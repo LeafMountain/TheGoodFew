@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad49cb7b0138984081ac7b867c7b676, type: 3}
+  m_Name: Mission01_startDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Gramps
+    line: Ehooh!!
+  - name: Gramps
+    line: Over here! I found the sack of grains!
+  - name: Lizardman
+    line: Gimme gimme grains!
+  - name: Gramps
+    line: Why would meateaters like you lot want grains?
+  - name: Lizardman
+    line: Need grain to make meatpie!
+  - name: Gramps
+    line: Oh that makes sense! Can I have some?
+  - name: Lizardman
+    line: No!! You be in meatpie instead!
+  - name: Gramps
+    line: Ah fiddlesticks

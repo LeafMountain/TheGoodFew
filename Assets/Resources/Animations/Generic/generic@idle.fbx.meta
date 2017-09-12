@@ -1,0 +1,317 @@
+fileFormatVersion: 2
+guid: aa3d729e44e80d84fab6207d12760964
+timeCreated: 1494505639
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ball_LFT_01
+    100002: ball_RGT_01
+    100004: elbow_LFT_REAL_01
+    100006: elbow_RGT_REAL_01
+    100008: fingers_LFT_C_01
+    100010: fingers_LFT_GRP_C_01
+    100012: fingers_RGH_C_01
+    100014: fingers_RGH_GRP_C_01
+    100016: //RootNode
+    100018: Gobal_Control
+    100020: grp_ALL
+    100022: grp_ALL_joints
+    100024: Hand_Grip_LFT_C
+    100026: hand_LFT_01
+    100028: hand_LFT_02
+    100030: hand_LFT_CONNECTOR
+    100032: hand_RGT_01
+    100034: hand_RGT_01 1
+    100036: hand_RGT_CONNECTOR
+    100038: head_CEN_01
+    100040: head_CEN_02
+    100042: head_CEN_CONNECTOR
+    100044: hip_LFT_01
+    100046: hip_RGT_01
+    100048: knee_LFT_01
+    100050: knee_RGT_01
+    100052: neck_CEN_10
+    100054: nurbsCircle2
+    100056: palm_LFT_REAL_01
+    100058: palm_RGT_REAL_01
+    100060: root_CEN
+    100062: shoulder_LFT_REAL_01
+    100064: shoulder_RGT_REAL_01
+    100066: spine_CEN_01
+    100068: spine_CEN_02
+    100070: spine_CEN_03
+    100072: spine_CEN_04
+    100074: thumb_LFT_01
+    100076: thumb_LFT_01 1
+    100078: thumb_LFT_01 2
+    100080: thumb_LFT_C_01
+    100082: thumb_LFT_C_02
+    100084: thumb_LFT_grp_C_01
+    100086: thumb_RGH_C_01
+    100088: thumb_RGH_C_02
+    100090: thumb_RGH_GRP_C_01
+    100092: thumb_RGT_01
+    100094: thumb_RGT_01 1
+    100096: thumb_RGT_01 2
+    100098: toe_LFT_01
+    100100: toe_RGT_01
+    400000: ball_LFT_01
+    400002: ball_RGT_01
+    400004: elbow_LFT_REAL_01
+    400006: elbow_RGT_REAL_01
+    400008: fingers_LFT_C_01
+    400010: fingers_LFT_GRP_C_01
+    400012: fingers_RGH_C_01
+    400014: fingers_RGH_GRP_C_01
+    400016: //RootNode
+    400018: Gobal_Control
+    400020: grp_ALL
+    400022: grp_ALL_joints
+    400024: Hand_Grip_LFT_C
+    400026: hand_LFT_01
+    400028: hand_LFT_02
+    400030: hand_LFT_CONNECTOR
+    400032: hand_RGT_01
+    400034: hand_RGT_01 1
+    400036: hand_RGT_CONNECTOR
+    400038: head_CEN_01
+    400040: head_CEN_02
+    400042: head_CEN_CONNECTOR
+    400044: hip_LFT_01
+    400046: hip_RGT_01
+    400048: knee_LFT_01
+    400050: knee_RGT_01
+    400052: neck_CEN_10
+    400054: nurbsCircle2
+    400056: palm_LFT_REAL_01
+    400058: palm_RGT_REAL_01
+    400060: root_CEN
+    400062: shoulder_LFT_REAL_01
+    400064: shoulder_RGT_REAL_01
+    400066: spine_CEN_01
+    400068: spine_CEN_02
+    400070: spine_CEN_03
+    400072: spine_CEN_04
+    400074: thumb_LFT_01
+    400076: thumb_LFT_01 1
+    400078: thumb_LFT_01 2
+    400080: thumb_LFT_C_01
+    400082: thumb_LFT_C_02
+    400084: thumb_LFT_grp_C_01
+    400086: thumb_RGH_C_01
+    400088: thumb_RGH_C_02
+    400090: thumb_RGH_GRP_C_01
+    400092: thumb_RGT_01
+    400094: thumb_RGT_01 1
+    400096: thumb_RGT_01 2
+    400098: toe_LFT_01
+    400100: toe_RGT_01
+    7400000: idle
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Gobal_Control
+        weight: 1
+      - path: Gobal_Control/Hand_Grip_LFT_C
+        weight: 1
+      - path: Gobal_Control/nurbsCircle2
+        weight: 1
+      - path: grp_ALL
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_LFT_01/knee_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_LFT_01/knee_LFT_01/ball_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_LFT_01/knee_LFT_01/ball_LFT_01/toe_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_RGT_01/knee_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_RGT_01/knee_RGT_01/ball_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/hip_RGT_01/knee_RGT_01/ball_RGT_01/toe_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/fingers_LFT_GRP_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/fingers_LFT_GRP_C_01/fingers_LFT_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/hand_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/hand_LFT_01/hand_LFT_02
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/hand_LFT_01/hand_LFT_02/hand_LFT_CONNECTOR
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_01/thumb_LFT_01
+          1
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_01/thumb_LFT_01
+          1/thumb_LFT_01 2
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_grp_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_grp_C_01/thumb_LFT_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_LFT_REAL_01/elbow_LFT_REAL_01/palm_LFT_REAL_01/thumb_LFT_grp_C_01/thumb_LFT_C_01/thumb_LFT_C_02
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/fingers_RGH_GRP_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/fingers_RGH_GRP_C_01/fingers_RGH_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/hand_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/hand_RGT_01/hand_RGT_01
+          1
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/hand_RGT_01/hand_RGT_01
+          1/hand_RGT_CONNECTOR
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGH_GRP_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGH_GRP_C_01/thumb_RGH_C_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGH_GRP_C_01/thumb_RGH_C_01/thumb_RGH_C_02
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGT_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGT_01/thumb_RGT_01
+          1
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/shoulder_RGT_REAL_01/elbow_RGT_REAL_01/palm_RGT_REAL_01/thumb_RGT_01/thumb_RGT_01
+          1/thumb_RGT_01 2
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/spine_CEN_04
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/spine_CEN_04/neck_CEN_10
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/spine_CEN_04/neck_CEN_10/head_CEN_01
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/spine_CEN_04/neck_CEN_10/head_CEN_01/head_CEN_02
+        weight: 1
+      - path: grp_ALL/grp_ALL_joints/root_CEN/spine_CEN_01/spine_CEN_02/spine_CEN_03/spine_CEN_04/neck_CEN_10/head_CEN_01/head_CEN_02/head_CEN_CONNECTOR
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22697739413060346a1d3a89fee67734, type: 3}
+  m_Name: Restore
+  m_EditorClassIdentifier: 
+  title: Restore
+  icon: {fileID: 21300000, guid: 9b85bf60a346fb34d852679e51a0e11f, type: 3}
+  description: Performs a rite that restores a large amount of Health to a unit.
+  cooldown: 3
+  startAnimation: 0
+  startEffect: {fileID: 1297729001446314, guid: 4d5fd0fd3fd0a844496171bdec5cc03a,
+    type: 2}
+  usingAnimation: 4
+  usingEffect: {fileID: 1469565213522284, guid: b287f4801eca78b4eb0329bd1d996a8d,
+    type: 2}
+  endEffect: {fileID: 1435922079552624, guid: d27963a9ab9cc05428d8b33bc402f9e0, type: 2}
+  startSound: {fileID: 11400000, guid: 8c40463d7f35e6c48a23672fc1b20dc7, type: 2}
+  endSound: {fileID: 11400000, guid: 93f0ea93c0b6a7142b08fccadb397261, type: 2}
+  range: 5
+  radius: 0
+  lineOfSight: 0
+  physicalDamage: 0
+  magicalDamage: 0
+  heal: 8

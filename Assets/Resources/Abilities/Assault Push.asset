@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22697739413060346a1d3a89fee67734, type: 3}
+  m_Name: Assault Push
+  m_EditorClassIdentifier: 
+  title: Assault Push
+  icon: {fileID: 21300000, guid: 84dc54e33162d2541bb7daa13e708d11, type: 3}
+  description: Violently shove an enemy away dealing damage while pushing them back
+    3 tiles.
+  cooldown: 3
+  startAnimation: 0
+  startEffect: {fileID: 1480886414347456, guid: 91a6579500e12ed4ba7b5f43eed84d4a,
+    type: 2}
+  usingAnimation: 1
+  usingEffect: {fileID: 1564831582575144, guid: ebe40bf1cf99ccf4e89b348ecb21a10c,
+    type: 2}
+  endEffect: {fileID: 1765437911938890, guid: 415895a25b6ea4b4fbc7706682068369, type: 2}
+  startSound: {fileID: 11400000, guid: e1ed3b896780a904da3d90bae975eb35, type: 2}
+  endSound: {fileID: 11400000, guid: 89c6ffc17ba2ff94d8ac58c5ef5ad7dd, type: 2}
+  range: 1
+  radius: 0
+  lineOfSight: 0
+  physicalDamage: 6
+  magicalDamage: 0
+  heal: 0

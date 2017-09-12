@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad49cb7b0138984081ac7b867c7b676, type: 3}
+  m_Name: Mission03_startDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Olivia
+    line: I do not understand, why has my people begun dabbling in necromancy?
+  - name: Milo
+    line: I suppose it's the same reason why you dabble in magic.
+  - name: Olivia
+    line: And what reason would that be?
+  - name: Milo
+    line: Curiosity, though your intention maybe be pure, you may dig your own grave.
+  - name: Milo
+    line: The scriptures often tell tales of similar things.
+  - name: Olivia
+    line: I assure you, my magic is nothing like necromancy
+  - name: Milo
+    line: If you say so..

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22697739413060346a1d3a89fee67734, type: 3}
+  m_Name: Missile of Magic
+  m_EditorClassIdentifier: 
+  title: Missile of Magic
+  icon: {fileID: 21300000, guid: 13e2d6ddc14328d4181fcf7b15ddc12a, type: 3}
+  description: Launches a volatile mass of magic at a target.
+  cooldown: 3
+  startAnimation: 0
+  startEffect: {fileID: 1471138571741660, guid: ad3446d109f382a4381751572bfc9842,
+    type: 2}
+  usingAnimation: 3
+  usingEffect: {fileID: 1356474887121204, guid: 3a1e3a45e62a98049b55ac26bff17a21,
+    type: 2}
+  endEffect: {fileID: 1124201500945002, guid: bf310465e4b504d49a9c2909a0778663, type: 2}
+  startSound: {fileID: 11400000, guid: dea42b977ee94d04d8647390863d6c4e, type: 2}
+  endSound: {fileID: 11400000, guid: 3a49299319fc30c43b9199cc75035ac2, type: 2}
+  range: 5
+  radius: 3
+  lineOfSight: 0
+  physicalDamage: 0
+  magicalDamage: 10
+  heal: 0

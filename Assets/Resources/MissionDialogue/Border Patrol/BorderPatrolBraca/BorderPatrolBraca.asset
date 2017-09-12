@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff1b61d499318840857d6b31be98d90, type: 3}
+  m_Name: BorderPatrolBraca
+  m_EditorClassIdentifier: 
+  scene: B02 Border Patrol Braca
+  missionName: 'Border Patrol: Braca'
+  startDialogue: {fileID: 11400000, guid: 724149ccfcad96143a613a6025af98ba, type: 2}
+  endDialogue: {fileID: 11400000, guid: 8421bd6fc87478648862aafde1373288, type: 2}

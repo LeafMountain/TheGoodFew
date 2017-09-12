@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22697739413060346a1d3a89fee67734, type: 3}
+  m_Name: Bullseye
+  m_EditorClassIdentifier: 
+  title: Bullseye
+  icon: {fileID: 21300000, guid: 2ecb56b954dbc9048a43107a21b210eb, type: 3}
+  description: Fire an arrow at an enemy's vulnerable location causing high damage.
+  cooldown: 3
+  startAnimation: 0
+  startEffect: {fileID: 1659894856385386, guid: 8061fa3741b80ef41a8e2836162316d3,
+    type: 2}
+  usingAnimation: 2
+  usingEffect: {fileID: 1653384646112130, guid: 349612e0c160d0442b41d2ac5503af4b,
+    type: 2}
+  endEffect: {fileID: 1686710504929220, guid: 5538416cfcdd09f4480da066cb4647a7, type: 2}
+  startSound: {fileID: 11400000, guid: 7706f554892e7184582eeec53cd6067c, type: 2}
+  endSound: {fileID: 11400000, guid: 277c5ec2232f30f4995fef65c95c3922, type: 2}
+  range: 5
+  radius: 0
+  lineOfSight: 1
+  physicalDamage: 6
+  magicalDamage: 0
+  heal: 0

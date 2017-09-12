@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b89ff2a830e95d4fbea5d5cbc4bb87b, type: 3}
+  m_Name: Bushes
+  m_EditorClassIdentifier: 
+  packageName: Bushes
+  assets:
+  - {fileID: 1501588991947164, guid: 686617e96676c8940aaf6e0ef0a0b44b, type: 2}
+  - {fileID: 1458035899202144, guid: 21f43ff1f49b8b3419419d46bac95ec2, type: 2}
+  - {fileID: 1129985372083820, guid: d6c939a3f9cb73b48961778d9de4e37b, type: 2}
+  - {fileID: 1388328432145094, guid: 850a3fc50b72c394690e46d69635bf72, type: 2}
+  - {fileID: 1764889812434542, guid: 94be8c24c5b439349aee862837b75697, type: 2}
+  - {fileID: 1819797434486110, guid: 431856ba526d4af41bf0a77b57825f93, type: 2}
+  - {fileID: 1045817529868040, guid: cfdd157ab8dfeb64c98ad4f4c1fc5598, type: 2}
+  - {fileID: 1326637288107990, guid: f0cb589ad55d3d340ab2c109c6de9ba6, type: 2}
+  - {fileID: 1944681867214776, guid: bf9ebcbd2ef7c83419a6dd7a2f4243bd, type: 2}

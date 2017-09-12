@@ -1,0 +1,195 @@
+fileFormatVersion: 2
+guid: 4f1072d30636d9e4683a4278aee5e271
+timeCreated: 1492165059
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ball_LFT_01
+    100002: ball_RGT_01
+    100004: elbow_LFT_IK_01
+    100006: elbow_LFT_REAL_01
+    100008: elbow_RGT_IK_01
+    100010: elbow_RGT_REAL_01
+    100012: fingers_LFT_C_01
+    100014: fingers_LFT_GRP_C_01
+    100016: fingers_RGH_C_01
+    100018: fingers_RGH_GRP_C_01
+    100020: //RootNode
+    100022: Gobal_Control
+    100024: grp_ALL
+    100026: grp_ALL_IKs
+    100028: grp_ALL_joints
+    100030: Hand_Grip_LFT_C
+    100032: hand_LFT_01
+    100034: hand_LFT_02
+    100036: hand_LFT_CONNECTOR
+    100038: hand_RGT_01
+    100040: hand_RGT_01 1
+    100042: hand_RGT_CONNECTOR
+    100044: head_CEN_01
+    100046: head_CEN_02
+    100048: head_CEN_CONNECTOR
+    100050: hip_LFT_01
+    100052: hip_RGT_01
+    100054: knee_LFT_01
+    100056: knee_RGT_01
+    100058: neck_CEN_10
+    100060: nurbsCircle2
+    100062: palm_LFT_IK_01
+    100064: palm_LFT_REAL_01
+    100066: palm_RGT_IK_01
+    100068: palm_RGT_REAL_01
+    100070: root_CEN
+    100072: shoulder_LFT_IK_01
+    100074: shoulder_LFT_REAL_01
+    100076: shoulder_RGT_IK_01
+    100078: shoulder_RGT_REAL_01
+    100080: spine_CEN_01
+    100082: spine_CEN_02
+    100084: spine_CEN_03
+    100086: spine_CEN_04
+    100088: thumb_LFT_01
+    100090: thumb_LFT_01 1
+    100092: thumb_LFT_01 2
+    100094: thumb_LFT_C_01
+    100096: thumb_LFT_C_02
+    100098: thumb_LFT_grp_C_01
+    100100: thumb_RGH_C_01
+    100102: thumb_RGH_C_02
+    100104: thumb_RGH_GRP_C_01
+    100106: thumb_RGT_01
+    100108: thumb_RGT_01 1
+    100110: thumb_RGT_01 2
+    100112: toe_LFT_01
+    100114: toe_RGT_01
+    400000: ball_LFT_01
+    400002: ball_RGT_01
+    400004: elbow_LFT_IK_01
+    400006: elbow_LFT_REAL_01
+    400008: elbow_RGT_IK_01
+    400010: elbow_RGT_REAL_01
+    400012: fingers_LFT_C_01
+    400014: fingers_LFT_GRP_C_01
+    400016: fingers_RGH_C_01
+    400018: fingers_RGH_GRP_C_01
+    400020: //RootNode
+    400022: Gobal_Control
+    400024: grp_ALL
+    400026: grp_ALL_IKs
+    400028: grp_ALL_joints
+    400030: Hand_Grip_LFT_C
+    400032: hand_LFT_01
+    400034: hand_LFT_02
+    400036: hand_LFT_CONNECTOR
+    400038: hand_RGT_01
+    400040: hand_RGT_01 1
+    400042: hand_RGT_CONNECTOR
+    400044: head_CEN_01
+    400046: head_CEN_02
+    400048: head_CEN_CONNECTOR
+    400050: hip_LFT_01
+    400052: hip_RGT_01
+    400054: knee_LFT_01
+    400056: knee_RGT_01
+    400058: neck_CEN_10
+    400060: nurbsCircle2
+    400062: palm_LFT_IK_01
+    400064: palm_LFT_REAL_01
+    400066: palm_RGT_IK_01
+    400068: palm_RGT_REAL_01
+    400070: root_CEN
+    400072: shoulder_LFT_IK_01
+    400074: shoulder_LFT_REAL_01
+    400076: shoulder_RGT_IK_01
+    400078: shoulder_RGT_REAL_01
+    400080: spine_CEN_01
+    400082: spine_CEN_02
+    400084: spine_CEN_03
+    400086: spine_CEN_04
+    400088: thumb_LFT_01
+    400090: thumb_LFT_01 1
+    400092: thumb_LFT_01 2
+    400094: thumb_LFT_C_01
+    400096: thumb_LFT_C_02
+    400098: thumb_LFT_grp_C_01
+    400100: thumb_RGH_C_01
+    400102: thumb_RGH_C_02
+    400104: thumb_RGH_GRP_C_01
+    400106: thumb_RGT_01
+    400108: thumb_RGT_01 1
+    400110: thumb_RGT_01 2
+    400112: toe_LFT_01
+    400114: toe_RGT_01
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad49cb7b0138984081ac7b867c7b676, type: 3}
+  m_Name: Mission01_endDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Gramps
+    line: Phew...
+  - name: Milo
+    line: Do you require healing?
+  - name: Gramps
+    line: Don't worry about me Billy, I'll live.
+  - name: Milo
+    line: For the last time, my name is Milo!
+  - name: Gramps
+    line: What about Molimo? Don't worry Billy! Molimo says he's fine.
+  - name: Milo
+    line: Errgh...
+  - name: Gramps
+    line: C'mon! Let's get this grain back to Johnson

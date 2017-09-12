@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: aeeca90bfb945ba49bcaad873e41a21c
+  - enabled: 1
+    path: Assets/Scenes/VillageTemp.unity
+    guid: f3b209c97e4814848a2314ef45dd1bd6
+  - enabled: 1
+    path: Assets/Scenes/00 Anchormont.unity
+    guid: fef387f8480d29341874877c3e7d1a8b
+  - enabled: 1
+    path: Assets/Scenes/01 Lizards & Pies.unity
+    guid: 278682951fb1dfb43ab40216ce45ecdb
+  - enabled: 1
+    path: Assets/Scenes/02 Ambush Braca.unity
+    guid: bfabf908bd2fa354199b31ddb5c034dc
+  - enabled: 1
+    path: Assets/Scenes/03 Clear the Crypt.unity
+    guid: 7e14f7e68e904bd468fdc39816a0ca0d
+  - enabled: 1
+    path: Assets/Scenes/04 Scorched Earth.unity
+    guid: ce4888c60f24eac44bffcd38e6a54ce6
+  - enabled: 1
+    path: Assets/Scenes/05 Missing Caravans.unity
+    guid: 7d1e2114c20d7f14795ed77e8ffcf863
+  - enabled: 1
+    path: Assets/Scenes/B01 Border Patrol Osmaria.unity
+    guid: 2acb067756136f0488b760e8927cecf7
+  - enabled: 1
+    path: Assets/Scenes/B02 Border Patrol Braca.unity
+    guid: dcbd202016ea65e48bd206c3f859a982
+  - enabled: 1
+    path: Assets/Scenes/B03 Border Patrol Ethen.unity
+    guid: 52385fa99e1fe25409473e86e6592619

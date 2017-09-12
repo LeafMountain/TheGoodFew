@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b89ff2a830e95d4fbea5d5cbc4bb87b, type: 3}
+  m_Name: Cliffs
+  m_EditorClassIdentifier: 
+  packageName: Cliffs
+  assets:
+  - {fileID: 1340353510213662, guid: 1339f8c3de756614c9ebb0f936c2fb14, type: 2}
+  - {fileID: 1080769031658668, guid: 30fe1bf7b74f4454d89515b0ca16b285, type: 2}
+  - {fileID: 1668479375243158, guid: 0d05fdc7525c1eb418f9adf9877470ae, type: 2}
+  - {fileID: 1151506652471538, guid: 485061ca999029e4dbf28e1f3098eb1a, type: 2}
+  - {fileID: 1176695370146980, guid: 3fe26740ed75a0049ba83d62ec113785, type: 2}
+  - {fileID: 1075461599037206, guid: 4af3c9a191ccb9a46bec869e26f5536b, type: 2}
+  - {fileID: 1119063530031212, guid: 076537aa62f476e49bf7dbef3721a53f, type: 2}

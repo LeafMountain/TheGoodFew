@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d8725206aacdb4999a5abcae433d7f, type: 3}
+  m_Name: Olivia
+  m_EditorClassIdentifier: 
+  title: Olivia
+  portrait: {fileID: 21300000, guid: 11fe11b9408688949b56eca3381a2f80, type: 3}
+  type: 1
+  primaryClass: 4
+  soldierLevel: 0
+  scoutLevel: 0
+  archerLevel: 0
+  acolyteLevel: 0
+  apprenticeLevel: 1
+  health: 14
+  atk: 14
+  def: 10
+  pow: 18
+  res: 12
+  speed: 10
+  movement: 6
+  passiveAbility: {fileID: 0}
+  weaponAbility: {fileID: 11400000, guid: 81ea2e2c5badd804bb6cd79deecf4faa, type: 2}
+  activeAbility1: {fileID: 11400000, guid: 405970b5e03d0f74c8397389522f9e1e, type: 2}
+  activeAbility2: {fileID: 0}
+  activeAbility3: {fileID: 0}
+  activeAbility4: {fileID: 0}
+  activeAbility5: {fileID: 0}
+  storedAbilities: []

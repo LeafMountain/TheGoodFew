@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 19676aa8df0662b4986c5e87c0a1af8c
+timeCreated: 1492532724
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ball_LFT_01_JNT
+    100002: ball_RGH_01_JNT
+    100004: clavicle_LFT_01_JNT
+    100006: clavicle_RGH_01_JNT
+    100008: elbow_LFT_01_JNT
+    100010: elbow_RGH_01_JNT
+    100012: face_CEN_01_JNT
+    100014: foot_LFT_01_JNT
+    100016: foot_RGH_01_JNT
+    100018: hand_LFT_CONNECTOR_JNT
+    100020: hand_RGH_CONNECTOR_JNT
+    100022: head_CEN_01_JNT
+    100024: hipp_LFT_01_JNT
+    100026: hipp_RGH_01_JNT
+    100028: index_LFT_01_JNT
+    100030: index_LFT_02_JNT
+    100032: index_LFT_03_JNT
+    100034: index_RGH_01_JNT
+    100036: index_RGH_02_JNT
+    100038: index_RGH_03_JNT
+    100040: jaw_CEN_01_JNT
+    100042: jaw_CEN_02_JNT
+    100044: knee_LFT_01_JNT
+    100046: knee_RGH_01_JNT
+    100048: middle_LFT_01_JNT
+    100050: middle_LFT_02_JNT
+    100052: middle_LFT_03_JNT
+    100054: middle_RGH_01_JNT
+    100056: middle_RGH_02_JNT
+    100058: middle_RGH_03_JNT
+    100060: //RootNode
+    100062: ring_LFT_01_JNT
+    100064: ring_LFT_02_JNT
+    100066: ring_LFT_03_JNT
+    100068: ring_RGH_01_JNT
+    100070: ring_RGH_02_JNT
+    100072: ring_RGH_03_JNT
+    100074: root
+    100076: shoulder_LFT_01_JNT
+    100078: shoulder_RGH_01_JNT
+    100080: spine_CEN_01_JNT
+    100082: spine_CEN_02_JNT
+    100084: spine_CEN_03_JNT
+    100086: spine_CEN_04_JNT
+    100088: tail_CEN_01_JNT
+    100090: tail_CEN_02_JNT
+    100092: tail_CEN_03_JNT
+    100094: tail_CEN_04_JNT
+    100096: tail_CEN_05_JNT
+    100098: toe_LFT_01_JNT
+    100100: toe_RGH_01_JNT
+    100102: wrist_LFT_01_JNT
+    100104: wrist_LFT_02_JNT
+    100106: wrist_RGH_01_JNT
+    100108: wrist_RGH_02_JNT
+    400000: ball_LFT_01_JNT
+    400002: ball_RGH_01_JNT
+    400004: clavicle_LFT_01_JNT
+    400006: clavicle_RGH_01_JNT
+    400008: elbow_LFT_01_JNT
+    400010: elbow_RGH_01_JNT
+    400012: face_CEN_01_JNT
+    400014: foot_LFT_01_JNT
+    400016: foot_RGH_01_JNT
+    400018: hand_LFT_CONNECTOR_JNT
+    400020: hand_RGH_CONNECTOR_JNT
+    400022: head_CEN_01_JNT
+    400024: hipp_LFT_01_JNT
+    400026: hipp_RGH_01_JNT
+    400028: index_LFT_01_JNT
+    400030: index_LFT_02_JNT
+    400032: index_LFT_03_JNT
+    400034: index_RGH_01_JNT
+    400036: index_RGH_02_JNT
+    400038: index_RGH_03_JNT
+    400040: jaw_CEN_01_JNT
+    400042: jaw_CEN_02_JNT
+    400044: knee_LFT_01_JNT
+    400046: knee_RGH_01_JNT
+    400048: middle_LFT_01_JNT
+    400050: middle_LFT_02_JNT
+    400052: middle_LFT_03_JNT
+    400054: middle_RGH_01_JNT
+    400056: middle_RGH_02_JNT
+    400058: middle_RGH_03_JNT
+    400060: //RootNode
+    400062: ring_LFT_01_JNT
+    400064: ring_LFT_02_JNT
+    400066: ring_LFT_03_JNT
+    400068: ring_RGH_01_JNT
+    400070: ring_RGH_02_JNT
+    400072: ring_RGH_03_JNT
+    400074: root
+    400076: shoulder_LFT_01_JNT
+    400078: shoulder_RGH_01_JNT
+    400080: spine_CEN_01_JNT
+    400082: spine_CEN_02_JNT
+    400084: spine_CEN_03_JNT
+    400086: spine_CEN_04_JNT
+    400088: tail_CEN_01_JNT
+    400090: tail_CEN_02_JNT
+    400092: tail_CEN_03_JNT
+    400094: tail_CEN_04_JNT
+    400096: tail_CEN_05_JNT
+    400098: toe_LFT_01_JNT
+    400100: toe_RGH_01_JNT
+    400102: wrist_LFT_01_JNT
+    400104: wrist_LFT_02_JNT
+    400106: wrist_RGH_01_JNT
+    400108: wrist_RGH_02_JNT
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

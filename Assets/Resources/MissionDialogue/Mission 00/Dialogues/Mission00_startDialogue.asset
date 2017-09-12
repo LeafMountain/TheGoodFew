@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad49cb7b0138984081ac7b867c7b676, type: 3}
+  m_Name: Mission00_startDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Bracan Warrior
+    line: Sir! There are more civilians hiding in the town!
+  - name: The Boss
+    line: Get to work, or I'll feed you to the rats!
+  - name: Alena
+    line: You! Stop right there!
+  - name: Bracan Warrior
+    line: Huuuh?!
+  - name: Alena
+    line: Your reign of terror ends here!
+  - name: Jacques
+    line: Prepare for battle you Bracan dogs!
+  - name: Milo
+    line: We must defeat these soldiers so we can save these poor people!

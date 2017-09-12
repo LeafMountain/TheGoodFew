@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad49cb7b0138984081ac7b867c7b676, type: 3}
+  m_Name: Mission02_startDialogue
+  m_EditorClassIdentifier: 
+  lines:
+  - name: Olivia
+    line: I wonder what could be so valuable for them to be so cautious.
+  - name: Alena
+    line: Must be someting really important to your people.
+  - name: Olivia
+    line: I am not sure if I should even refer to them as my people anymore.
+  - name: Olivia
+    line: The have changed..
+  - name: Wilburr
+    line: All things change, it's a part of life, You should just accept that are
+      different now.
+  - name: Alena
+    line: Jeez Wilburr, you sure are being helpful right now!
+  - name: Wilburr
+    line: No point in sugarcoating it. Sometimes hard truths are better than sweet
+      lies.

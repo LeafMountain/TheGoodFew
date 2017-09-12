@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d8725206aacdb4999a5abcae433d7f, type: 3}
+  m_Name: Wilburr
+  m_EditorClassIdentifier: 
+  title: Wilburr
+  portrait: {fileID: 21300000, guid: ae40c506b1c5a5e459eafed71f31a682, type: 3}
+  type: 1
+  primaryClass: 1
+  soldierLevel: 0
+  scoutLevel: 1
+  archerLevel: 0
+  acolyteLevel: 0
+  apprenticeLevel: 0
+  health: 20
+  atk: 18
+  def: 11
+  pow: 10
+  res: 10
+  speed: 11
+  movement: 6
+  passiveAbility: {fileID: 0}
+  weaponAbility: {fileID: 11400000, guid: 16ada94bf0da7ca4390c30063a811602, type: 2}
+  activeAbility1: {fileID: 11400000, guid: 06641e82cae5a0d458fed0f839fabda5, type: 2}
+  activeAbility2: {fileID: 0}
+  activeAbility3: {fileID: 0}
+  activeAbility4: {fileID: 0}
+  activeAbility5: {fileID: 0}
+  storedAbilities: []
