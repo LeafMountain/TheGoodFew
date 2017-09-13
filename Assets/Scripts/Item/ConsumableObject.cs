@@ -1,21 +1,24 @@
 ﻿//Author: Axel Stenkrona
-//Description: The item archtype class. 
+//Description: The consumable item archtype class. 
 
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 
-[CreateAssetMenuAttribute(fileName = "New Weapon",menuName = "Item/Consumable")]
+[CreateAssetMenuAttribute(fileName = "New ConsumableObject",menuName = "Item/Consumable")]
+
 [System.Serializable]
-public class ConsumabeObject : ScriptableObject
+public class ConsumableObject : ScriptableObject
 {
     new public string name = "New Consumable";
     public Sprite icon;
     public GameObject model;
 
-    public UnitData.Class characterClass;
     public Ability ability;
+
+    public int cost;
+    public int duration;
 
     //Cool Lore Text
     public string description;
