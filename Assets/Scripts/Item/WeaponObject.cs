@@ -8,10 +8,10 @@ using System.Collections.Generic;
 
 [CreateAssetMenuAttribute(fileName = "New Weapon",menuName = "Item/Equipment/Weapon")]
 [System.Serializable]
-public class WeaponObject : ScriptableObject
+public class WeaponObject : Item
 {
-    new public string name = "New Item";
-    public Sprite icon;
+    
+    
     public GameObject model;
 
     public UnitData.Class characterClass;
@@ -25,11 +25,5 @@ public class WeaponObject : ScriptableObject
     public int minimumPow = 0;
     public int maximumPow = 1;
 
-    //Cool Lore Text
-    public string description;
-
-    //Developer Note
-    public string note;
-
-
+   
 }
