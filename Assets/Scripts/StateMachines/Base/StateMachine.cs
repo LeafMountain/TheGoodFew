@@ -5,25 +5,26 @@ using UnityEngine;
 public abstract class StateMachine : MonoBehaviour {
     protected StateMachineState currentState;
 
+
     public void ChangeState (StateMachineState newState) {
         if (currentState != null) {
             currentState.ExitState ();
         }
         currentState = newState;
         currentState.EnterState ();
-		OnChangeState();
+        OnChangeState ();
     }
 
-	public virtual void OnChangeState(){
+    public virtual void OnChangeState () {
 
-	}
+    }
 
     private void Update () {
         currentState.Update ();
-        OnUpdate();
+        OnUpdate ();
     }
 
-	public virtual void OnUpdate(){
-		
-	}
+    public virtual void OnUpdate () {
+
+    }
 }
