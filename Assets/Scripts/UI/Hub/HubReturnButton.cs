@@ -7,12 +7,12 @@ using UnityEngine;
 
 public class HubReturnButton : MonoBehaviour {
 
-    private IHubStates overViewstate;
+    
 
     //Called when clicked on the return button in a town menu. The hub state changes to <OverViewState>
     public void ReturnToOverView()
     {
-
+        transform.GetComponentInParent<SubMenuTemplate>().gameObject.SetActive(false);
     }
 
     //properties
