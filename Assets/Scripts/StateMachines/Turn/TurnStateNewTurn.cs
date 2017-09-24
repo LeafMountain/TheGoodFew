@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnStateNewTurn : StateMachineState {
+public class TurnStateNewTurn : ITurnState {
 
-	public override void EnterState () {
-		
+	private TurnStateMachine turnStateMachine;
+
+	public TurnStateNewTurn(TurnStateMachine turnStateMachine){
+		this.turnStateMachine = turnStateMachine;
 	}
 
-	public override void ExitState(){
-		
+	public void EnterState(){
 	}
-	
-	public override void Update () {
-		
+
+	public void ExitState(){
+		turnStateMachine.UnitManager.AddUnit(turnStateMachine.UnitManager.turnOrderObjects[0]);
 	}
-	
+
+	public void Update(){
+		// Debug.Log(turnStateMachine.UnitManager.turnOrderObjects.Count);	
+
+	}
 }
