@@ -6,10 +6,8 @@ using UnityEngine;
 public class UnitManager:MonoBehaviour {
 
 	private static UnitManager currentInstance; 
-	private List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
+	public List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
 	public TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
-
-	public event EventHandler < TurnOrderUpdate > TurnOrderUpdated; 
 
 
 	public static UnitManager GetInstance() {
@@ -21,7 +19,7 @@ public class UnitManager:MonoBehaviour {
 	}
 
 	private void Start() {
-		FindTurnOrderObjects(); 
+		// FindTurnOrderObjects(); 
 	}
 
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
@@ -33,23 +31,26 @@ public class UnitManager:MonoBehaviour {
 	//Add unit to list of units (removes units from list if the list already contains the unit)
 	public void AddUnit(TurnOrderObject unit) {
 		RemoveUnit(unit); 
-		turnOrderObjects.Add(unit); 
+		turnOrderObjects.Add(unit);
+		OnTurnOrderUpdated();
 	}
 
 	//Remove units from list of units
 	public void RemoveUnit(TurnOrderObject unit) {
 		if (turnOrderObjects.Contains(unit)) {
-			turnOrderObjects.Remove(unit); 
+			turnOrderObjects.Remove(unit);
+			OnTurnOrderUpdated();
 		}
 		else {
 			Debug.Log("The unit doesn't exists in the Turn Order Object list"); 
 		}
 	}
 
-	public event EventHandler < TurnOrderUpdate > TurnOrderUpdate; 
+	//Event
+	public event EventHandler<TurnOrderUpdate> TurnOrderUpdated;
 
 	protected virtual void OnTurnOrderUpdated () {
-		if (TurnOrderUpdate != null) {
+		if (TurnOrderUpdated != null) {
 			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects)); 
 		}
 	}
