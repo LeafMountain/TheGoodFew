@@ -8,15 +8,15 @@ public class TurnOrderObject : MonoBehaviour {
 	public enum Allegiance { Enemy, Friendly }
 	public Allegiance allegiance;
 
-	private TurnManager turnManager;
+	// private TurnManager turnManager;
 
 	private void Start(){
-		Health health = GetComponent<Health>();
+		// Health health = GetComponent<Health>();
 
-		if (health)
-		{
-			health.Dead.AddListener(OnDead);
-		}
+		// if (health)
+		// {
+		// 	health.Dead.AddListener(OnDead);
+		// }
 	}
 
 	//If unit dies, disables the gameobject
@@ -26,17 +26,17 @@ public class TurnOrderObject : MonoBehaviour {
 
 	//Add gameobject to turn manager when this component gets enabled
 	private void OnEnable(){
-		turnManager = TurnManager.GetInstance();
+		// turnManager = TurnManager.GetInstance();
 		
-		if(turnManager != null){
-			turnManager.AddUnit(this);
-		}
+		// if(turnManager != null){
+		// 	turnManager.AddUnit(this);
+		// }
 	}
 
 	//Remove gameobject from turn manager when this component gets disabled
 	private void OnDisable(){
-		if(turnManager != null){
-			turnManager.RemoveUnit(this);
-		}
+		// if(turnManager != null){
+		// 	turnManager.RemoveUnit(this);
+		// }
 	}
 }

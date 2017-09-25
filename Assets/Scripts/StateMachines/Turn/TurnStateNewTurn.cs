@@ -14,11 +14,15 @@ public class TurnStateNewTurn : ITurnState {
 	}
 
 	public void ExitState(){
-		turnStateMachine.UnitManager.AddUnit(turnStateMachine.UnitManager.turnOrderObjects[0]);
+		TurnOrderObject currentUnit = turnStateMachine.UnitManager.CurrentUnit;
+		turnStateMachine.UnitManager.AddUnit(currentUnit);
 	}
 
 	public void Update(){
-		// Debug.Log(turnStateMachine.UnitManager.turnOrderObjects.Count);	
 
+		//Use input manager instead for input.
+		if(Input.GetKeyDown(KeyCode.Space)){
+			turnStateMachine.ChangeState(new TurnStateNewTurn(turnStateMachine));
+		}
 	}
 }

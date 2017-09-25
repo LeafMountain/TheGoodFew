@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GlobalStateMachine : StateMachine {
-    public ScreenFader screenFader { get; private set; }
+    // public ScreenFader screenFader { get; private set; }
     [HeaderAttribute("Scene Names")]
     public string mainMenu;
     public string villageHub;
@@ -33,13 +33,13 @@ public class GlobalStateMachine : StateMachine {
     }
 
     private void Start () {
-        screenFader = GetComponent<ScreenFader>();
+        // screenFader = GetComponent<ScreenFader>();
         currentState = new GlobalStateMainMenu(this);
     }
 
     //Load scene with a delay and fade screen
     public void ChangeScene (string scene) {
-        globalStateMachine.screenFader.FadeSceen(1);
+        // globalStateMachine.screenFader.FadeSceen(1);
         this.scene = scene;
         changeScene = true;
 
