@@ -1,18 +1,22 @@
-﻿//Author: Axel Stenkrona
-//Description: This class is put on the return button in a hub menu. 
+﻿//Description: This class is put on buttons in a hub menu. 
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HubReturnButton : MonoBehaviour {
+public class SubHubButtons : MonoBehaviour {
 
-    
+    public GameObject shop;
+    public GameObject textbox;
 
     //Called when clicked on the return button in a town menu. The hub state changes to <OverViewState>
     public void ReturnToOverView()
     {
         transform.GetComponentInParent<SubMenuTemplate>().gameObject.SetActive(false);
+    }
+    public void ToggleShop()
+    {
+        shop.SetActive(!shop.activeSelf);
+        textbox.SetActive(!textbox.activeSelf);
+        
     }
 
     //properties

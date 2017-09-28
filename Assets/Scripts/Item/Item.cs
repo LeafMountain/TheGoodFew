@@ -15,7 +15,7 @@ public class Item : ScriptableObject {
     public bool showInInventory;
     public void Use()
     {
-
+        Debug.Log(itemName + " was used!");
     }
     public void RemoveFromInventory()
     {
