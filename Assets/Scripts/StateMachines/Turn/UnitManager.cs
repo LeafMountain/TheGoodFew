@@ -11,15 +11,15 @@ public class UnitManager:MonoBehaviour {
 
 
 	public static UnitManager GetInstance() {
-		return currentInstance; 
+		return currentInstance;
 	}
 
 	private void Awake() {
-		currentInstance = this; 
+		currentInstance = this;
 	}
 
 	private void Start() {
-		// FindTurnOrderObjects(); 
+		OnTurnOrderUpdated();
 	}
 
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
@@ -42,14 +42,14 @@ public class UnitManager:MonoBehaviour {
 			OnTurnOrderUpdated();
 		}
 		else {
-			Debug.Log("The unit doesn't exists in the Turn Order Object list"); 
+			Debug.Log("The unit doesn't exists in the Turn Order Object list");
 		}
 	}
 
 	//Event
 	public event EventHandler<TurnOrderUpdate> TurnOrderUpdated;
 
-	protected virtual void OnTurnOrderUpdated () {
+	protected virtual void OnTurnOrderUpdated () {		
 		if (TurnOrderUpdated != null) {
 			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects)); 
 		}
