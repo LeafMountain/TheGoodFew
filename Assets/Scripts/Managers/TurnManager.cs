@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class UnitManager:MonoBehaviour {
+public class TurnManager:MonoBehaviour {
 
-	private static UnitManager currentInstance; 
+	private static TurnManager currentInstance; 
 	public List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
 	public TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
 
 
-	public static UnitManager GetInstance() {
+	public static TurnManager GetInstance() {
 		return currentInstance;
 	}
 
@@ -48,10 +48,21 @@ public class UnitManager:MonoBehaviour {
 
 	//Event
 	public event EventHandler<TurnOrderUpdate> TurnOrderUpdated;
+	
+	//Trying to make an event for when a new turn starts
+	public delegate void TurnEvent ();
+	public event TurnEvent NewTurn;
+
 
 	protected virtual void OnTurnOrderUpdated () {		
 		if (TurnOrderUpdated != null) {
 			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects)); 
+		}
+	}
+
+	protected virtual void OnNewTurn(){
+		if(NewTurn != null){
+			NewTurn.Invoke();
 		}
 	}
 }

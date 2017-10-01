@@ -11,8 +11,7 @@ public class TurnStatePrepare : ITurnState {
 	}
 
 	public void EnterState(){
-		turnStateMachine.UnitManager = UnitManager.GetInstance();
-		Debug.Log("test");
+		turnStateMachine.TurnManager = TurnManager.GetInstance();
 	}
 
 	public void ExitState(){

@@ -16,8 +16,8 @@ public class TurnStateNewTurn : ITurnState {
 	}
 
 	public void ExitState(){
-		currentUnit = turnStateMachine.UnitManager.CurrentUnit;
-		turnStateMachine.UnitManager.AddUnit(currentUnit);
+		currentUnit = turnStateMachine.TurnManager.CurrentUnit;
+		turnStateMachine.TurnManager.AddUnit(currentUnit);
 	}
 
 	public void Update(){
