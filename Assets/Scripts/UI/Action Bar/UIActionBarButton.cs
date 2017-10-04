@@ -9,17 +9,28 @@ public class UIActionBarButton : MonoBehaviour {
 	private Image icon;
 	public Image cooldownImage;
 	public Text cooldownText;
+	private UIActionBarButtonDescription description;
 
 	private AbilityCombat ability;
 
 	private void Awake(){
 		icon = GetComponent<Image>();
 		defaultIcon = icon.sprite;
+		description = GetComponentInChildren<UIActionBarButtonDescription>();		
 	}
 
 	public void SetupButton(AbilityCombat ability) {
+		if(ability == null){
+			return;
+		}
+		
 		this.ability = ability;
 		SetIcon(ability.ability.ability.icon);
+
+		if(description != null){
+			description.Setup(ability);
+		}
+
 		SetCooldown();
 	}
 

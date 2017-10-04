@@ -52,7 +52,7 @@ public class TurnManager:MonoBehaviour {
 	//Trying to make an event for when a new turn starts
 	public delegate void TurnEvent ();
 	public event TurnEvent NewTurn;
-
+	public event TurnEvent NewUnit;
 
 	protected virtual void OnTurnOrderUpdated () {		
 		if (TurnOrderUpdated != null) {
@@ -60,9 +60,21 @@ public class TurnManager:MonoBehaviour {
 		}
 	}
 
-	protected virtual void OnNewTurn(){
-		if(NewTurn != null){
-			NewTurn.Invoke();
+	// protected virtual void OnNewTurn(){
+	// 	if(NewTurn != null){
+	// 		NewTurn.Invoke();
+	// 	}
+	// }
+
+	// protected virtual void OnNewUnit(){
+	// 	if(NewUnit != null){
+	// 		NewUnit.Invoke();
+	// 	}
+	// }
+
+	protected virtual void OnTurnEvent(TurnEvent turnEvent){
+		if(turnEvent != null){
+			turnEvent.Invoke();
 		}
 	}
 }

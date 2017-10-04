@@ -9,6 +9,7 @@ public class GridMover : MonoBehaviour {
 
     private NavMeshAgent agent;
 
+    private int moveRange;
     private Vector3 destination;
     public Vector3 Destination {
         get { return new Vector3 (destination.x, transform.position.y, destination.z); }
@@ -40,6 +41,16 @@ public class GridMover : MonoBehaviour {
         ReachedDestination.RemoveAllListeners();
     }
 
+    private void Start(){
+        ObjectInformation objectInformation = GetComponent<ObjectInformation>();
+
+        if(objectInformation != null){
+            moveRange = objectInformation.UnitData.Movement;
+        }
+
+        ShowMoveableArea();        
+    }
+
     //Move to destination
     public void Move (Vector3 destination) {
         this.Destination = destination;
@@ -66,6 +77,33 @@ public class GridMover : MonoBehaviour {
         if (ReachedDestination != null) {
             ReachedDestination.Invoke ();
         }
+    }
+
+    public void ShowMoveableArea(){
+        Grid grid = new Grid(1, Color.red, GetMoveableTiles(GetMoveArea()));
+        grid.UpdateGrid();
+    }
+
+    public List<GridCell> GetMoveArea(){
+        List<GridCell> moveArea = new List<GridCell>();
+
+        for (int x = -moveRange; x <= moveRange; x++){
+            for (int y = -moveRange; y <= moveRange; y++){
+                Vector2 newCell = new Vector2(destination.x + x, destination.z + y);
+                moveArea.Add(new GridCell(newCell, Grid.CellType.neutral));
+            }
+        }
+        
+        return moveArea;   
+    }
+
+    public List<GridCell> GetMoveableTiles(List<GridCell> moveArea){
+        List<GridCell> moveableTiles = new List<GridCell>();
+
+        //Pathfinding
+
+        
+        return moveableTiles;
     }
 
     //If the gameobject hasn't reached its destination in timeoutTime, teleport the gameobject to the destinatnion
