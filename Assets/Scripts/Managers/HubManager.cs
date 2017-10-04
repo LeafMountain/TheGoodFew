@@ -7,7 +7,7 @@ public class HubManager : MonoBehaviour {
 
     public ShopDataBase[] shopData;
 
-    public GameObject subMenuGameObject;
+    public GameObject[] subMenuGameObject;
     public SubMenuTemplate subMenuTemplete;
     
 	// Use this for initialization
@@ -24,20 +24,21 @@ public class HubManager : MonoBehaviour {
 
     
 
-    public void SelectedSubHub(string shopName)
+    public void SelectedSubHub(string objectName)
     {
         //Goes through a array of <ShopDataBase> and when the string paramenter matches the <ShopDataBase> subHubMenu 
         //string that <ShopDataBase> is used when opening the sub menu.
 
-        for (int i = 0; i < shopData.Length; i++)
+        for (int i = 0; i < subMenuGameObject.Length; i++)
         {
-            if(shopData[i].subHubName == shopName)
+            if(subMenuGameObject[i].name == objectName + "Menu")
             {
-                subMenuTemplete.ApplyShopData(shopData[i]);
+                subMenuGameObject[i].SetActive(true);
+                break;
             }
         }
 
-        subMenuGameObject.SetActive(true);
+      
     }
   
    
