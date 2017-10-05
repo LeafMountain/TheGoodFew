@@ -9,15 +9,7 @@ public class SubMenuTemplate : MonoBehaviour {
 
     private ShopDataBase shopData;
 
-    public Image shopKeeperPortrait;
-    public Image backGrondSprite;
-
-    public Text dialobueBox;
-
-    private AudioClip backGroundAudioTrack;
-
-    //private List<Item> shopItems //<- the items the shop is selling.
-    //private List<Item> playerItems //<- list of the items the player has.
+   
    
 
 	// Use this for initialization
@@ -31,7 +23,7 @@ public class SubMenuTemplate : MonoBehaviour {
 		
 	}
 
-    public void ApplyShopData(ShopDataBase shopData)
+    public void LoadShopInventory(ShopDataBase shopData)
     {
         //Puts the <ShopDataBase> info into the menu templete
 
@@ -39,9 +31,7 @@ public class SubMenuTemplate : MonoBehaviour {
 
         if (shopData != null)
         {
-            //if (shopData.characterPortraits != null) { shopKeeperPortrait.sprite = shopData.characterPortraits[0]; } else { Debug.Log("Character Portraits are Missing!"); }
-            if (shopData.backGroundSprite != null) { backGrondSprite.sprite = shopData.backGroundSprite; } else { Debug.Log("Back Ground Sprite is Missing!"); }
-            
+           
 
         }
         else {Debug.Log("Shop Data is Missing!!!!");}
