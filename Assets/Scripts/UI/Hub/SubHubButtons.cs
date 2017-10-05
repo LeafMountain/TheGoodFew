@@ -27,12 +27,14 @@ public class SubHubButtons : MonoBehaviour {
         shop.SetActive(!shop.activeSelf);
         main.SetActive(!main.activeSelf);
         storeUI.UpdateUI();
+        GetComponentInParent<ShopManager>().Buying = true;
     }
     public void TogglePlayerInventory()
     {
         playerInventory.SetActive(!playerInventory.activeSelf);
         main.SetActive(!main.activeSelf);
         playerUI.UpdateUI();
+        GetComponentInParent<ShopManager>().Buying = false; //<<- selling not buying.
 
     }
     public void ToggleDialouge()

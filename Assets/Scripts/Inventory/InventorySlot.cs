@@ -7,9 +7,16 @@ public class InventorySlot : MonoBehaviour
 {
 
     public Image icon;
-    public Button removeButton;
+    
+
+    private ShopManager shopManager;
 
     Item item;  // Current item in the slot
+
+    void Start()
+    {
+        shopManager = GetComponentInParent<ShopManager>();
+    }
 
     // Add item to the slot
     public void AddItem(Item newItem)
@@ -18,7 +25,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = item.icon;
         icon.enabled = true;
-        removeButton.interactable = true;
+       
     }
 
     // Clear the slot
@@ -28,7 +35,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = null;
         icon.enabled = false;
-        removeButton.interactable = false;
+       
     }
 
     // If the remove button is pressed, this function will be called.
@@ -47,7 +54,21 @@ public class InventorySlot : MonoBehaviour
     }
     public void TryBuyItem()
     {
-        GetComponentInParent<ShopManager>().Ask();
+        shopManager.Ask(item.itemName, item.price, true);
+        shopManager.ItemInQuestion = item;
+    }
+    public void TrySellItem()
+    {
+        shopManager.Ask(item.itemName, item.price, false);
+        shopManager.ItemInQuestion = item;
+    }
+    public void ShowItemInfo()
+    {
+        shopManager.informationDisplay.RecieveInformation(item);
+    }
+    public void RemoveItemInfo()
+    {
+        shopManager.informationDisplay.EmptyDisplay();
     }
    
    

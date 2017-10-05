@@ -5,11 +5,12 @@ using UnityEngine;
 public class Item : ScriptableObject {
 
     public string itemName;
+    public int price;
+    public int worthSecondHand;
 
     public Sprite icon;
     public string description;
 
-    
     public string developerNote;
 
     public bool showInInventory;

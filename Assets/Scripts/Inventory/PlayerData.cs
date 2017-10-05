@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public PlayerDataBase dataSource;
+
+    private Inventory playerInventory;
+    private int goldCoins;
+
+    void Start()
+    {
+        LoadData();
+    }
+    public void LoadData()
+    {
+        playerInventory = dataSource.playerInventory;
+        goldCoins = dataSource.goldCoins;
+    }
+    //properties
+
+    public Inventory PlayerInventory { get { return playerInventory; } set { playerInventory = value; } }
+    public int GoldCoins { get { return goldCoins; } set { goldCoins = value; } }
+
 }
