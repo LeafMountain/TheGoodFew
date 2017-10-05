@@ -1,15 +1,27 @@
 fileFormatVersion: 2
-guid: 1d1662587a12cb6488202b9d4820e083
-timeCreated: 1494406328
+guid: 8720017ac81f05949a486cd8ca846e25
+timeCreated: 1507203301
 licenseType: Free
 ModelImporter:
-  serializedVersion: 19
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: mod_building_arcane_shop
+    100004: mod_building_arcane_shop_glas
+    100006: mod_prop_rotating_mirrors
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: mod_arcane_shop
+    400002: mod_building_arcane_shop
+    400004: mod_building_arcane_shop_glas
+    400006: mod_prop_rotating_mirrors
+    2300000: mod_building_arcane_shop
+    2300002: mod_building_arcane_shop_glas
+    2300004: mod_prop_rotating_mirrors
+    3300000: mod_building_arcane_shop
+    3300002: mod_building_arcane_shop_glas
+    3300004: mod_prop_rotating_mirrors
+    4300000: mod_prop_rotating_mirrors
+    4300002: mod_building_arcane_shop_glas
+    4300004: mod_building_arcane_shop
   materials:
     importMaterials: 1
     materialName: 0
@@ -32,6 +44,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -39,7 +52,10 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -55,6 +71,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
