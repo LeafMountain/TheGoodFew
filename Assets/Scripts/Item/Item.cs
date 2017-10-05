@@ -2,11 +2,13 @@
 //Description: the base item class, all items should derive from this.
 using UnityEngine;
 
+public enum ItemType { Armor, Consumables, Weapon};
+
 public class Item : ScriptableObject {
 
     public string itemName;
     public int price;
-    public int worthSecondHand;
+    public ItemType itemType;
 
     public Sprite icon;
     public string description;
