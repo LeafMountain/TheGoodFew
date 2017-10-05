@@ -56,7 +56,7 @@ public class TurnManager:MonoBehaviour {
 
 	protected virtual void OnTurnOrderUpdated () {		
 		if (TurnOrderUpdated != null) {
-			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects)); 
+			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects));
 		}
 	}
 

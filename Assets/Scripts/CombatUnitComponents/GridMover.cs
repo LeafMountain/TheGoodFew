@@ -48,7 +48,7 @@ public class GridMover : MonoBehaviour {
             moveRange = objectInformation.UnitData.Movement;
         }
 
-        ShowMoveableArea();        
+        // ShowMoveableArea();
     }
 
     //Move to destination
