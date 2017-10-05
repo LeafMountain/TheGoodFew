@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("Inventory awakes");
         instance = this;
     }
 
