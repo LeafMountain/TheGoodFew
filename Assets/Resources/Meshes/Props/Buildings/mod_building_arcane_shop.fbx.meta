@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: 8720017ac81f05949a486cd8ca846e25
-timeCreated: 1507203301
+guid: a6612f46c787e3d45946465d62d08fa7
+timeCreated: 1507210510
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
-    100002: mod_building_arcane_shop
-    100004: mod_building_arcane_shop_glas
-    100006: mod_prop_rotating_mirrors
     400000: //RootNode
-    400002: mod_building_arcane_shop
-    400004: mod_building_arcane_shop_glas
-    400006: mod_prop_rotating_mirrors
-    2300000: mod_building_arcane_shop
-    2300002: mod_building_arcane_shop_glas
-    2300004: mod_prop_rotating_mirrors
-    3300000: mod_building_arcane_shop
-    3300002: mod_building_arcane_shop_glas
-    3300004: mod_prop_rotating_mirrors
-    4300000: mod_prop_rotating_mirrors
-    4300002: mod_building_arcane_shop_glas
-    4300004: mod_building_arcane_shop
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: mod_building_arcane_shop
   materials:
     importMaterials: 1
     materialName: 0
