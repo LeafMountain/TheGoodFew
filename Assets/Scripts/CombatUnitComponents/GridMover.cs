@@ -98,7 +98,7 @@ public class GridMover : MonoBehaviour {
 
         for (int x = -moveRange; x <= moveRange; x++){
             for (int y = -moveRange; y <= moveRange; y++){
-                positions[x + moveRange, y + moveRange] = ;
+                // positions[x + moveRange, y + moveRange] = ;
                 Vector2 newCell = new Vector2(destination.x + x, destination.z + y);
                 moveArea.Add(new GridCell(newCell, Grid.CellType.neutral));
             }
