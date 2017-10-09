@@ -17,8 +17,8 @@ public class DisplayItemInformation : MonoBehaviour {
 
     private Text defence; //<< def
     private Text resistance;
-    
-    
+
+    private List<Text> textList;  
     
 
     void Start()
@@ -32,6 +32,16 @@ public class DisplayItemInformation : MonoBehaviour {
         spellPower = transform.GetChild(7).GetComponent<Text>();
         defence = transform.GetChild(8).GetComponent<Text>();
         resistance = transform.GetChild(9).GetComponent<Text>();
+        textList = new List<Text>();
+        textList.Add(itemName);
+        textList.Add(itemCost);
+        textList.Add(description);
+        textList.Add(whatClass);
+        textList.Add(specialAbility);
+        textList.Add(atkForce);
+        textList.Add(spellPower);
+        textList.Add(defence);
+        textList.Add(resistance);
 
     }
     public void RecieveInformation(Item item)
@@ -67,7 +77,11 @@ public class DisplayItemInformation : MonoBehaviour {
     }
     public void EmptyDisplay()
     {
-        itemName.text = itemCost.text = description.text = "";
+        foreach(Text t in textList)
+        {
+            t.text = "";
+        }
+
     }
     public string GetClass(UnitData.Class type)
     {

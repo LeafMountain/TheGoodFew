@@ -10,8 +10,8 @@ public class SubHubButtons : MonoBehaviour {
     public GameObject playerInventory;
     public GameObject main;
 
-    public InventoryUI storeUI;
-    public InventoryUI playerUI; //<---Need a better name.
+    public InventoryUI storeUI; //entire UI;
+
 
     public string[] dialougeLines;
     private int dialougeIndex = 0;
@@ -33,7 +33,7 @@ public class SubHubButtons : MonoBehaviour {
     {
         playerInventory.SetActive(!playerInventory.activeSelf);
         main.SetActive(!main.activeSelf);
-        playerUI.UpdateUI();
+        storeUI.UpdateUI();
         GetComponentInParent<ShopManager>().Buying = false; //<<- selling not buying.
 
     }

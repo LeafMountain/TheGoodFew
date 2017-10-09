@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Description:
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */

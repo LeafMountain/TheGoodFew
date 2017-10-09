@@ -25,9 +25,18 @@ public class ShopManager : MonoBehaviour {
         playerData = playerDataGameObject.GetComponent<PlayerData>();
         dispayPlayerCoins.text = playerData.GoldCoins.ToString();
     }
-    void Update () {
-		
-	}
+
+    public void OpenShopSection()
+    {
+        if(buying)
+        {
+            new OpenBuyingSection();
+        }
+        else
+        {
+            new OpenSellingSection();
+        }
+    }
 
     private void BuyItem(Item item)
     {
@@ -108,4 +117,5 @@ public class ShopManager : MonoBehaviour {
     //Properties
     public bool Buying { set { buying = value; } }
     public Item ItemInQuestion { set { itemInQuestion = value; } }
+
 }

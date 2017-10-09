@@ -11,13 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466978ee74e2bac4d8db558c981fd808, type: 3}
   m_Name: BookOfAges
   m_EditorClassIdentifier: 
-  name: Book of Ages
+  itemName: 
+  price: 0
+  itemType: 2
   icon: {fileID: 0}
+  description: 
+  developerNote: 
+  showInInventory: 0
   model: {fileID: 0}
   characterClass: 3
   minimumAtk: 0
   maximumAtk: 0
   minimumPow: 4
   maximumPow: 8
-  description: 
-  note: 
