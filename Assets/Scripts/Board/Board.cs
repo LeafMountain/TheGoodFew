@@ -32,7 +32,7 @@ public class Board : MonoBehaviour {
         //Find valid positions
         boardPositions = FindBoardPositions ();
         //Create tiles on valid positions
-        tiles = CreateTiles (boardPositions);
+        tiles = CreateTiles (boardPositions);        
     }
 
     //Creates new tiles depending on the mesh size of the ground GameObject.
@@ -131,4 +131,6 @@ public class Board : MonoBehaviour {
 
     }
     #endregion
+
+    
 }
