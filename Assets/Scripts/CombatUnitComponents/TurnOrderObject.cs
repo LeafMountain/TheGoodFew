@@ -8,15 +8,20 @@ public class TurnOrderObject : MonoBehaviour {
 	public enum Allegiance { Enemy, Friendly }
 	public Allegiance allegiance;
 
-	private UnitManager unitManager;
-	private UnitManager UnitManager { 
+	private TurnManager unitManager;
+	private TurnManager UnitManager { 
 		get {
 			if(unitManager == null){
-				unitManager = UnitManager.GetInstance();
+				unitManager = TurnManager.GetInstance();
 			}
 			return unitManager;
 		}
 	}
+
+	public delegate void UnitEvent ();
+
+	public event UnitEvent TurnStarted;
+
 
 	private void OnDead(){
 		gameObject.SetActive(false);
@@ -28,5 +33,11 @@ public class TurnOrderObject : MonoBehaviour {
 
 	private void OnDisable(){
 		UnitManager.RemoveUnit(this);
+	}
+
+	public void StartTurn(){
+		if(TurnStarted != null){
+			TurnStarted.Invoke();
+		}
 	}
 }
