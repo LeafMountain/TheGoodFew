@@ -19,7 +19,7 @@ public class AreaHelper {
 
 	public Vector2[,] PathfindArea(Vector2 origin, Vector2[,] area, int steps){
 
-		PathfindStep[,] path = new PathfindStep[(steps + 1) * 2, (steps + 1) * 2];
+		Spot[,] path = new Spot[(steps + 1) * 2, (steps + 1) * 2];
 
 		for (int x = -steps; x < steps; x++){
 			for (int y = -steps; y < steps; y++){
@@ -29,16 +29,37 @@ public class AreaHelper {
 
 		return area;
 	}
+
+	public Spot[,] ConvertVector2ToSteps(Vector2[,] area){
+		Spot[,] steps = new Spot[area.GetUpperBound(0), area.GetUpperBound(1)];
+
+		for (int i = 0; i < area.GetUpperBound(0); i++)
+		{
+			for (int j = 0; j < area.GetUpperBound(1); j++)
+			{
+				steps[i, j] = new Spot(area[i,j]);
+			}
+		}
+
+		return steps;
+	}
+
+	private void GetNeighbours(){
+
+	}
+
+
+
 }
 
-public class PathfindStep {
+public class Spot {
 	public int minimumSteps;
 	public Vector2 position;
+	public Spot[] neighbours = new Spot[4];
 
 	public Vector2[] adjacent = new Vector2[4];
 
-	public PathfindStep(Vector2 position){
-		// this.adjacent = adjacent;
+	public Spot(Vector2 position){
 		this.position = position;
 	}
 
@@ -48,4 +69,7 @@ public class PathfindStep {
 		}
 	}
 
+	public void SetNeightbours(Spot[] neighbours){
+		this.neighbours = neighbours;
+	}
 }
