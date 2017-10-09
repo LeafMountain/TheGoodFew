@@ -21,6 +21,7 @@ public class GridMover : MonoBehaviour {
             destination = value;
         }
     }
+    private AreaHelper areaHelper;
 
     [TooltipAttribute ("The time until the object is forced to the destinations position")] public float timeoutTime = 5;
 
@@ -35,10 +36,17 @@ public class GridMover : MonoBehaviour {
     public AI ai;
     public bool AtDestination { get { return (Vector3.Distance (transform.position, Destination) < 0.1f + agent.stoppingDistance); } }
 
+    private Grid walkGrid;
+
     private void Awake () {
         agent = GetComponent<NavMeshAgent> ();
         Destination = transform.position;
         ReachedDestination.RemoveAllListeners();
+        areaHelper = AreaHelper.GetInstance();
+
+        if(areaHelper == null){
+            areaHelper = new AreaHelper();
+        }
     }
 
     private void Start(){
@@ -86,9 +94,11 @@ public class GridMover : MonoBehaviour {
 
     public List<GridCell> GetMoveArea(){
         List<GridCell> moveArea = new List<GridCell>();
+        Vector2[,] positions = new Vector2[moveRange * 2 + 1,moveRange * 2 + 1];
 
         for (int x = -moveRange; x <= moveRange; x++){
             for (int y = -moveRange; y <= moveRange; y++){
+                positions[x + moveRange, y + moveRange] = ;
                 Vector2 newCell = new Vector2(destination.x + x, destination.z + y);
                 moveArea.Add(new GridCell(newCell, Grid.CellType.neutral));
             }
@@ -99,9 +109,6 @@ public class GridMover : MonoBehaviour {
 
     public List<GridCell> GetMoveableTiles(List<GridCell> moveArea){
         List<GridCell> moveableTiles = new List<GridCell>();
-
-        //Pathfinding
-
         
         return moveableTiles;
     }

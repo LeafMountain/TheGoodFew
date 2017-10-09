@@ -12,7 +12,6 @@ public class GridTester : MonoBehaviour {
 	private Vector2[,] spotPositions;
 	private Spot[,] spots;
 
-
 	private void Awake(){
 		areaHelper = new AreaHelper();
 
