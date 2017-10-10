@@ -14,6 +14,11 @@ public class BoardManager {
 
 		mapWidth = width;
         mapHeight = height;
+
+        CreateBoardCells();
+        SetNeighbours();
+
+        CreateGrid();
 	}
 
 	public static BoardManager GetInstance(){
@@ -31,35 +36,47 @@ public class BoardManager {
         }
     }
 
-	private void SetNeighbours(BoardCell cell){
+	private void SetNeighbours(){
 		//Find and set the neightbours to the cell.
+        for (int x = 0; x < mapWidth; x++)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                BoardCell[] neighbors = new BoardCell[4];
+
+                if(y < mapHeight - 1){
+                    neighbors[0] = boardCells[x, y + 1];
+                }
+                if(x < mapWidth - 1 ){
+                    neighbors[1] = boardCells[x + 1, y];
+                }
+                if(y > 0){
+                    neighbors[2] = boardCells[x, y - 1];
+                }
+                if(x > 0){
+                    neighbors[3] = boardCells[x - 1, y];
+                }
+
+                boardCells[x, y].SetNeighbors(neighbors);
+            }
+        }
 	}
 
 	public void ChangeCellType(BoardCell cell, BoardCell.CellType newType){
 		cell.ChangeType(newType);
 	}
 
-}
-
-
-public class BoardCell {
-    public enum CellType { error, walkable, blocked }
-    
-    public Vector2 Position { get; private set; }   
-    public CellType Type { get; private set; }
-    public int MoveCost { get; private set; }
-	public BoardCell[] neighbours = new BoardCell[4];
-
-    public BoardCell(Vector2 position, CellType type){
-        Position = position;
-        Type = type;
+    public void CreateGrid(){
+        List<GridCell> cells = new List<GridCell>();
+        for (int x = 0; x < mapWidth; x++)
+        {
+            for (int y = 0; y < mapHeight; y++)
+            {
+                cells.Add(new GridCell(boardCells[x, y].Position, Grid.CellType.neutral));
+            }
+        }
+        Grid grid = new Grid(1, Color.red, cells);
+        grid.UpdateGrid();
     }
 
-    public void SetMoveCost(int moveCost){
-        MoveCost = moveCost;
-    }
-
-	public void ChangeType(CellType type){
-		Type = type;
-	}
 }

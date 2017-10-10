@@ -22,6 +22,8 @@ public class Board : MonoBehaviour {
         }
     }
 
+    private BoardManager boardManager;
+
     //New stuffs
     private List<Vector2> boardPositions = new List<Vector2> ();
     private List<Tile> tiles = new List<Tile> ();
@@ -32,7 +34,9 @@ public class Board : MonoBehaviour {
         //Find valid positions
         boardPositions = FindBoardPositions ();
         //Create tiles on valid positions
-        tiles = CreateTiles (boardPositions);        
+        tiles = CreateTiles (boardPositions);
+
+        boardManager = new BoardManager(Mathf.FloorToInt(Rend.bounds.size.x), Mathf.FloorToInt(Rend.bounds.size.z));
     }
 
     //Creates new tiles depending on the mesh size of the ground GameObject.
