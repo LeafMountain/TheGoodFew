@@ -12,12 +12,15 @@ public class OpenBuyingSection {
     private OpenBuyingSection() { }
     public OpenBuyingSection(Inventory inventory, ShopManager shopManager)
     {
+
         this.inventory = inventory;
         this.shopManager = shopManager;
         inventoryDisplay = shopManager.inventoryDisplay;
         main = shopManager.main;
         storeUI = shopManager.storeUI;
-
+        shopManager.inventoryTitle.text = "Shop Inventory";
+        shopManager.Buying = true;
+        shopManager.dispayPlayerCoins.text = shopManager._PlayerData.Epas.ToString();
         Open();
     }
 

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿//Description: When the player is browsing the shop this class makes sure that the when the mouse is above
+//              an item the information of that item is shown in a panel.
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,17 +13,14 @@ public class DisplayItemInformation : MonoBehaviour {
 
     private Text whatClass;
     private Text specialAbility;
-
     //Attack
     private Text atkForce; 
     private Text spellPower;
-
     //def
     private Text defence; 
     private Text resistance;
 
     private List<Text> textList;  
-    
 
     void Start()
     {
@@ -44,6 +43,7 @@ public class DisplayItemInformation : MonoBehaviour {
         textList.Add(spellPower);
         textList.Add(defence);
         textList.Add(resistance);
+        EmptyDisplay();
 
     }
     public void RecieveInformation(Item item)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Note: this could be merged with <OpenBuySection>.
+using UnityEngine;
 
 public class OpenSellingSection : MonoBehaviour {
 
@@ -17,7 +18,9 @@ public class OpenSellingSection : MonoBehaviour {
         inventoryDisplay = shopManager.inventoryDisplay;
         main = shopManager.main;
         storeUI = shopManager.storeUI;
-
+        shopManager.inventoryTitle.text = "Player Inventory";
+        shopManager.Buying = false;
+        shopManager.dispayPlayerCoins.text = shopManager._PlayerData.Epas.ToString();
         Open();
 
     }

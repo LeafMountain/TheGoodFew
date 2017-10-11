@@ -5,25 +5,8 @@ using UnityEngine;
 
 public class HubManager : MonoBehaviour {
 
-    public ShopDataBase[] shopData;
-
     public GameObject[] subMenuGameObject;
-    public SubMenuTemplate subMenuTemplete;
     
-	// Use this for initialization
-	void Start () {
-
-      
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    
-
     public void SelectedSubHub(string objectName)
     {
         //Goes through a array of <ShopDataBase> and when the string paramenter matches the <ShopDataBase> subHubMenu 
@@ -37,11 +20,5 @@ public class HubManager : MonoBehaviour {
                 break;
             }
         }
-
-      
     }
-  
-   
-
-
 }

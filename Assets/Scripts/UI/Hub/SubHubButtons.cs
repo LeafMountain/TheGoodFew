@@ -19,7 +19,7 @@ public class SubHubButtons : MonoBehaviour {
     
     public void ReturnToOverView()
     {
-        transform.GetComponentInParent<SubMenuTemplate>().gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
     public void OpenBuySection()
     {

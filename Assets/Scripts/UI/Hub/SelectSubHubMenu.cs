@@ -1,4 +1,5 @@
 ﻿//Discription: When clicking on the different shops this is used to get the right shop to appear.
+//Under construction, class not done.
 using UnityEngine;
 using UnityEngine.EventSystems;
 
