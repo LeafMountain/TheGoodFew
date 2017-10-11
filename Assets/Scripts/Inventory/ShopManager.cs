@@ -5,21 +5,16 @@ using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour {
 
-    
     private PlayerData playerData;
     public GameObject playerDataGameObject;
     public DisplayItemInformation informationDisplay;
     public InventoryUI storeUI;
-
-    
-
-
     //GameObjects
+    public Text inventoryTitle;
     public GameObject confirmPurches;
     public GameObject main;
     public GameObject inventoryDisplay;
     public GameObject textBox;
-    public GameObject sellingSection;
     public GameObject subMenus;
 
     public int shopGoldCoins;
@@ -28,14 +23,14 @@ public class ShopManager : MonoBehaviour {
     private bool buying; //<< Is the player in the sell or buy menu. Set when player press buy or sell button.
     private Item itemInQuestion; //<<The item that is being sold or bought. Set when player presses a itemslot.
     private DialougeData dialougeData;
-    private Transactions transactions;
+    private Inventory inventory;
 
 
 	void Start () {
         playerData = playerDataGameObject.GetComponent<PlayerData>();
-        dispayPlayerCoins.text = playerData.GoldCoins.ToString();
+        dispayPlayerCoins.text = playerData.Epas.ToString();
         dialougeData = GetComponent<DialougeData>();
-        transactions = new Transactions(this);
+        inventory = GetComponent<Inventory>();
     }
 
     //SubMenus
@@ -69,15 +64,9 @@ public class ShopManager : MonoBehaviour {
         }
         subMenus.transform.GetChild(0).gameObject.SetActive(true);
     }
-
-    private void BuyItem(Item item)
+    private void ExecuteTransaction()
     {
-        
-
-    }
-    private void SellItem(Item item)
-    {
-
+        new Transactions(this);
     }
     public void Answer(string answer)
     {
@@ -85,12 +74,12 @@ public class ShopManager : MonoBehaviour {
         {
             if(buying)
             {
-                BuyItem(itemInQuestion);
+                ExecuteTransaction();
                 confirmPurches.SetActive(!confirmPurches.activeSelf);
             }
             else
             {
-                SellItem(itemInQuestion);
+                ExecuteTransaction();
                 confirmPurches.SetActive(!confirmPurches.activeSelf);
             }
         }
@@ -102,10 +91,10 @@ public class ShopManager : MonoBehaviour {
 
        
     }
-    public void Ask(string itemName, int price, bool buying)
+    public void Ask(string itemName, int price)    
     {
         Text question = confirmPurches.transform.GetChild(1).GetComponent<Text>();
-        if (playerData.GoldCoins >= price)
+        if (playerData.Epas >= price)
         {
             ToggleButtons(true);
             confirmPurches.SetActive(!confirmPurches.activeSelf);
@@ -146,10 +135,9 @@ public class ShopManager : MonoBehaviour {
         }
     }
 
-    
-
     //Properties
-    public bool Buying { set { buying = value; } }
+    public bool Buying { get { return buying; } set { buying = value; } }
     public Item ItemInQuestion {get { return itemInQuestion; } set { itemInQuestion = value; } }
-
+    public PlayerData _PlayerData { get { return playerData; } set { playerData = value; } }
+    public Inventory _Inventory { get { return inventory; } set { inventory = value; } }
 }

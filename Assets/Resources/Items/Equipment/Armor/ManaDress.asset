@@ -11,8 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c377c4ee091a565459d9ddf8ba477f73, type: 3}
   m_Name: ManaDress
   m_EditorClassIdentifier: 
-  name: Mana Dress
+  itemName: 
+  price: 10
+  itemType: 0
   icon: {fileID: 0}
+  description: 
+  developerNote: 
+  showInInventory: 0
   model: {fileID: 0}
   characterClass: 4
   armortype: 3
@@ -20,5 +25,3 @@ MonoBehaviour:
   magicalDefence: 10
   blockChance: 0
   speedPenalty: 0
-  description: 
-  note: 

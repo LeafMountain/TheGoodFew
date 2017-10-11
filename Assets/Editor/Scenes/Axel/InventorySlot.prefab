@@ -103,7 +103,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114577076572209986}
-        m_MethodName: TryBuyItem
+        m_MethodName: InventorySlotClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -53,19 +53,27 @@ public class InventorySlot : MonoBehaviour
             item.Use();
        }
     }
-    public void TryBuyItem()
+    public void InventorySlotClicked()
     {
-        shopManager.Ask(item.itemName, item.price, true);
         shopManager.ItemInQuestion = item;
+
+        if (shopManager.Buying)
+        {
+            shopManager.Ask(item.itemName, item.price);
+        }
+        else
+        {
+            shopManager.Ask(item.itemName, item.price/2);
+        }
+        
     }
-    public void TrySellItem()
-    {
-        shopManager.Ask(item.itemName, item.price, false);
-        shopManager.ItemInQuestion = item;
-    }
+   
     public void ShowItemInfo()
     {
-        shopManager.informationDisplay.RecieveInformation(item);
+        if (item != null)
+        {
+            shopManager.informationDisplay.RecieveInformation(item);
+        }
     }
     public void RemoveItemInfo()
     {
