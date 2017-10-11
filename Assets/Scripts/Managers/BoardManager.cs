@@ -9,6 +9,10 @@ public class BoardManager {
 	private int mapWidth;
     private int mapHeight;
 
+    private Grid grid;
+
+    //Need a pathfinder to find areas.
+
 	public BoardManager(int width, int height){
 		instance = this;
 
@@ -18,6 +22,7 @@ public class BoardManager {
         CreateBoardCells();
         SetNeighbours();
 
+        //For debugging purposes.
         CreateGrid();
 	}
 
@@ -34,6 +39,8 @@ public class BoardManager {
                 boardCells[x, y] = new BoardCell(new Vector2(x, y), BoardCell.CellType.walkable);
             }
         }
+
+        boardCells[5, 5].ChangeType(BoardCell.CellType.blocked);
     }
 
 	private void SetNeighbours(){
@@ -62,20 +69,29 @@ public class BoardManager {
         }
 	}
 
-	public void ChangeCellType(BoardCell cell, BoardCell.CellType newType){
-		cell.ChangeType(newType);
+	public void ChangeCellType(Vector2 cell, BoardCell.CellType newType){
+		boardCells[Mathf.FloorToInt(cell.x), Mathf.FloorToInt(cell.y)].ChangeType(newType);
+        CreateGrid();
 	}
 
     public void CreateGrid(){
+        if(grid != null){
+            GameObject.Destroy(grid.gameObject);
+        }
         List<GridCell> cells = new List<GridCell>();
         for (int x = 0; x < mapWidth; x++)
         {
             for (int y = 0; y < mapHeight; y++)
             {
-                cells.Add(new GridCell(boardCells[x, y].Position, Grid.CellType.neutral));
+                if(boardCells[x, y].Type == BoardCell.CellType.blocked){
+                    cells.Add(new GridCell(boardCells[x, y].Position, Grid.CellType.special));
+                }
+                else{
+                    cells.Add(new GridCell(boardCells[x, y].Position, Grid.CellType.neutral));
+                }
             }
         }
-        Grid grid = new Grid(1, Color.red, cells);
+        grid = new Grid(1, Color.red, cells);
         grid.UpdateGrid();
     }
 

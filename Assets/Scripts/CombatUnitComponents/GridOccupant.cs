@@ -52,13 +52,32 @@ public class GridOccupant : MonoBehaviour {
         return positions;
     }
 
+    private BoardManager boardManager;
+
     private void OnEnable () {
         //Enable collider when this component is enabled
         Collider.enabled = true;
+
     }
 
     private void OnDisable () {
         //Disable collider when this component is disabled
         Collider.enabled = false;
+    }
+
+    private void Start(){
+        SetupBoardManager();
+
+        List<Vector3> positions = Positions();
+        for (int i = 0; i < positions.Count; i++)
+        {
+            boardManager.ChangeCellType(new Vector2(positions[i].x, positions[i].z), BoardCell.CellType.blocked);     
+        }
+    }
+    
+    private void SetupBoardManager(){
+        if(boardManager == null){
+            boardManager = BoardManager.GetInstance();
+        }
     }
 }
