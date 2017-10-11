@@ -11,13 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466978ee74e2bac4d8db558c981fd808, type: 3}
   m_Name: HookSword
   m_EditorClassIdentifier: 
-  name: Hook Sword
+  itemName: 
+  price: 0
+  itemType: 2
   icon: {fileID: 0}
+  description: 
+  developerNote: 
+  showInInventory: 0
   model: {fileID: 0}
   characterClass: 0
   minimumAtk: 3
   maximumAtk: 8
   minimumPow: 0
   maximumPow: 0
-  description: 
-  note: 

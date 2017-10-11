@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Name: Smisker
   m_EditorClassIdentifier: 
   itemName: Smisker
+  price: 10
+  itemType: 2
   icon: {fileID: 21300000, guid: a5664624d0d4fb8499152ef324066677, type: 3}
-  description: 
+  description: Legends say this weapon belonged to the mighty Spank'dar from Bracka.  Feared
+    for his disrespect for butts.
   developerNote: 
   showInInventory: 0
   model: {fileID: 0}

@@ -5,14 +5,14 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
+public enum ArmorType { Light, Medium, Sheild, Cloth }
 [CreateAssetMenuAttribute(fileName = "New Armor", menuName = "Item/Equipment/Armor")]
 
 [System.Serializable]
 public class ArmorObject : Item
 {
 
-    public enum ArmorType {Light, Medium, Sheild, Cloth}
+    
 
     
     

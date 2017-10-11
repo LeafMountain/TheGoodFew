@@ -5,61 +5,41 @@ using UnityEngine.UI;
 
 public class SubHubButtons : MonoBehaviour {
 
-    public GameObject shop;
-    public GameObject textbox;
-    public GameObject playerInventory;
-    public GameObject main;
+    private ShopManager shopManager;
 
-    public InventoryUI storeUI;
-    public InventoryUI playerUI; //<---Need a better name.
+    public InventoryUI storeUI; //entire UI;
 
-    public string[] dialougeLines;
-    private int dialougeIndex = 0;
 
-   
+    
+
+    void Start()
+    {
+        shopManager = GetComponent<ShopManager>();
+    }
     
     public void ReturnToOverView()
     {
         transform.GetComponentInParent<SubMenuTemplate>().gameObject.SetActive(false);
     }
-    public void ToggleShop()
+    public void OpenBuySection()
     {
-        shop.SetActive(!shop.activeSelf);
-        main.SetActive(!main.activeSelf);
-        storeUI.UpdateUI();
+        shopManager.Buying = true;
+        shopManager.OpenShopSection();
     }
-    public void TogglePlayerInventory()
+    public void OpenSellSection()
     {
-        playerInventory.SetActive(!playerInventory.activeSelf);
-        main.SetActive(!main.activeSelf);
-        playerUI.UpdateUI();
-
+        shopManager.Buying = false;
+        shopManager.OpenShopSection();
     }
-    public void ToggleDialouge()
+    public void GoBack()
     {
-        NextDialougeLine();
-        textbox.SetActive(!textbox.activeSelf);
-        main.SetActive(!main.activeSelf);
+        shopManager.CloseChildren();
     }
-    public void ContinueDiaOrBack()
+    public void DialougeButton()
     {
-        if (dialougeIndex == dialougeLines.Length - 1)
-        {
-            ToggleDialouge();
-            dialougeIndex = 0;
-        }
-        else
-        {
-            dialougeIndex++;
-            NextDialougeLine();
-            
-        }
+        shopManager.ClickDialougeButton();
     }
-    private void NextDialougeLine()
-    {
-        textbox.GetComponentInChildren<Text>().text = dialougeLines[dialougeIndex];
-    }
-
+    
     //properties
     public IHubStates OverViewState { get; set; }
 	

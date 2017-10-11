@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     #region Singleton
 
     public static Inventory instance;
+     
 
     void Awake()
     {
