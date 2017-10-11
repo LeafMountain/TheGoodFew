@@ -14,6 +14,34 @@ public class AreaHelper {
 		instance = this;
 	}
 
+	public List<BoardCell> GetArea2 (BoardCell origin, int areaRange){
+		List<BoardCell> cells = new List<BoardCell>();
+
+		return cells;
+	}
+
+	List<BoardCell> walkableCells = new List<BoardCell>();
+
+	public List<BoardCell> CalculateWalkableSteps2(BoardCell currentCell, int stepsLeft){
+
+		if(currentCell.Type == BoardCell.CellType.blocked){
+			return walkableCells;
+		}
+
+		if(stepsLeft >= 0){
+			if(!walkableCells.Contains(currentCell)){
+				walkableCells.Add(currentCell);
+			}
+			
+			for (int i = 0; i < currentCell.neighbors.Length; i++){
+				CalculateWalkableSteps2(currentCell.neighbors[i], stepsLeft - 1);
+			}
+		}
+
+		return walkableCells;
+	}
+
+
     public Vector2[,] GetArea(Vector2 origin, int areaRange){
         Vector2[,] moveArea = new Vector2[(areaRange + 1) * 2, (areaRange + 1) * 2];
 

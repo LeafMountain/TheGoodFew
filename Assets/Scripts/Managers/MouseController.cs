@@ -18,7 +18,7 @@ public class MouseController : MonoBehaviour {
         //Create grid for mouse marker
         List<GridCell> gridCell = new List<GridCell> ();
         gridCell.Add (new GridCell (Vector2.zero, Grid.CellType.neutral));
-        marker = new Grid (1, Color.blue, gridCell);
+        // marker = new Grid (1, Color.blue, gridCell);
     }
 
     //Check if mouse is hovering over a new tiles and move marker

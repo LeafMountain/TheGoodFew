@@ -21,7 +21,7 @@ public class BoardInteraction {
 
         markedTiles = FindUsableTiles (tiles, Tile.Status.open);
 
-        grid = new Grid (1, specialColor, ConvertToCellType (tiles, rootTile));
+        // grid = new Grid (1, specialColor, ConvertToCellType (tiles, rootTile));
         grid.gameObject.transform.position = rootTile.WorldPosition;
         grid.UpdateGrid ();
 

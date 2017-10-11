@@ -9,7 +9,7 @@ public class GridMover : MonoBehaviour {
 
     private NavMeshAgent agent;
 
-    private int moveRange;
+    public int moveRange;
     private Vector3 destination;
     public Vector3 Destination {
         get { return new Vector3 (destination.x, transform.position.y, destination.z); }
@@ -37,6 +37,8 @@ public class GridMover : MonoBehaviour {
     public bool AtDestination { get { return (Vector3.Distance (transform.position, Destination) < 0.1f + agent.stoppingDistance); } }
 
     private Grid walkGrid;
+
+    private BoardCell currentCell;
 
     private void Awake () {
         agent = GetComponent<NavMeshAgent> ();
@@ -88,8 +90,14 @@ public class GridMover : MonoBehaviour {
     }
 
     public void ShowMoveableArea(){
-        Grid grid = new Grid(1, Color.red, GetMoveableTiles(GetMoveArea()));
+        BoardManager boardManager = BoardManager.GetInstance();
+        currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
+        Grid grid = new Grid(1, Color.red, boardManager.AreaHelper.CalculateWalkableSteps2(currentCell, moveRange));
         grid.UpdateGrid();
+
+
+        // Grid grid = new Grid(1, Color.red, GetMoveableTiles(GetMoveArea()));
+        // grid.UpdateGrid();
     }
 
     public List<GridCell> GetMoveArea(){

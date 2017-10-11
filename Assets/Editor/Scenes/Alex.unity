@@ -4413,7 +4413,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4159059264813498, guid: 70d7b38c83adef44a9cb249e0712a93c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4159059264813498, guid: 70d7b38c83adef44a9cb249e0712a93c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4421,7 +4421,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4159059264813498, guid: 70d7b38c83adef44a9cb249e0712a93c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 4159059264813498, guid: 70d7b38c83adef44a9cb249e0712a93c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5965,7 +5965,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5973,7 +5973,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6323,7 +6323,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.5
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6331,7 +6331,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6367,11 +6367,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4616806186266436, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1607833300406600, guid: fdcf5434d69cf0a468d0b4b73c8502a8, type: 2}
       propertyPath: m_StaticEditorFlags
@@ -7547,7 +7547,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7555,7 +7555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9137,7 +9137,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4255755421547774, guid: 4cb53084f499f804fa4df8c28b5fa6e6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4255755421547774, guid: 4cb53084f499f804fa4df8c28b5fa6e6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9959,7 +9959,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9967,7 +9967,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -11019,13 +11019,55 @@ GameObject:
   m_Component:
   - component: {fileID: 1365945243}
   - component: {fileID: 1365945242}
+  - component: {fileID: 1365945241}
+  - component: {fileID: 1365945240}
   m_Layer: 0
   m_Name: Pathfinding tester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!114 &1365945240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365945239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0c825843e9b5a458ccdb80b49a364b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRange: 6
+  timeoutTime: 5
+  ReachedDestination:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  ai: {fileID: 0}
+--- !u!195 &1365945241
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365945239}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &1365945242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11572,7 +11614,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11580,7 +11622,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8, type: 2}
       propertyPath: m_LocalRotation.x

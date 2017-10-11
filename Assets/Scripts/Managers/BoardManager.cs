@@ -10,6 +10,7 @@ public class BoardManager {
     private int mapHeight;
 
     private Grid grid;
+    public AreaHelper AreaHelper{ get; private set; }
 
     //Need a pathfinder to find areas.
 
@@ -23,12 +24,22 @@ public class BoardManager {
         SetNeighbours();
 
         //For debugging purposes.
-        CreateGrid();
+        // CreateGrid();
+        if(AreaHelper.GetInstance() == null){
+            AreaHelper = new AreaHelper();
+        }
+        else{
+            AreaHelper = AreaHelper.GetInstance();
+        }
 	}
 
 	public static BoardManager GetInstance(){
 		return instance;
 	}
+
+    public BoardCell GetCell(Vector2 cell){
+        return boardCells[Mathf.FloorToInt(cell.x), Mathf.FloorToInt(cell.y)];
+    }
 
 	private void CreateBoardCells(){
         boardCells = new BoardCell[mapWidth, mapHeight];
@@ -70,8 +81,10 @@ public class BoardManager {
 	}
 
 	public void ChangeCellType(Vector2 cell, BoardCell.CellType newType){
-		boardCells[Mathf.FloorToInt(cell.x), Mathf.FloorToInt(cell.y)].ChangeType(newType);
-        CreateGrid();
+        if(cell.x >= 0 && cell.x < mapWidth && cell.y >= 0 && cell.y < mapHeight){
+		    boardCells[Mathf.FloorToInt(cell.x), Mathf.FloorToInt(cell.y)].ChangeType(newType);
+            // CreateGrid();
+        }
 	}
 
     public void CreateGrid(){
@@ -91,8 +104,8 @@ public class BoardManager {
                 }
             }
         }
-        grid = new Grid(1, Color.red, cells);
-        grid.UpdateGrid();
+        // grid = new Grid(1, Color.red, cells);
+        // grid.UpdateGrid();
     }
 
 }

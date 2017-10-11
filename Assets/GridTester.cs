@@ -12,7 +12,7 @@ public class GridTester : MonoBehaviour {
 	private Vector2[,] spotPositions;
 	private Spot[,] spots;
 
-	private void Awake(){
+	private void Start(){
 		areaHelper = new AreaHelper();
 
 		TestCalc();
@@ -85,13 +85,16 @@ public class GridTester : MonoBehaviour {
 	}
 
 	private void TestCalc(){
-		spotPositions = CreateGridCells();
-		spots = CreateSpots(spotPositions);
-		SetNeighbours(spots);
-		CalculateSteps(spots[Mathf.CeilToInt(spotPositions.GetUpperBound(0) / 2), Mathf.CeilToInt(spotPositions.GetUpperBound(1) / 2)], steps);
+		// spotPositions = CreateGridCells();
+		// spots = CreateSpots(spotPositions);
+		// SetNeighbours(spots);
+		// CalculateSteps(spots[Mathf.CeilToInt(spotPositions.GetUpperBound(0) / 2), Mathf.CeilToInt(spotPositions.GetUpperBound(1) / 2)], steps);
 
-		Grid grid = new Grid(1, Color.red, ConvertSpotToGridCell(walkableSpots));
-		grid.UpdateGrid();
+		// Grid grid = new Grid(1, Color.red, ConvertSpotToGridCell(walkableSpots));
+		// grid.UpdateGrid();
+
+		// BoardManager.GetInstance().AreaHelper.CalculateWalkableSteps2();
+		GetComponent<GridMover>().ShowMoveableArea();
 		
 	}
 }
