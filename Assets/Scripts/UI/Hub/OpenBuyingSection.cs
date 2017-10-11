@@ -1,9 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OpenBuyingSection {
 
-    //Du ska göra två scripts som öppnar buy- eller sell-sektionen.
+    private Inventory inventory;
+    private ShopManager shopManager;
 
+    private GameObject inventoryDisplay;
+    private GameObject main;
+    private InventoryUI storeUI;
+
+    private OpenBuyingSection() { }
+    public OpenBuyingSection(Inventory inventory, ShopManager shopManager)
+    {
+        this.inventory = inventory;
+        this.shopManager = shopManager;
+        inventoryDisplay = shopManager.inventoryDisplay;
+        main = shopManager.main;
+        storeUI = shopManager.storeUI;
+
+        Open();
+    }
+
+    public void Open()
+    {
+        storeUI.Inventory = inventory;
+        inventoryDisplay.SetActive(!inventoryDisplay.activeSelf);
+        main.SetActive(!main.activeSelf);
+        storeUI.UpdateUI();
+        shopManager.Buying = true;
+    }
 }

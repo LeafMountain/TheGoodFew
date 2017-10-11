@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 114273661079295032}
   - component: {fileID: 114392036649087632}
   - component: {fileID: 114120614113519540}
+  - component: {fileID: 114522180589777104}
   m_Layer: 5
   m_Name: BlacksmithMenu
   m_TagString: Untagged
@@ -1691,7 +1692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224420467785032322}
   m_Layer: 5
-  m_Name: Player Inventory
+  m_Name: Story Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2848,7 +2849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224633421584567078}
   m_Layer: 5
-  m_Name: Store
+  m_Name: Store Buy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4996,7 +4997,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114273661079295032}
-        m_MethodName: ToggleShop
+        m_MethodName: GoBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6584,10 +6585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e922898b1e7082c418f00b0901874afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shop: {fileID: 1835828629375756}
-  textbox: {fileID: 1032966506173412}
-  playerInventory: {fileID: 0}
-  main: {fileID: 1553387218073758}
   storeUI: {fileID: 114033130184656352}
   dialougeLines:
   - I though AP was Ass Power but it means Ability Power...
@@ -7492,7 +7489,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDataGameObject: {fileID: 0}
   informationDisplay: {fileID: 114386975347539626}
+  storeUI: {fileID: 114033130184656352}
   confirmPurches: {fileID: 1834801750430128}
+  main: {fileID: 1553387218073758}
+  buyingSection: {fileID: 1835828629375756}
+  textBox: {fileID: 1032966506173412}
+  sellingSection: {fileID: 1454604975632164}
+  subMenus: {fileID: 1601313585771220}
   shopGoldCoins: 100
   dispayPlayerCoins: {fileID: 114914383269589964}
 --- !u!114 &114397939501147316
@@ -8224,7 +8227,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114273661079295032}
-        m_MethodName: TogglePlayerInventory
+        m_MethodName: GoBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8503,6 +8506,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6d95cfb53285349b4ef31656b20f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114522180589777104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1041468239772614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950e2907d1a54684bb057a497dd45947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialougeLines: []
 --- !u!114 &114523390529332572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12287,7 +12302,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114273661079295032}
-        m_MethodName: ToggleShop
+        m_MethodName: OpenBuySection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12824,7 +12839,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114273661079295032}
-        m_MethodName: TogglePlayerInventory
+        m_MethodName: OpenSellSection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

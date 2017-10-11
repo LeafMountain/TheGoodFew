@@ -468,8 +468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 10
   items:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: cc48c6eabce1b80419bfe9c29f1f364e, type: 2}
+  - {fileID: 11400000, guid: 126c2e5b75971fe43a52189ea98bcb9f, type: 2}
 --- !u!1001 &1692382411
 Prefab:
   m_ObjectHideFlags: 0
@@ -514,11 +514,20 @@ Prefab:
       propertyPath: playerDataGameObject
       value: 
       objectReference: {fileID: 1116360398}
-    - target: {fileID: 114273661079295032, guid: 1fab4a9782e7d9043955eeaecf437c8d,
+    - target: {fileID: 114392036649087632, guid: 1fab4a9782e7d9043955eeaecf437c8d,
         type: 2}
-      propertyPath: playerInventory
+      propertyPath: inventoryDisplay
       value: 
-      objectReference: {fileID: 1116360398}
+      objectReference: {fileID: 1729284153}
+    - target: {fileID: 1835828629375756, guid: 1fab4a9782e7d9043955eeaecf437c8d, type: 2}
+      propertyPath: m_Name
+      value: Inventory Display
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1fab4a9782e7d9043955eeaecf437c8d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1729284153 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1835828629375756, guid: 1fab4a9782e7d9043955eeaecf437c8d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1692382411}

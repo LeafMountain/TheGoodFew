@@ -9,33 +9,65 @@ public class ShopManager : MonoBehaviour {
     private PlayerData playerData;
     public GameObject playerDataGameObject;
     public DisplayItemInformation informationDisplay;
+    public InventoryUI storeUI;
 
+    
 
 
     //GameObjects
     public GameObject confirmPurches;
+    public GameObject main;
+    public GameObject inventoryDisplay;
+    public GameObject textBox;
+    public GameObject sellingSection;
+    public GameObject subMenus;
 
     public int shopGoldCoins;
     public Text dispayPlayerCoins;
 
     private bool buying; //<< Is the player in the sell or buy menu. Set when player press buy or sell button.
     private Item itemInQuestion; //<<The item that is being sold or bought. Set when player presses a itemslot.
-	
+    private DialougeData dialougeData;
+    private Transactions transactions;
+
+
 	void Start () {
         playerData = playerDataGameObject.GetComponent<PlayerData>();
         dispayPlayerCoins.text = playerData.GoldCoins.ToString();
+        dialougeData = GetComponent<DialougeData>();
+        transactions = new Transactions(this);
     }
 
+    //SubMenus
     public void OpenShopSection()
     {
         if(buying)
         {
-            new OpenBuyingSection();
+            new OpenBuyingSection(GetComponent<Inventory>(), this);
         }
         else
         {
-            new OpenSellingSection();
+            new OpenSellingSection(GetComponent<Inventory>(), this);
         }
+    }
+    public void OpenDialougeBox()
+    {
+        new OpenDialouge(this);
+    }
+    public void ClickDialougeButton()
+    {
+        dialougeData.ContinueDiaOrBack();
+    }
+    public void CloseChildren()
+    {
+        //Not closing the Main child but opening it.
+
+        for (int i = 1; i < subMenus.transform.childCount; i++)
+        {
+            subMenus.transform.GetChild(i).gameObject.SetActive(false);
+
+        }
+        subMenus.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     private void BuyItem(Item item)
@@ -114,8 +146,10 @@ public class ShopManager : MonoBehaviour {
         }
     }
 
+    
+
     //Properties
     public bool Buying { set { buying = value; } }
-    public Item ItemInQuestion { set { itemInQuestion = value; } }
+    public Item ItemInQuestion {get { return itemInQuestion; } set { itemInQuestion = value; } }
 
 }

@@ -1,21 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayItemInformation : MonoBehaviour {
 
-    private Text itemName; //<< general info
+    //general info
+    private Text itemName; 
     private Text itemCost;
     private Text description;
 
     private Text whatClass;
     private Text specialAbility;
 
-    private Text atkForce; //<< Attack
+    //Attack
+    private Text atkForce; 
     private Text spellPower;
 
-    private Text defence; //<< def
+    //def
+    private Text defence; 
     private Text resistance;
 
     private List<Text> textList;  
