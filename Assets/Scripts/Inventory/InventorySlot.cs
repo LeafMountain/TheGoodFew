@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Description:
+using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
@@ -7,9 +8,16 @@ public class InventorySlot : MonoBehaviour
 {
 
     public Image icon;
-    public Button removeButton;
+    
+
+    private ShopManager shopManager;
 
     Item item;  // Current item in the slot
+
+    void Start()
+    {
+        shopManager = GetComponentInParent<ShopManager>();
+    }
 
     // Add item to the slot
     public void AddItem(Item newItem)
@@ -18,7 +26,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = item.icon;
         icon.enabled = true;
-        removeButton.interactable = true;
+       
     }
 
     // Clear the slot
@@ -28,7 +36,7 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = null;
         icon.enabled = false;
-        removeButton.interactable = false;
+       
     }
 
     // If the remove button is pressed, this function will be called.
@@ -45,9 +53,31 @@ public class InventorySlot : MonoBehaviour
             item.Use();
        }
     }
-    public void TryBuyItem()
+    public void InventorySlotClicked()
     {
-        GetComponentInParent<ShopManager>().Ask();
+        shopManager.ItemInQuestion = item;
+
+        if (shopManager.Buying)
+        {
+            shopManager.Ask(item.itemName, item.price);
+        }
+        else
+        {
+            shopManager.Ask(item.itemName, item.price/2);
+        }
+        
+    }
+   
+    public void ShowItemInfo()
+    {
+        if (item != null)
+        {
+            shopManager.informationDisplay.RecieveInformation(item);
+        }
+    }
+    public void RemoveItemInfo()
+    {
+        shopManager.informationDisplay.EmptyDisplay();
     }
    
    

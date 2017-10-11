@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -8,6 +7,7 @@ public class Inventory : MonoBehaviour
     #region Singleton
 
     public static Inventory instance;
+     
 
     void Awake()
     {
@@ -28,8 +28,7 @@ public class Inventory : MonoBehaviour
     // Add a new item if enough room
     public void Add(Item item)
     {
-        if (item.showInInventory)
-        {
+        
             if (items.Count >= space)
             {
                 Debug.Log("Not enough room.");
@@ -40,7 +39,7 @@ public class Inventory : MonoBehaviour
 
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
-        }
+        
     }
 
     // Remove an item

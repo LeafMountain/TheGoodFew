@@ -12,7 +12,7 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        inventory = GetComponentInParent<Inventory>();
+        inventory = GetComponentInChildren<Inventory>();
         inventory.onItemChangedCallback += UpdateUI;
     }
 
@@ -48,5 +48,7 @@ public class InventoryUI : MonoBehaviour
             
         }
     }
+    //Properties
+    public Inventory Inventory { set { inventory = value; } }
 
 }
