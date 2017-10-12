@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaHelper {
+public class PathfindingController : CombatElement {
 
-	private static AreaHelper instance;
+	private static PathfindingController instance;
 
-	public static AreaHelper GetInstance(){
+	public static PathfindingController GetInstance(){
 		return instance;
 	}
 
-	public AreaHelper(){
+	public PathfindingController(){
 		instance = this;
 	}
 	

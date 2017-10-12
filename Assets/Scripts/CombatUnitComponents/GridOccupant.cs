@@ -15,7 +15,7 @@ public class GridOccupant : MonoBehaviour {
     }
 
     //Get the current tile this gameobject occupies
-    public Tile CurrentTile { get { return BattleManager.board.GetTile (BattleManager.board.ConvertToBoardPosition (transform.position)); } }
+    // public Tile CurrentTile { get { return BattleManager.board.GetTile (BattleManager.board.ConvertToBoardPosition (transform.position)); } }
 
     private BoxCollider col;
     public BoxCollider Collider {
@@ -52,7 +52,7 @@ public class GridOccupant : MonoBehaviour {
         return positions;
     }
 
-    private BoardManager boardManager;
+    private BoardController boardManager;
 
     private void OnEnable () {
         //Enable collider when this component is enabled
@@ -77,7 +77,7 @@ public class GridOccupant : MonoBehaviour {
     
     private void SetupBoardManager(){
         if(boardManager == null){
-            boardManager = BoardManager.GetInstance();
+            boardManager = BoardController.GetInstance();
         }
     }
 }

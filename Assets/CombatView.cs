@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatView : MonoBehaviour {
+public class CombatView : CombatElement {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public BoardView boardView;
+
+	private void Awake(){
+		boardView = GetComponentInChildren<BoardView>();
 	}
 }

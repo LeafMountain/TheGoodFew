@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatElement : MonoBehaviour { 
-
-	public CombatApplication app = (CombatApplication)FindObjectOfType(typeof(CombatApplication));
+	private CombatApplication app;
+	public CombatApplication App {
+		get {
+			if(!app){
+				app = (CombatApplication)FindObjectOfType(typeof(CombatApplication));
+			}
+			return app;
+		}
+	}
 }
 
 public class CombatApplication : MonoBehaviour {

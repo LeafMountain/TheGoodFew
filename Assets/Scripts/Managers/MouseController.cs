@@ -10,7 +10,7 @@ public class MouseController : MonoBehaviour {
     public Grid marker;
     private Vector2 boardPosition;
 
-    public Tile CurrentTile { get { return battleManager.board.GetTile (BoardPosition ()); } }
+    // public Tile CurrentTile { get { return battleManager.board.GetTile (BoardPosition ()); } }
 
     private void Start () {
         battleManager = BattleManager.GetInstance();
@@ -22,12 +22,12 @@ public class MouseController : MonoBehaviour {
     }
 
     //Check if mouse is hovering over a new tiles and move marker
-    private void CheckIfNewTile () {
-        if (battleManager.board.ConvertToBoardPosition (Position ()) != boardPosition) {
-            boardPosition = battleManager.board.ConvertToBoardPosition (Position ());
-            MoveMarker ();
-        }
-    }
+    // private void CheckIfNewTile () {
+    //     // if (battleManager.board.ConvertToBoardPosition (Position ()) != boardPosition) {
+    //     //     boardPosition = battleManager.board.ConvertToBoardPosition (Position ());
+    //     //     MoveMarker ();
+    //     // }
+    // }
 
     //Check if mouse is within the bounds of the board
     private bool WithinBounds () {
@@ -56,28 +56,28 @@ public class MouseController : MonoBehaviour {
     }
 
     //Check where the mouse is pointing on the board
-    public Vector2 BoardPosition () {
-        return battleManager.board.ConvertToBoardPosition (Position ());
-    }
+    // public Vector2 BoardPosition () {
+    //     return battleManager.board.ConvertToBoardPosition (Position ());
+    // }
 
-    //Move the grid marker
-    private void MoveMarker () {
-        if (WithinBounds ()) {
-            if (!marker.gameObject.activeInHierarchy)
-                marker.gameObject.SetActive (true);
+    // //Move the grid marker
+    // private void MoveMarker () {
+    //     if (WithinBounds ()) {
+    //         if (!marker.gameObject.activeInHierarchy)
+    //             marker.gameObject.SetActive (true);
 
-            if (CurrentTile != null) {
-                Vector3 newPos = CurrentTile.WorldPosition;
+    //         if (CurrentTile != null) {
+    //             Vector3 newPos = CurrentTile.WorldPosition;
 
-                marker.gameObject.transform.position = new Vector3 (newPos.x, 0, newPos.z);
+    //             marker.gameObject.transform.position = new Vector3 (newPos.x, 0, newPos.z);
 
-                marker.UpdateGrid ();
-            }
-        } else
-            marker.gameObject.SetActive (false);
-    }
+    //             marker.UpdateGrid ();
+    //         }
+    //     } else
+    //         marker.gameObject.SetActive (false);
+    // }
 
     void Update () {
-        CheckIfNewTile ();
+        // CheckIfNewTile ();
     }
 }

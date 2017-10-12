@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatModel : MonoBehaviour {
+public class CombatModel : CombatElement {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public TurnModel turnModel;
+	public BoardModel boardModel;
+
+	private void Awake(){
+		turnModel = GetComponentInChildren<TurnModel>();
+		boardModel = GetComponentInChildren<BoardModel>();
 	}
 }

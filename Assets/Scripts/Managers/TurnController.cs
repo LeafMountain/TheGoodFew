@@ -3,12 +3,10 @@ using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class TurnController:MonoBehaviour {
+public class TurnController : CombatElement {
 	private static TurnController currentInstance; 
 
 	private InputManager inputManager;
-	private List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
-	private TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
 
 
 	public static TurnController GetInstance() {
@@ -29,21 +27,22 @@ public class TurnController:MonoBehaviour {
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
 	private void FindTurnOrderObjects() {
 		TurnOrderObject[] turnOrderObjects = (TurnOrderObject[])GameObject.FindObjectsOfType(typeof(TurnOrderObject));
-		this.turnOrderObjects.AddRange(turnOrderObjects); 
+		App.model.turnModel.turnOrder.AddRange(turnOrderObjects);
 	}
 
 	//Add unit to list of units (removes units from list if the list already contains the unit)
 	public void AddUnit(TurnOrderObject unit) {
 		RemoveUnit(unit); 
-		turnOrderObjects.Add(unit);
+		App.model.turnModel.turnOrder.Add(unit);
 		OnNewTurnOrder();
 		OnNewUnit();
 	}
 
 	//Remove units from list of units
 	public void RemoveUnit(TurnOrderObject unit) {
-		if (turnOrderObjects.Contains(unit)) {
-			turnOrderObjects.Remove(unit);
+		Debug.Log(App.model);
+		if (App.model.turnModel.turnOrder.Contains(unit)) {
+			App.model.turnModel.turnOrder.Remove(unit);
 			OnNewTurnOrder();
 		}
 		else {
@@ -63,19 +62,19 @@ public class TurnController:MonoBehaviour {
 
 	protected virtual void OnNewTurn(){
 		if(NewTurn != null){
-			NewTurn.Invoke(turnOrderObjects);
+			NewTurn.Invoke(App.model.turnModel.turnOrder);
 		}
 	}
 
 	protected virtual void OnNewTurnOrder(){
 		if(NewTurnOrder != null){
-			NewTurnOrder.Invoke(turnOrderObjects);
+			NewTurnOrder.Invoke(App.model.turnModel.turnOrder);
 		}
 	}
 
 	protected virtual void OnNewUnit(){
 		if(NewUnit != null){
-			NewUnit.Invoke(CurrentUnit);
+			NewUnit.Invoke(App.model.turnModel.turnOrder[0]);
 		}
 	}
 

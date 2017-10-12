@@ -9,7 +9,7 @@ public class GridMover : MonoBehaviour {
 
     private NavMeshAgent agent;
 
-    private BoardManager boardManager;
+    private BoardController boardManager;
     public int moveRange;
     private Vector3 destination;
     public Vector3 Destination {
@@ -44,7 +44,7 @@ public class GridMover : MonoBehaviour {
     }
 
     private void Start(){
-        boardManager = BoardManager.GetInstance();        
+        boardManager = BoardController.GetInstance();        
         
         ObjectInformation objectInformation = GetComponent<ObjectInformation>();
         if(objectInformation){
