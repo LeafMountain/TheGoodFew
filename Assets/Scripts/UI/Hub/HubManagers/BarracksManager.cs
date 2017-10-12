@@ -7,7 +7,7 @@ public class BarracksManager : MonoBehaviour {
 
     private GameObject iconFrame;
     private GameObject inventoryDisplay;
-    
+    private InventoryUI inventoryUI;
 
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
@@ -17,7 +17,7 @@ public class BarracksManager : MonoBehaviour {
         iconFrame = transform.Find("SubMenus").Find("IconFrame").gameObject;
         inventoryDisplay = transform.Find("SubMenus").Find("Inventory Display").gameObject;
 
-        InventoryUI inventoryUI = GetComponentInParent<InventoryUI>();
+        inventoryUI = GetComponentInParent<InventoryUI>();
         inventoryUI.Inventory = playerInventory;
         inventoryUI.inventoryUI = inventoryDisplay.transform.GetChild(0).gameObject;
         inventoryUI.UpdateUI();
@@ -31,4 +31,5 @@ public class BarracksManager : MonoBehaviour {
     //Properties
     public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }
     public GameObject InventoryDisplay { get { return inventoryDisplay; } }
+    public InventoryUI _InventoryUI { get { return inventoryUI; } set { inventoryUI = value; } }
 }

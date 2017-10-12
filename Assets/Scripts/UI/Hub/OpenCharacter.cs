@@ -16,5 +16,6 @@ public class OpenCharacter {
         barracksManager.gameObject.transform.Find("SubMenus").Find("IconFrame").gameObject.SetActive(true);
         barracksManager.IconFrame.GetComponent<Image>().sprite = barracksManager.characterIcon[characterIndex];
         barracksManager.InventoryDisplay.SetActive(true);
+        barracksManager._InventoryUI.UpdateUI();
     }
 }
