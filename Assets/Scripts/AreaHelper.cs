@@ -13,55 +13,50 @@ public class AreaHelper {
 	public AreaHelper(){
 		instance = this;
 	}
+	
+	private List<BoardCell> walkableCells = new List<BoardCell>();
 
 	public List<BoardCell> GetArea2 (BoardCell origin, int areaRange){
-		List<BoardCell> cells = new List<BoardCell>();
+		walkableCells.Clear();
 
-		return cells;
+		CalculateWalkableSteps2(origin, areaRange);
+
+		return walkableCells;
 	}
 
-	List<BoardCell> walkableCells = new List<BoardCell>();
 
-	public List<BoardCell> CalculateWalkableSteps2(BoardCell currentCell, int stepsLeft){
-
-		if(currentCell == null){
-			return walkableCells;
-		}
-
-		if(currentCell.Type == BoardCell.CellType.blocked){
-			return walkableCells;
-		}
-
+	private List<BoardCell> CalculateWalkableSteps2(BoardCell currentCell, int stepsLeft){
 		if(stepsLeft >= 0){
 			if(!walkableCells.Contains(currentCell)){
 				walkableCells.Add(currentCell);
 			}
 			
 			for (int i = 0; i < currentCell.neighbors.Length; i++){
-				CalculateWalkableSteps2(currentCell.neighbors[i], stepsLeft - 1);
+				if(currentCell.neighbors[i] != null && currentCell.neighbors[i].Type != BoardCell.CellType.blocked){
+					CalculateWalkableSteps2(currentCell.neighbors[i], stepsLeft - 1);
+				}
 			}
 		}
 
 		return walkableCells;
 	}
 
+    // public Vector2[,] GetArea(Vector2 origin, int areaRange){
+    //     Vector2[,] moveArea = new Vector2[(areaRange + 1) * 2, (areaRange + 1) * 2];
 
-    public Vector2[,] GetArea(Vector2 origin, int areaRange){
-        Vector2[,] moveArea = new Vector2[(areaRange + 1) * 2, (areaRange + 1) * 2];
-
-        for (int x = -areaRange; x <= areaRange; x++){
-            for (int y = -areaRange; y <= areaRange; y++){
-                Vector2 newCell = new Vector2(origin.x + x, origin.y + y);
-				moveArea[x + areaRange, y + areaRange] = newCell;
-            }
-        }
+    //     for (int x = -areaRange; x <= areaRange; x++){
+    //         for (int y = -areaRange; y <= areaRange; y++){
+    //             Vector2 newCell = new Vector2(origin.x + x, origin.y + y);
+	// 			moveArea[x + areaRange, y + areaRange] = newCell;
+    //         }
+    //     }
         
-        return moveArea;
-    }
+    //     return moveArea;
+    // }
 
 	public List<GridCell> GetLimitedArea(Vector2[,] area, int steps){
 		Spot[,] spots = CreateSpots(area);
-		SetNeighbours(spots);
+		// SetNeighbours(spots);
 		List<Spot> spots2 = CalculateWalkableSteps(spots[spots.GetUpperBound(0), spots.GetUpperBound(1)], steps);
 		return ConvertSpotToGridCell(spots2);
 	}
@@ -79,30 +74,30 @@ public class AreaHelper {
 		return spots;
 	}
 
-	private void SetNeighbours(Spot [,] spots){
-		for (int x = 0; x < spots.GetUpperBound(0); x++)
-		{
-			for (int y = 0; y < spots.GetUpperBound(1); y++)
-			{
-				Spot[] neighbours = new Spot[4];
+	// private void SetNeighbours(Spot [,] spots){
+	// 	for (int x = 0; x < spots.GetUpperBound(0); x++)
+	// 	{
+	// 		for (int y = 0; y < spots.GetUpperBound(1); y++)
+	// 		{
+	// 			Spot[] neighbours = new Spot[4];
 
-				if(y - 1 >= 0){
-					neighbours[0] = spots[x, y - 1];
-				}
-				if(x + 1 <= spots.GetUpperBound(0)){
-					neighbours[1] = spots[x + 1, y];
-				}
-				if(y + 1 <= spots.GetUpperBound(1)){
-					neighbours[2] = spots[x, y + 1];
-				}
-				if(x - 1 >= 0){
-					neighbours[3] = spots[x -1, y];
-				}
+	// 			if(y - 1 >= 0){
+	// 				neighbours[0] = spots[x, y - 1];
+	// 			}
+	// 			if(x + 1 <= spots.GetUpperBound(0)){
+	// 				neighbours[1] = spots[x + 1, y];
+	// 			}
+	// 			if(y + 1 <= spots.GetUpperBound(1)){
+	// 				neighbours[2] = spots[x, y + 1];
+	// 			}
+	// 			if(x - 1 >= 0){
+	// 				neighbours[3] = spots[x -1, y];
+	// 			}
 
-				spots[x, y].SetNeightbours(neighbours);
-			}
-		}
-	}
+	// 			spots[x, y].SetNeightbours(neighbours);
+	// 		}
+	// 	}
+	// }
 
 	private List<Spot> CalculateWalkableSteps(Spot currentSpot, int stepsLeft){
 		List<Spot> walkableSpots = new List<Spot>();

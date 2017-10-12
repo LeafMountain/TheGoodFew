@@ -5,12 +5,12 @@ using UnityEngine;
 public class UIActionBar : MonoBehaviour {
 
 	private List<UIActionBarButton> buttons = new List<UIActionBarButton>();
-	private TurnManager unitManager;
+	private TurnController turnManager;
 
 	private void Start(){
 		FindButtons();
-		unitManager = TurnManager.GetInstance();
-		unitManager.NewUnit += OnNewUnit;
+		turnManager = TurnController.GetInstance();
+		turnManager.NewUnit += OnNewUnit;
 	}
 
 	private void FindButtons(){
@@ -20,10 +20,10 @@ public class UIActionBar : MonoBehaviour {
 	private void OnNewUnit(TurnOrderObject currentUnit){
 		ResetButtons();
 
-		AbilityUser currentAbilityUser = unitManager.CurrentUnit.GetComponent<AbilityUser>();
+		AbilityUser currentAbilityUser = currentUnit.GetComponent<AbilityUser>();
 
 		if(currentAbilityUser != null){
-			SetupButtons(unitManager.CurrentUnit.GetComponent<AbilityUser>().Abilities);
+			SetupButtons(currentUnit.GetComponent<AbilityUser>().Abilities);
 		}
 	}
 

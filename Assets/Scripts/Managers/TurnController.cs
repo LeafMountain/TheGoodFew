@@ -3,19 +3,27 @@ using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class TurnManager:MonoBehaviour {
+public class TurnController:MonoBehaviour {
+	private static TurnController currentInstance; 
 
-	private static TurnManager currentInstance; 
-	public List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
-	public TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
+	private InputManager inputManager;
+	private List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
+	private TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
 
 
-	public static TurnManager GetInstance() {
+	public static TurnController GetInstance() {
 		return currentInstance;
 	}
 
 	private void Awake() {
 		currentInstance = this;
+	}
+
+	private void Start(){
+		inputManager = InputManager.GetInstance();
+		if(inputManager){
+			inputManager.NextPressed += OnNewUnit;
+		}
 	}
 
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
@@ -29,6 +37,7 @@ public class TurnManager:MonoBehaviour {
 		RemoveUnit(unit); 
 		turnOrderObjects.Add(unit);
 		OnNewTurnOrder();
+		OnNewUnit();
 	}
 
 	//Remove units from list of units

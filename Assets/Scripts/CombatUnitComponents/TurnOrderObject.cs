@@ -8,11 +8,11 @@ public class TurnOrderObject : MonoBehaviour {
 	public enum Allegiance { Enemy, Friendly }
 	public Allegiance allegiance;
 
-	private TurnManager turnManager;
-	private TurnManager TurnManager { 
+	private TurnController turnManager;
+	private TurnController TurnManager { 
 		get {
 			if(turnManager == null){
-				turnManager = TurnManager.GetInstance();
+				turnManager = TurnController.GetInstance();
 			}
 			return turnManager;
 		}
@@ -45,11 +45,14 @@ public class TurnOrderObject : MonoBehaviour {
 		if(currentUnit == this && UnitActivated != null){
 			UnitActivated.Invoke();
 		}
+		else{
+			OnUnitInactivated(currentUnit);
+		}
 	}
 
 	private void OnUnitInactivated(TurnOrderObject currentUnit){
-		if(currentUnit == this && UnitActivated != null){
-			UnitActivated.Invoke();
+		if(UnitInactivated != null){
+			UnitInactivated.Invoke();
 		}
 	}
 

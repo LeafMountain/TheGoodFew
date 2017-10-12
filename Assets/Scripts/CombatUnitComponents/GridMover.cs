@@ -9,6 +9,7 @@ public class GridMover : MonoBehaviour {
 
     private NavMeshAgent agent;
 
+    private BoardManager boardManager;
     public int moveRange;
     private Vector3 destination;
     public Vector3 Destination {
@@ -21,12 +22,8 @@ public class GridMover : MonoBehaviour {
             destination = value;
         }
     }
-    private AreaHelper areaHelper;
 
     [TooltipAttribute ("The time until the object is forced to the destinations position")] public float timeoutTime = 5;
-
-    public FloatEvent Moving = new FloatEvent ();
-    public UnityEvent ReachedDestination = new UnityEvent ();
 
     //Velocity
     private Vector3 lastPosition;
@@ -44,21 +41,30 @@ public class GridMover : MonoBehaviour {
         agent = GetComponent<NavMeshAgent> ();
         Destination = transform.position;
         ReachedDestination.RemoveAllListeners();
-        areaHelper = AreaHelper.GetInstance();
-
-        if(areaHelper == null){
-            areaHelper = new AreaHelper();
-        }
     }
 
     private void Start(){
+        boardManager = BoardManager.GetInstance();        
+        
         ObjectInformation objectInformation = GetComponent<ObjectInformation>();
-
-        if(objectInformation != null){
+        if(objectInformation){
             moveRange = objectInformation.UnitData.Movement;
         }
 
-        // ShowMoveableArea();
+        TurnOrderObject turnOrderObject = GetComponent<TurnOrderObject>();
+        if(turnOrderObject){
+            turnOrderObject.UnitActivated += OnUnitActivated;
+            turnOrderObject.UnitInactivated += OnUnitInactivated;
+        }
+
+    }
+
+    private void OnUnitActivated(){
+        ShowMoveableArea();
+    }
+
+    private void OnUnitInactivated(){
+        Reset();
     }
 
     //Move to destination
@@ -75,50 +81,17 @@ public class GridMover : MonoBehaviour {
         }
     }
 
-    //Invokes an event when moving and sends out the velocity of the gameobject
-    public void OnMoving () {
-        if (Moving != null) {
-            Moving.Invoke (velocity);
-        }
-    }
-
-    //Invokes an event when the gameobject has reaced its destination
-    public void OnReachedDestination () {
-        if (ReachedDestination != null) {
-            ReachedDestination.Invoke ();
-        }
-    }
-
-    public void ShowMoveableArea(){
-        BoardManager boardManager = BoardManager.GetInstance();
+    private void ShowMoveableArea(){
         currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
-        Grid grid = new Grid(1, Color.red, boardManager.AreaHelper.CalculateWalkableSteps2(currentCell, moveRange));
-        grid.UpdateGrid();
-
-
-        // Grid grid = new Grid(1, Color.red, GetMoveableTiles(GetMoveArea()));
-        // grid.UpdateGrid();
+        walkGrid = new Grid(1, Color.red, boardManager.AreaHelper.GetArea2(currentCell, moveRange));
+        walkGrid.UpdateGrid();
     }
 
-    public List<GridCell> GetMoveArea(){
-        List<GridCell> moveArea = new List<GridCell>();
-        Vector2[,] positions = new Vector2[moveRange * 2 + 1,moveRange * 2 + 1];
-
-        for (int x = -moveRange; x <= moveRange; x++){
-            for (int y = -moveRange; y <= moveRange; y++){
-                // positions[x + moveRange, y + moveRange] = ;
-                Vector2 newCell = new Vector2(destination.x + x, destination.z + y);
-                moveArea.Add(new GridCell(newCell, Grid.CellType.neutral));
-            }
+    private void Reset(){
+        if(walkGrid != null){
+            Destroy(walkGrid.gameObject);
+            walkGrid = null;
         }
-        
-        return moveArea;   
-    }
-
-    public List<GridCell> GetMoveableTiles(List<GridCell> moveArea){
-        List<GridCell> moveableTiles = new List<GridCell>();
-        
-        return moveableTiles;
     }
 
     //If the gameobject hasn't reached its destination in timeoutTime, teleport the gameobject to the destinatnion
@@ -143,4 +116,25 @@ public class GridMover : MonoBehaviour {
     public void Update () {
         UpdateVelocity ();
     }
+
+#region [Events]
+
+    public FloatEvent Moving = new FloatEvent ();
+    public UnityEvent ReachedDestination = new UnityEvent ();
+
+    //Invokes an event when moving and sends out the velocity of the gameobject
+    public void OnMoving () {
+        if (Moving != null) {
+            Moving.Invoke (velocity);
+        }
+    }
+
+    //Invokes an event when the gameobject has reaced its destination
+    public void OnReachedDestination () {
+        if (ReachedDestination != null) {
+            ReachedDestination.Invoke ();
+        }
+    }
+
+#endregion
 }

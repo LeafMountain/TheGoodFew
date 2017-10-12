@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurnStateNewTurn : ITurnState {
 
 	private TurnStateMachine turnStateMachine;
-	private TurnOrderObject currentUnit;
 
 	public TurnStateNewTurn(TurnStateMachine turnStateMachine){
 		this.turnStateMachine = turnStateMachine;
@@ -16,8 +15,8 @@ public class TurnStateNewTurn : ITurnState {
 	}
 
 	public void ExitState(){
-		currentUnit = turnStateMachine.TurnManager.CurrentUnit;
-		turnStateMachine.TurnManager.AddUnit(currentUnit);
+		// currentUnit = turnStateMachine.TurnManager.CurrentUnit;
+		turnStateMachine.TurnManager.AddUnit(turnStateMachine.CurrentUnit);
 	}
 
 	public void Update(){
@@ -29,6 +28,6 @@ public class TurnStateNewTurn : ITurnState {
 	}
 
 	private void FocusCamera(){
-		CameraControls.GetInstance().Move(currentUnit.transform.position);
+		CameraControls.GetInstance().Move(turnStateMachine.CurrentUnit.transform.position);
 	}
 }

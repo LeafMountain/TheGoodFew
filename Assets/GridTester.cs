@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GridTester : MonoBehaviour {
 
-	AreaHelper areaHelper;
 	Vector2 position;
 	int steps = 6;
 
@@ -12,16 +11,10 @@ public class GridTester : MonoBehaviour {
 	private Vector2[,] spotPositions;
 	private Spot[,] spots;
 
-	private void Start(){
-		areaHelper = new AreaHelper();
-
-		TestCalc();
-	}
-
 	//Get a 2D area with the area of steps*steps
-	private Vector2[,] CreateGridCells(){
-		return areaHelper.GetArea(new Vector2(transform.position.x, transform.position.z), steps * 2 + 1);
-	}
+	// private Vector2[,] CreateGridCells(){
+	// 	return areaHelper.GetArea(new Vector2(transform.position.x, transform.position.z), steps * 2 + 1);
+	// }
 
 
 	private Spot[,] CreateSpots(Vector2[,] area){
@@ -82,19 +75,5 @@ public class GridTester : MonoBehaviour {
 		}
 
 		return cells;
-	}
-
-	private void TestCalc(){
-		// spotPositions = CreateGridCells();
-		// spots = CreateSpots(spotPositions);
-		// SetNeighbours(spots);
-		// CalculateSteps(spots[Mathf.CeilToInt(spotPositions.GetUpperBound(0) / 2), Mathf.CeilToInt(spotPositions.GetUpperBound(1) / 2)], steps);
-
-		// Grid grid = new Grid(1, Color.red, ConvertSpotToGridCell(walkableSpots));
-		// grid.UpdateGrid();
-
-		// BoardManager.GetInstance().AreaHelper.CalculateWalkableSteps2();
-		GetComponent<GridMover>().ShowMoveableArea();
-		
 	}
 }

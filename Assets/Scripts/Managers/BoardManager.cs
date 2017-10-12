@@ -23,13 +23,10 @@ public class BoardManager {
         CreateBoardCells();
         SetNeighbours();
 
-        //For debugging purposes.
-        // CreateGrid();
-        if(AreaHelper.GetInstance() == null){
+        AreaHelper = AreaHelper.GetInstance();
+        
+        if(AreaHelper == null){
             AreaHelper = new AreaHelper();
-        }
-        else{
-            AreaHelper = AreaHelper.GetInstance();
         }
 	}
 

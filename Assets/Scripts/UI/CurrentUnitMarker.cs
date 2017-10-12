@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CurrentUnitMarker : MonoBehaviour {
 
-	private TurnManager turnManager;
+	private TurnController turnManager;
 
 	private void Start(){
-		turnManager = TurnManager.GetInstance();
+		turnManager = TurnController.GetInstance();
 		turnManager.NewUnit += SetParent;
 	}
 
