@@ -6,11 +6,7 @@ using UnityEngine.UI;
 public class SubHubButtons : MonoBehaviour {
 
     private ShopManager shopManager;
-
-    public InventoryUI storeUI; //entire UI;
-
-
-    
+    private BarracksManager barracksManager;
 
     void Start()
     {
