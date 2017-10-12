@@ -35,7 +35,21 @@ public class BarracksManager : MonoBehaviour {
     {
         new OpenCharacter(this, characterIndex);
     }
-    
+    public void LoadEquipment()
+    {
+        //Finds the current equipped items, for a character, at <PlayerData> and then give the info to 
+        //the <EquipmentManager>.
+    }
+    public void SwapEquipment()
+    {
+        //When the player clicks on an item (weapon, armor or trinket) the item is swapped with the clicked item.
+        //If the item slot is empty it just fills the slot. 
+    }
+    public void Unequip()
+    {
+        //When the player clicks on a equipment slot with an item in it the item is removed and put in the players inventory. 
+    }
+
     //Properties
     public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }
     public GameObject InventoryDisplay { get { return inventoryDisplay; } }
