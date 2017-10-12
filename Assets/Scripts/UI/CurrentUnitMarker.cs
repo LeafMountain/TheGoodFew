@@ -8,10 +8,10 @@ public class CurrentUnitMarker : MonoBehaviour {
 
 	private void Start(){
 		turnManager = TurnManager.GetInstance();
-		turnManager.TurnOrderUpdated += SetParent;
+		turnManager.NewUnit += SetParent;
 	}
 
-	private void SetParent(object source, TurnOrderUpdate turnOrderUpdate){
-		transform.SetParent(turnOrderUpdate.CurrentUnit.transform);
+	private void SetParent(TurnOrderObject currentUnit){
+		transform.SetParent(currentUnit.transform);
 	}
 }

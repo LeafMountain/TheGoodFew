@@ -24,6 +24,10 @@ public class AreaHelper {
 
 	public List<BoardCell> CalculateWalkableSteps2(BoardCell currentCell, int stepsLeft){
 
+		if(currentCell == null){
+			return walkableCells;
+		}
+
 		if(currentCell.Type == BoardCell.CellType.blocked){
 			return walkableCells;
 		}

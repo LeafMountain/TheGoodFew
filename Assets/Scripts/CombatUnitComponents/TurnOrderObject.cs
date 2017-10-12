@@ -8,36 +8,57 @@ public class TurnOrderObject : MonoBehaviour {
 	public enum Allegiance { Enemy, Friendly }
 	public Allegiance allegiance;
 
-	private TurnManager unitManager;
-	private TurnManager UnitManager { 
+	private TurnManager turnManager;
+	private TurnManager TurnManager { 
 		get {
-			if(unitManager == null){
-				unitManager = TurnManager.GetInstance();
+			if(turnManager == null){
+				turnManager = TurnManager.GetInstance();
 			}
-			return unitManager;
+			return turnManager;
 		}
 	}
-
-	public delegate void UnitEvent ();
-
-	public event UnitEvent TurnStarted;
-
 
 	private void OnDead(){
 		gameObject.SetActive(false);
 	}
 
 	private void OnEnable(){
-		UnitManager.AddUnit(this);
+		TurnManager.AddUnit(this);
+		TurnManager.NewUnit += OnUnitActivated;
+		TurnManager.NewTurn += OnNewTurn;
 	}
 
 	private void OnDisable(){
-		UnitManager.RemoveUnit(this);
+		TurnManager.RemoveUnit(this);
+		TurnManager.NewUnit -= OnUnitActivated;
+		TurnManager.NewTurn -= OnNewTurn;
 	}
 
-	public void StartTurn(){
-		if(TurnStarted != null){
-			TurnStarted.Invoke();
+#region [Events]
+	public delegate void UnitEvent ();
+
+	public event UnitEvent UnitActivated;
+	public event UnitEvent UnitInactivated;
+	public event UnitEvent NewTurn;
+
+	private void OnUnitActivated(TurnOrderObject currentUnit){
+		if(currentUnit == this && UnitActivated != null){
+			UnitActivated.Invoke();
 		}
 	}
+
+	private void OnUnitInactivated(TurnOrderObject currentUnit){
+		if(currentUnit == this && UnitActivated != null){
+			UnitActivated.Invoke();
+		}
+	}
+
+	private void OnNewTurn(List<TurnOrderObject> turnOrder){
+		if(NewTurn != null){
+			NewTurn.Invoke();
+		}
+	}
+
+#endregion
+
 }

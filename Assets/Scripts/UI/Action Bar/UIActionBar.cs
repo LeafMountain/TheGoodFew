@@ -10,14 +10,14 @@ public class UIActionBar : MonoBehaviour {
 	private void Start(){
 		FindButtons();
 		unitManager = TurnManager.GetInstance();
-		unitManager.TurnOrderUpdated += OnTurnOrderUpdated;
+		unitManager.NewUnit += OnNewUnit;
 	}
 
 	private void FindButtons(){
 		buttons.AddRange(GetComponentsInChildren<UIActionBarButton>());
 	}
 
-	private void OnTurnOrderUpdated(object source, TurnOrderUpdate turnOrderUpdate){
+	private void OnNewUnit(TurnOrderObject currentUnit){
 		ResetButtons();
 
 		AbilityUser currentAbilityUser = unitManager.CurrentUnit.GetComponent<AbilityUser>();

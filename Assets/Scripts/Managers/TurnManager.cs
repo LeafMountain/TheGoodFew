@@ -18,10 +18,6 @@ public class TurnManager:MonoBehaviour {
 		currentInstance = this;
 	}
 
-	private void Start() {
-		OnTurnOrderUpdated();
-	}
-
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
 	private void FindTurnOrderObjects() {
 		TurnOrderObject[] turnOrderObjects = (TurnOrderObject[])GameObject.FindObjectsOfType(typeof(TurnOrderObject));
@@ -32,58 +28,47 @@ public class TurnManager:MonoBehaviour {
 	public void AddUnit(TurnOrderObject unit) {
 		RemoveUnit(unit); 
 		turnOrderObjects.Add(unit);
-		OnTurnOrderUpdated();
+		OnNewTurnOrder();
 	}
 
 	//Remove units from list of units
 	public void RemoveUnit(TurnOrderObject unit) {
 		if (turnOrderObjects.Contains(unit)) {
 			turnOrderObjects.Remove(unit);
-			OnTurnOrderUpdated();
+			OnNewTurnOrder();
 		}
 		else {
 			Debug.Log("The unit doesn't exists in the Turn Order Object list");
 		}
 	}
 
-	//Event
-	public event EventHandler<TurnOrderUpdate> TurnOrderUpdated;
-	
-	//Trying to make an event for when a new turn starts
-	public delegate void TurnEvent ();
+#region [Events]
+	//Turn Events
+	public delegate void TurnEvent (List<TurnOrderObject> turnOrderObjects);
 	public event TurnEvent NewTurn;
-	public event TurnEvent NewUnit;
+	public event TurnEvent NewTurnOrder;
 
-	protected virtual void OnTurnOrderUpdated () {		
-		if (TurnOrderUpdated != null) {
-			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects));
+	//Unit Event
+	public delegate void UnitEvent(TurnOrderObject currentUnit);
+	public event UnitEvent NewUnit;
+
+	protected virtual void OnNewTurn(){
+		if(NewTurn != null){
+			NewTurn.Invoke(turnOrderObjects);
 		}
 	}
 
-	// protected virtual void OnNewTurn(){
-	// 	if(NewTurn != null){
-	// 		NewTurn.Invoke();
-	// 	}
-	// }
-
-	// protected virtual void OnNewUnit(){
-	// 	if(NewUnit != null){
-	// 		NewUnit.Invoke();
-	// 	}
-	// }
-
-	protected virtual void OnTurnEvent(TurnEvent turnEvent){
-		if(turnEvent != null){
-			turnEvent.Invoke();
+	protected virtual void OnNewTurnOrder(){
+		if(NewTurnOrder != null){
+			NewTurnOrder.Invoke(turnOrderObjects);
 		}
 	}
-}
 
-public class TurnOrderUpdate:EventArgs {
-	public List < TurnOrderObject > TurnOrderList {get; private set; }
-	public TurnOrderObject CurrentUnit {get {return TurnOrderList[0]; }}
-	
-	public TurnOrderUpdate (List < TurnOrderObject > newTurnOrder) {
-		this.TurnOrderList = newTurnOrder; 
+	protected virtual void OnNewUnit(){
+		if(NewUnit != null){
+			NewUnit.Invoke(CurrentUnit);
+		}
 	}
+
+#endregion
 }

@@ -12,7 +12,7 @@ public class AbilityUser : MonoBehaviour {
 		TurnOrderObject turnOrderObject = GetComponent<TurnOrderObject>();
 
 		if(turnOrderObject != null){
-			turnOrderObject.TurnStarted += OnTurnStart;
+			turnOrderObject.ActiveUnit += OnTurnStart;
 		}
 	}
 

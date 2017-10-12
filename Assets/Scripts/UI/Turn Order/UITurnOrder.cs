@@ -8,11 +8,11 @@ public class UITurnOrder : MonoBehaviour {
 
 	private void Start(){
 		portraits.AddRange(GetComponentsInChildren<UITurnOrderPortrait>());
-		TurnManager.GetInstance().TurnOrderUpdated += OnTurnOrderUpdated;
+		TurnManager.GetInstance().NewTurnOrder += OnNewTurnOrder;
 	}
 
-	private void OnTurnOrderUpdated (object source, TurnOrderUpdate turnOrderUpdate) {
-        SetTurnOrderList (turnOrderUpdate.TurnOrderList);
+	private void OnNewTurnOrder (List<TurnOrderObject> turnOrder) {
+        SetTurnOrderList (turnOrder);
     }
 	
 	private void SetTurnOrderList(List<TurnOrderObject> turnOrderObjects){
