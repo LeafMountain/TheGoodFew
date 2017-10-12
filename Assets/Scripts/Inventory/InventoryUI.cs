@@ -51,5 +51,4 @@ public class InventoryUI : MonoBehaviour
     }
     //Properties
     public Inventory Inventory { set { inventory = value; } }
-
 }

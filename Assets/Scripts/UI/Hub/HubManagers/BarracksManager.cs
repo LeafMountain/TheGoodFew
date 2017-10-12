@@ -7,15 +7,20 @@ public class BarracksManager : MonoBehaviour {
 
     private GameObject iconFrame;
     private GameObject inventoryDisplay;
+    
 
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
 
-    void Start()
+    void OnEnable()
     {
         iconFrame = transform.Find("SubMenus").Find("IconFrame").gameObject;
         inventoryDisplay = transform.Find("SubMenus").Find("Inventory Display").gameObject;
-        GetComponentInParent<InventoryUI>().Inventory = playerInventory; 
+
+        InventoryUI inventoryUI = GetComponentInParent<InventoryUI>();
+        inventoryUI.Inventory = playerInventory;
+        inventoryUI.inventoryUI = inventoryDisplay.transform.GetChild(0).gameObject;
+        inventoryUI.UpdateUI();
     }
 
     public void OpenCharacter(int characterIndex)

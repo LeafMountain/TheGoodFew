@@ -26,11 +26,12 @@ public class ShopManager : MonoBehaviour {
     private Inventory inventory;
 
 
-	void Start () {
+	void OnEnable () {
         playerData = playerDataGameObject.GetComponent<PlayerData>();
         dispayPlayerCoins.text = playerData.Epas.ToString();
         dialougeData = GetComponent<DialougeData>();
         inventory = GetComponent<Inventory>();
+        GetComponentInParent<InventoryUI>().inventoryUI = subMenus.transform.Find("Inventory Display").Find("Store Inventory").gameObject;
     }
 
     //SubMenus
@@ -64,75 +65,24 @@ public class ShopManager : MonoBehaviour {
         }
         subMenus.transform.GetChild(0).gameObject.SetActive(true);
     }
-    private void ExecuteTransaction()
+    public void ExecuteTransaction()
     {
         new Transactions(this);
     }
-    public void Answer(string answer)
-    {
-        if (answer == "Yes")
-        {
-            if(buying)
-            {
-                ExecuteTransaction();
-                confirmPurches.SetActive(!confirmPurches.activeSelf);
-            }
-            else
-            {
-                ExecuteTransaction();
-                confirmPurches.SetActive(!confirmPurches.activeSelf);
-            }
-        }
-        else
-        {
-            confirmPurches.SetActive(!confirmPurches.activeSelf);
-        }
-
-
-       
-    }
     public void Ask(string itemName, int price)    
     {
-        Text question = confirmPurches.transform.GetChild(1).GetComponent<Text>();
-        if (playerData.Epas >= price)
+        if (Buying)
         {
-            ToggleButtons(true);
-            confirmPurches.SetActive(!confirmPurches.activeSelf);
-            if (buying)
-            //Text for Confirm page.
-            {
-                question.text = "Do You Want to Purches " + itemName + " for " + price + " Epas?"; 
-            }
-            else
-            {
-                question.text = "Do You Want to Sell " + itemName + " for " + price + " Epas?";
-            }
+            new OpenConformation(itemName, price, this);
         }
-
         else
         {
-            ToggleButtons(false);
-            confirmPurches.SetActive(!confirmPurches.activeSelf);
-            question.text = "You Do Not Have Enough Epas.";
+            new OpenConformation(itemName, price / 2, this);
         }
     }
-    private void ToggleButtons(bool enoughMoney)
+    public void Answer(string playerAnswer)
     {
-        GameObject buttonOne = confirmPurches.transform.GetChild(0).GetChild(0).gameObject;
-        GameObject buttonTwo =confirmPurches.transform.GetChild(0).GetChild(1).gameObject;
-        GameObject buttonThree = confirmPurches.transform.GetChild(0).GetChild(2).gameObject;
-        if(enoughMoney)
-        {
-            buttonOne.SetActive(true);
-            buttonTwo.SetActive(true);
-            buttonThree.SetActive(false);
-        }
-        else
-        {
-            buttonOne.SetActive(false);
-            buttonTwo.SetActive(false);
-            buttonThree.SetActive(true);
-        }
+        new PlayerAnswerOnConformation(playerAnswer, this);
     }
 
     //Properties
