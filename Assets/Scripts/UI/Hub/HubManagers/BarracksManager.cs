@@ -8,10 +8,18 @@ public class BarracksManager : MonoBehaviour {
     private GameObject iconFrame;
     private GameObject inventoryDisplay;
     private InventoryUI inventoryUI;
+    private EquipmentManager equipmentManager;
+    private Item itemInQuestion;
 
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
+    public GameObject playerEquipment;
 
+    void Start()
+    {
+        equipmentManager = new EquipmentManager(this);
+    }
+    
     void OnEnable()
     {
         iconFrame = transform.Find("SubMenus").Find("IconFrame").gameObject;
@@ -32,4 +40,5 @@ public class BarracksManager : MonoBehaviour {
     public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }
     public GameObject InventoryDisplay { get { return inventoryDisplay; } }
     public InventoryUI _InventoryUI { get { return inventoryUI; } set { inventoryUI = value; } }
+    public Item ItemInQuestion { get { return itemInQuestion; } set { itemInQuestion = value; } }
 }

@@ -11,12 +11,14 @@ public class InventorySlot : MonoBehaviour
     
 
     private ShopManager shopManager;
+    private BarracksManager barracksManager;
 
     Item item;  // Current item in the slot
 
     void Start()
     {
         shopManager = GetComponentInParent<ShopManager>();
+        barracksManager = GetComponentInParent<BarracksManager>();
     }
 
     // Add item to the slot
@@ -55,8 +57,15 @@ public class InventorySlot : MonoBehaviour
     }
     public void InventorySlotClicked()
     {
-        shopManager.ItemInQuestion = item;
-        shopManager.Ask(item.itemName, item.price);
+        if (shopManager != null)
+        {
+            shopManager.ItemInQuestion = item;
+            shopManager.Ask(item.itemName, item.price);
+        }
+        else
+        {
+            barracksManager.ItemInQuestion = item;
+        }
     }
    
     public void ShowItemInfo()
