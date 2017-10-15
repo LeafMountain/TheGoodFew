@@ -16,7 +16,7 @@ public class CameraControls : MonoBehaviour {
     private float newRot;
     private float zoom;
 
-    private InputManager inputManager;
+    private InputController inputManager;
     private CombatEventTracker combatEventTracker;
 
     public static CameraControls GetInstance () {
@@ -29,7 +29,7 @@ public class CameraControls : MonoBehaviour {
 
     private void Start () {
         newRot = transform.rotation.eulerAngles.y;
-        inputManager = InputManager.GetInstance ();
+        inputManager = InputController.GetInstance ();
 
         if (inputManager != null) {
             inputManager.MoveKeys += MoveInDirection;

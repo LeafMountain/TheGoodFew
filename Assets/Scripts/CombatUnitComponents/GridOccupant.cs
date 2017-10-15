@@ -3,19 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent (typeof (BoxCollider))]
-public class GridOccupant : MonoBehaviour {
-
-    private BattleManager battleManager;
-    public BattleManager BattleManager {
-        get {
-            if (!battleManager) { battleManager = BattleManager.GetInstance (); }
-            if (!battleManager) { Debug.LogWarning ("No battle manager instance found."); }
-            return battleManager;
-        }
-    }
-
-    //Get the current tile this gameobject occupies
-    // public Tile CurrentTile { get { return BattleManager.board.GetTile (BattleManager.board.ConvertToBoardPosition (transform.position)); } }
+public class GridOccupant : CombatElement {
 
     private BoxCollider col;
     public BoxCollider Collider {
@@ -23,8 +11,8 @@ public class GridOccupant : MonoBehaviour {
             if (!col) {
                 col = GetComponent<BoxCollider> ();
 
-                if (!col) { col = GetComponentInChildren<BoxCollider> (); }
-                if (!col) { Debug.LogWarning ("No box collider found on " + gameObject.name + " game object."); }
+                // if (!col) { col = GetComponentInChildren<BoxCollider> (); }
+                // if (!col) { Debug.LogWarning ("No box collider found on " + gameObject.name + " game object."); }
             }
             return col;
         }
@@ -52,32 +40,20 @@ public class GridOccupant : MonoBehaviour {
         return positions;
     }
 
-    private BoardController boardManager;
-
     private void OnEnable () {
-        //Enable collider when this component is enabled
         Collider.enabled = true;
 
     }
 
     private void OnDisable () {
-        //Disable collider when this component is disabled
         Collider.enabled = false;
     }
 
     private void Start(){
-        SetupBoardManager();
-
         List<Vector3> positions = Positions();
         for (int i = 0; i < positions.Count; i++)
         {
-            boardManager.ChangeCellType(new Vector2(positions[i].x, positions[i].z), BoardCell.CellType.blocked);     
-        }
-    }
-    
-    private void SetupBoardManager(){
-        if(boardManager == null){
-            boardManager = BoardController.GetInstance();
+            App.Controller.BoardController.ChangeCellType(new Vector2(positions[i].x, positions[i].z), TileModel.CellType.blocked);
         }
     }
 }

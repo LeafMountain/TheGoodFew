@@ -18,10 +18,10 @@ public class TurnStateMachine:MonoBehaviour {
 
     private void Start() {
         ChangeState(new TurnStatePrepare(this));
-        TurnController turnManager = TurnController.GetInstance();
-        if(turnManager){
-            turnManager.NewUnit += OnNewUnit;
-        }
+        // TurnController turnManager = TurnController.GetInstance();
+        // if(turnManager){
+        //     turnManager.NewUnit += OnNewUnit;
+        // }
     }
 
     private void Update() {

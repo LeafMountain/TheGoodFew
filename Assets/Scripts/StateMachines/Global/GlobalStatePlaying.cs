@@ -11,7 +11,7 @@ public class GlobalStatePlaying : StateMachineState {
     }
 
     public override void EnterState () {
-        InputManager.GetInstance().BackPressed += PauseGame;
+        InputController.GetInstance().BackPressed += PauseGame;
     }
 
     private void PauseGame () {

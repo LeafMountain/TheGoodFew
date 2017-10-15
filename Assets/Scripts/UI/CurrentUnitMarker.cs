@@ -7,7 +7,7 @@ public class CurrentUnitMarker : MonoBehaviour {
 	private TurnController turnManager;
 
 	private void Start(){
-		turnManager = TurnController.GetInstance();
+		// turnManager = TurnController.GetInstance();
 		turnManager.NewUnit += SetParent;
 	}
 

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardCell {
+public class TileModel {
     public enum CellType { error, walkable, blocked }
     
     public Vector2 Position { get; private set; }   
     public CellType Type { get; private set; }
     public int MoveCost { get; private set; }
-	public BoardCell[] neighbors = new BoardCell[4];
-    public GridOccupant Occupant { get; private set; }
+	public TileModel[] neighbors = new TileModel[4];
+    public UnitModel Unit { get; private set; }
 
-    public BoardCell(Vector2 position, CellType type){
+    public TileModel(Vector2 position, CellType type){
         Position = position;
         Type = type;
     }
@@ -24,11 +24,15 @@ public class BoardCell {
 		Type = type;
 	}
 
-    public void SetNeighbors(BoardCell[] neighbors){
+    public void SetNeighbors(TileModel[] neighbors){
         this.neighbors = neighbors;
     }
 
-    public void SetOccupant(GridOccupant occupant){
-        Occupant = occupant;
+    public void SetUnit(UnitModel unit){
+        Unit = unit;
+    }
+
+    public void RemoveOccupant(){
+        Unit = null;
     }
 }

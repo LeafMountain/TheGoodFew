@@ -16,7 +16,7 @@ public class GlobalStatePause : StateMachineState {
         //Show pause menu
         globalStateMachine.pauseMenu.SetActive (true);
 
-        InputManager.GetInstance().BackPressed += UnPauseGame;
+        InputController.GetInstance().BackPressed += UnPauseGame;
     }
 
     public override void ExitState () {

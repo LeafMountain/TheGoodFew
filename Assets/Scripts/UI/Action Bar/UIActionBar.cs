@@ -9,7 +9,7 @@ public class UIActionBar : MonoBehaviour {
 
 	private void Start(){
 		FindButtons();
-		turnManager = TurnController.GetInstance();
+		// turnManager = TurnController.GetInstance();
 		turnManager.NewUnit += OnNewUnit;
 	}
 

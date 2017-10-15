@@ -21,7 +21,7 @@ public class CombatEventTracker : MonoBehaviour {
 
 	public void Start(){
 		cameraControls = CameraControls.GetInstance();
-		TurnController.GetInstance().NewTurnOrder += OnTurnOrderUpdated;
+		// TurnController.GetInstance().NewTurnOrder += OnTurnOrderUpdated;
 	}
 
 	public void SetEventPosition(Vector3 position){

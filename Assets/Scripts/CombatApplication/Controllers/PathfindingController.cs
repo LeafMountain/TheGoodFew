@@ -14,9 +14,9 @@ public class PathfindingController : CombatElement {
 		instance = this;
 	}
 	
-	private List<BoardCell> walkableCells = new List<BoardCell>();
+	private List<TileModel> walkableCells = new List<TileModel>();
 
-	public List<BoardCell> GetArea2 (BoardCell origin, int areaRange){
+	public List<TileModel> GetArea2 (TileModel origin, int areaRange){
 		walkableCells.Clear();
 
 		CalculateWalkableSteps2(origin, areaRange);
@@ -25,14 +25,14 @@ public class PathfindingController : CombatElement {
 	}
 
 
-	private List<BoardCell> CalculateWalkableSteps2(BoardCell currentCell, int stepsLeft){
+	private List<TileModel> CalculateWalkableSteps2(TileModel currentCell, int stepsLeft){
 		if(stepsLeft >= 0){
 			if(!walkableCells.Contains(currentCell)){
 				walkableCells.Add(currentCell);
 			}
 			
 			for (int i = 0; i < currentCell.neighbors.Length; i++){
-				if(currentCell.neighbors[i] != null && currentCell.neighbors[i].Type != BoardCell.CellType.blocked){
+				if(currentCell.neighbors[i] != null && currentCell.neighbors[i].Type != TileModel.CellType.blocked){
 					CalculateWalkableSteps2(currentCell.neighbors[i], stepsLeft - 1);
 				}
 			}

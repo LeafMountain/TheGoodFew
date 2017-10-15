@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CombatView : CombatElement {
 
-	public BoardView boardView;
+	public BoardView BoardView { get; private set; }
 
 	private void Awake(){
-		boardView = GetComponentInChildren<BoardView>();
+		BoardView = GetComponentInChildren<BoardView>();
 	}
 }

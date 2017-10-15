@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour {
-    private static InputManager inputManager;
+public class InputController : MonoBehaviour {
+    private static InputController inputManager;
     public delegate void KeyPressed ();
     public delegate void KeyContinous (Vector2 moveCords);
     public delegate void WorldPosition (Vector3 markerPosition);
@@ -56,7 +56,7 @@ public class InputManager : MonoBehaviour {
         }
     }
 
-    public static InputManager GetInstance () {
+    public static InputController GetInstance () {
         return inputManager;
     }
 

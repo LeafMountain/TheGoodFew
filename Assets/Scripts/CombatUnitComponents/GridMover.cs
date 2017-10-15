@@ -5,11 +5,10 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 
 [RequireComponent (typeof (NavMeshAgent))]
-public class GridMover : MonoBehaviour {
+public class GridMover : CombatElement {
 
     private NavMeshAgent agent;
 
-    private BoardController boardManager;
     public int moveRange;
     private Vector3 destination;
     public Vector3 Destination {
@@ -35,7 +34,7 @@ public class GridMover : MonoBehaviour {
 
     private Grid walkGrid;
 
-    private BoardCell currentCell;
+    private TileModel currentCell;
 
     private void Awake () {
         agent = GetComponent<NavMeshAgent> ();
@@ -43,9 +42,7 @@ public class GridMover : MonoBehaviour {
         ReachedDestination.RemoveAllListeners();
     }
 
-    private void Start(){
-        boardManager = BoardController.GetInstance();        
-        
+    private void Start(){        
         ObjectInformation objectInformation = GetComponent<ObjectInformation>();
         if(objectInformation){
             moveRange = objectInformation.UnitData.Movement;
@@ -82,8 +79,8 @@ public class GridMover : MonoBehaviour {
     }
 
     private void ShowMoveableArea(){
-        currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
-        walkGrid = new Grid(1, Color.red, boardManager.AreaHelper.GetArea2(currentCell, moveRange));
+        // currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
+        walkGrid = new Grid(1, Color.red, App.Controller.PathfindingController.GetArea2(currentCell, moveRange));
         walkGrid.UpdateGrid();
     }
 
