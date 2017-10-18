@@ -6,6 +6,9 @@ public class Tile {
 
     public enum Status { open, blocked, occupied }
 
+    private int stepCost = 1;    
+    public int StepCost { get{ return stepCost; } }
+
     //Returns status of tile depending on the return of GetOccupant
     public Status CurrentStatus {
         get {

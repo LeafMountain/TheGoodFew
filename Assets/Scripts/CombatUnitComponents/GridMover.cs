@@ -80,8 +80,8 @@ public class GridMover : CombatElement {
 
     private void ShowMoveableArea(){
         // currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
-        walkGrid = new Grid(1, Color.red, App.Controller.PathfindingController.GetArea2(currentCell, moveRange));
-        walkGrid.UpdateGrid();
+        // walkGrid = new Grid(1, Color.red, App.Controller.PathfindingController.GetArea2(currentCell, moveRange));
+        // walkGrid.UpdateGrid();
     }
 
     private void Reset(){

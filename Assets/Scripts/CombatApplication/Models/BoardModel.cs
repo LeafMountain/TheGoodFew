@@ -11,5 +11,6 @@ public class BoardModel {
 	public void SetMapSize(int width, int height){
 		this.Width = width;
 		this.Height = height;
+		Tiles = new TileModel[Width, Height];		
 	}
 }

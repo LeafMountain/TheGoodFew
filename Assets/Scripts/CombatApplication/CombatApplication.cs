@@ -14,22 +14,6 @@ public class CombatElement : MonoBehaviour {
 	}
 }
 
-// public class CombatElement2 { 
-// 	private static CombatApplication app;
-// 	public CombatApplication App {
-// 		get {
-// 			return app;
-// 		}
-// 		private set {
-// 			App = value;
-// 		}
-// 	}
-
-// 	public CombatElement2(CombatApplication app){
-// 		this.App = app;
-// 	}
-// }
-
 public class CombatApplication : MonoBehaviour {
 
 	public CombatController Controller { get; private set; }

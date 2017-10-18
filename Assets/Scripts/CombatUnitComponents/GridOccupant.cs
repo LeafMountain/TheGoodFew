@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent (typeof (BoxCollider))]
 public class GridOccupant : CombatElement {
 
-    private BoxCollider col;
+    private BoxCollider collider;
     public BoxCollider Collider {
         get {
-            if (!col) {
-                col = GetComponent<BoxCollider> ();
+            if (!collider) {
+                collider = GetComponent<BoxCollider> ();
 
                 // if (!col) { col = GetComponentInChildren<BoxCollider> (); }
                 // if (!col) { Debug.LogWarning ("No box collider found on " + gameObject.name + " game object."); }
             }
-            return col;
+            return collider;
         }
     }
 
@@ -53,7 +53,8 @@ public class GridOccupant : CombatElement {
         List<Vector3> positions = Positions();
         for (int i = 0; i < positions.Count; i++)
         {
-            App.Controller.BoardController.ChangeCellType(new Vector2(positions[i].x, positions[i].z), TileModel.CellType.blocked);
+            App.Controller.Board.AddOccupant(App.Controller.Board.GetCell(new Vector2(positions[i].x, positions[i].z)));
+            // App.Controller.Board.ChangeCellType(new Vector2(positions[i].x, positions[i].z), TileModel.CellType.blocked);
         }
     }
 }

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class CombatController : CombatElement {
 
-	public BoardController BoardController { get; private set; }
+	public BoardController Board { get; private set; }
 	public TurnController TurnController { get; private set; }
 	public PathfindingController PathfindingController { get; private set; }
+	public PathfindingController1 pathfindingController1 = new PathfindingController1();
 
 	private void Awake(){
-		BoardController = GetComponentInChildren<BoardController>();
+		Board = GetComponentInChildren<BoardController>();
 		TurnController = GetComponentInChildren<TurnController>();
 		PathfindingController = GetComponentInChildren<PathfindingController>();
 	}

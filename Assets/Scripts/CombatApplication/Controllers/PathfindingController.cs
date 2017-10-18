@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PathfindingController : CombatElement {
 
-	private static PathfindingController instance;
+	// private static PathfindingController instance;
 
-	public static PathfindingController GetInstance(){
-		return instance;
-	}
+	// public static PathfindingController GetInstance(){
+	// 	return instance;
+	// }
 
-	public PathfindingController(){
-		instance = this;
-	}
+	// public PathfindingController(){
+	// 	instance = this;
+	// }
 	
 	private List<TileModel> walkableCells = new List<TileModel>();
 
@@ -127,7 +127,7 @@ public class PathfindingController : CombatElement {
 }
 
 public class Spot {
-	public int minimumSteps;
+	public int stepsLeft;
 	public Vector2 position;
 	public Spot[] neighbours = new Spot[4];
 
@@ -138,8 +138,8 @@ public class Spot {
 	}
 
 	public void SetSteps(int steps){
-		if(steps < minimumSteps){
-			minimumSteps = steps;
+		if(steps < stepsLeft){
+			stepsLeft = steps;
 		}
 	}
 

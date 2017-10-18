@@ -8,12 +8,14 @@ public class TileModel {
     public Vector2 Position { get; private set; }   
     public CellType Type { get; private set; }
     public int MoveCost { get; private set; }
-	public TileModel[] neighbors = new TileModel[4];
+	public TileModel[] neighbors;
     public UnitModel Unit { get; private set; }
 
     public TileModel(Vector2 position, CellType type){
         Position = position;
         Type = type;
+
+        SetMoveCost(1);
     }
 
     public void SetMoveCost(int moveCost){
