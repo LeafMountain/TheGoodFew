@@ -2,7 +2,7 @@
 //Description: the base item class, all items should derive from this.
 using UnityEngine;
 
-public enum ItemType { Armor, Consumables, Weapon};
+public enum ItemType { Armor, Consumables, Weapon, OffHand, Trinket};
 
 public class Item : ScriptableObject {
 

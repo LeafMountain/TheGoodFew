@@ -55,4 +55,6 @@ public class BarracksManager : MonoBehaviour {
     public GameObject InventoryDisplay { get { return inventoryDisplay; } }
     public InventoryUI _InventoryUI { get { return inventoryUI; } set { inventoryUI = value; } }
     public Item ItemInQuestion { get { return itemInQuestion; } set { itemInQuestion = value; } }
+    public EquipmentManager _EquipmentManager { get { return equipmentManager; } set { equipmentManager = value; } }
+
 }
