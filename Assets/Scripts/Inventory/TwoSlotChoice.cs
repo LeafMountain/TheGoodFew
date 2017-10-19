@@ -54,7 +54,7 @@ public class TwoSlotChoice {
             {
                 if(gameobject == go)
                 {
-                    equipmentManager._Equipment.allPieces[index] = item;
+                    equipmentManager.CurrentEquipment.EquipmentPieces[index] = item;
                     equipmentManager.EquipmentSlots[index].GetComponent<InventorySlot>().AddItem(item);
                 }       
             }

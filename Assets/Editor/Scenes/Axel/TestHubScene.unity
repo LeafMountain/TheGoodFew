@@ -4957,13 +4957,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataSource: {fileID: 11400000, guid: a7cab76d3c884ef48ac5c29d3abf4702, type: 2}
-  characterEquipment:
+  devEquipmentData:
   - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
+  - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
+  - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
+  - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
+  - {fileID: 11400000, guid: 28f1087f9d649e84e98b0d8723e8bdf5, type: 2}
+  devMode: 1
 --- !u!114 &1116360401
 MonoBehaviour:
   m_ObjectHideFlags: 0

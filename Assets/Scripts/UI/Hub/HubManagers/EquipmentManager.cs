@@ -19,16 +19,15 @@ public enum EquipmentPart { Body, OffHand, MainHand, FirstTrinket, SecondTrinket
 public class EquipmentManager {
 
     private BarracksManager barracksManager;
-
-    private UnitData currentCharacter; //< the current character in the barracks. 
-
     private GameObject[] equipmentSlots;
-    private Equipment equipment;
+    private Equipment currentEquipment;
 
     private bool canDuelWield; //<< Future ability.
+    private UnitData currentCharacter; //< the current character in the barracks. 
+
     private TwoSlotChoice twoSlotChoiceInstance;
 
-    private EquipmentManager() { }
+    private EquipmentManager() { }//Constructor
     public EquipmentManager(BarracksManager barracksManager)
     {
         this.barracksManager = barracksManager;
@@ -37,17 +36,15 @@ public class EquipmentManager {
         {
             equipmentSlots[i] = barracksManager.playerEquipment.transform.GetChild(i).gameObject;
         }
-    }
-
+    } // Constructor
     public void InventorySlotClicked(GameObject go)
     {
         for (int i = 0; i < equipmentSlots.Length; i++)
         {
-            if(equipmentSlots[i] == go){new SwapEquipment(barracksManager, true); return; }
-            new SwapEquipment(barracksManager, false);
+            if(equipmentSlots[i] == go){new SwapEquipment(barracksManager, true, go); return; }
+            new SwapEquipment(barracksManager, false, go);
         }
     }
-
     private void SelectedTwoSlotOption(GameObject go)
     {
         twoSlotChoiceInstance.ClickedInventorySlot(go);
@@ -56,7 +53,7 @@ public class EquipmentManager {
     //Properties
     public BarracksManager _BarracksManager { get { return barracksManager; } }
     public GameObject[] EquipmentSlots { get { return equipmentSlots; } }
-    public Equipment _Equipment { get { return equipment; } set { equipment = value; } }
+    public Equipment CurrentEquipment { get { return currentEquipment; } set { currentEquipment = value; } }
     public TwoSlotChoice TwoSlotChoiceInstance { get { return twoSlotChoiceInstance; } set { twoSlotChoiceInstance = value; } }
     public bool CanDuelWield { get { return canDuelWield; } }
 }

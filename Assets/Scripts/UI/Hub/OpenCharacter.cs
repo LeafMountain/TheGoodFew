@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class OpenCharacter {
@@ -17,7 +15,7 @@ public class OpenCharacter {
         equipmentManager = barracksManager._EquipmentManager;
 
       
-        //Player equipment prep
+        
         
 
         
@@ -28,27 +26,30 @@ public class OpenCharacter {
         barracksManager.InventoryDisplay.SetActive(true);
         barracksManager._InventoryUI.UpdateUI();
 
-        equipmentManager._Equipment = barracksManager.playerData.characterEquipment[characterIndex];
-
-        foreach (Item item in barracksManager.playerData.characterEquipment[characterIndex].allPieces)
-        {
-            Debug.Log(item.name);
-        }
+        //Player equipment prep
+        equipmentManager.CurrentEquipment = barracksManager.playerData.CharacterEquipmentList[characterIndex];
         UpdateEquipmentUI();
     }
 
     private void UpdateEquipmentUI()
     {
             GameObject[] equipmentSlots = equipmentManager.EquipmentSlots;
-            Equipment characterEquipment = equipmentManager._Equipment;
-        for (int i = 0; i < equipmentSlots.Length; i++)
-        {
-            Debug.Log("Add item in to equipment slot...");
+            Equipment characterEquipment = equipmentManager.CurrentEquipment;
 
-            equipmentSlots[i].GetComponent<InventorySlot>().AddItem(characterEquipment.allPieces[i]);
-           
-        }    
-        
+        if (characterEquipment != null)
+        {
+            for (int i = 0; i < equipmentSlots.Length; i++)
+            {
+                Debug.Log("Add item in to equipment slot...");
+
+                if (characterEquipment.EquipmentPieces[i] != null)
+                {
+                    equipmentSlots[i].GetComponent<InventorySlot>().AddItem(characterEquipment.EquipmentPieces[i]);
+                }
+
+            }
+        }
+        else{Debug.Log("Equipment missing for charachter " + characterIndex);}
     }
 }
     

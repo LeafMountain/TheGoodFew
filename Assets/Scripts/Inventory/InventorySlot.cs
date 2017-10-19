@@ -66,15 +66,17 @@ public class InventorySlot : MonoBehaviour
     {
         // Checking if this inventory slot is in a shop sub menu or a in the barracks sub menu.
 
-        Debug.Log("Click...");
+        Debug.Log("Clicked...");
 
         if (shopManager != null)
         {
+            Debug.Log("...a inventorySlot in a shop sub menu.");
             shopManager.ItemInQuestion = item;
             shopManager.Ask(item.itemName, item.price);
         }
         else
         {
+            Debug.Log("...a inventorySlot in the barracks sub menu.");
             barracksManager.ItemInQuestion = item;
             barracksManager.InventorySlotClicked(gameObject, item);
         }

@@ -15,28 +15,34 @@ public class SwapEquipment {
     private TwoSlotChoice twoSlotChoiceInstance;
     private bool clickedEquipmentSlot;
 
+    private Item itemInQuestion;
+    private GameObject inventorySlotOnButtonClicked;
+
     //Character details
     private bool canDuelWield;
     private UnitData.Class currentClass;
 
-
-
-    private SwapEquipment() { }
-    public SwapEquipment(BarracksManager barracksManager, bool clickedEquipmentSlot)
+    private SwapEquipment() { } //Constructor
+    public SwapEquipment(BarracksManager barracksManager, bool clickedEquipmentSlot, GameObject inventorySlot) //Constructor
     {
+        Debug.Log("Moving item...");
         this.barracksManager = barracksManager;
         equipmentManager = barracksManager._EquipmentManager;
-        equipment = equipmentManager._Equipment;
+        equipment = equipmentManager.CurrentEquipment;
         equipmentSlots = equipmentManager.EquipmentSlots;
         canDuelWield = equipmentManager.CanDuelWield;
         twoSlotChoiceInstance = equipmentManager.TwoSlotChoiceInstance;
         this.clickedEquipmentSlot = clickedEquipmentSlot;
+        itemInQuestion = barracksManager.ItemInQuestion;
+        inventorySlotOnButtonClicked = inventorySlot;
+
+        InventoryClicked(inventorySlotOnButtonClicked, itemInQuestion);
     }
     public void InventoryClicked(GameObject go, Item item)
     {
         //This method is called when the player clicks on an inventory slot that is in the barracks sub menu.
-        foreach (GameObject gameobject in equipmentSlots)
-            if (go = gameobject)
+        
+            if (clickedEquipmentSlot)
             {
                 if (twoSlotChoiceInstance == null)
                 { UnequipItem(go, item); return; }
@@ -65,16 +71,16 @@ public class SwapEquipment {
         {
             if (item.itemType == ItemType.Armor)
             {
-                equipment.allPieces[0] = item; equipmentSlots[0].GetComponent<InventorySlot>().AddItem(item);
+                equipment.EquipmentPieces[0] = item; equipmentSlots[0].GetComponent<InventorySlot>().AddItem(item);
             }
             else if (item.itemType == ItemType.OffHand)
             {
-                if (!canDuelWield) { equipment.allPieces[1] = item; equipmentSlots[1].GetComponent<InventorySlot>().AddItem(item); }
+                if (!canDuelWield) { equipment.EquipmentPieces[1] = item; equipmentSlots[1].GetComponent<InventorySlot>().AddItem(item); }
                 else { /* call two slot choice*/}
             }
             else if (item.itemType == ItemType.Weapon)
             {
-                if (!canDuelWield) { equipment.allPieces[2] = item; equipmentSlots[2].GetComponent<InventorySlot>().AddItem(item); }
+                if (!canDuelWield) { equipment.EquipmentPieces[2] = item; equipmentSlots[2].GetComponent<InventorySlot>().AddItem(item); }
                 else { /* call two slot choice*/}
             }
             else if (item.itemType == ItemType.Trinket)
@@ -83,13 +89,19 @@ public class SwapEquipment {
     }                                                                               //slots.
     private  void RemoveEquipment(Item item)
     {
-        for (int i = 0; i < equipment.allPieces.Length; i++)
-        {
-            if (item == equipment.allPieces[i])
+       
+            for (int i = 0; i < equipment.EquipmentPieces.Length; i++)
             {
-                equipment.allPieces[i] = null;
+                if (item == equipment.EquipmentPieces[i])
+                {
+                    equipment.EquipmentPieces[i] = null;
+                }
             }
-        }
+        
+    }
+    private bool IsItemSlotNull(int slotNumber)
+    {
+        return (equipment.EquipmentPieces[slotNumber] == null); 
     }
 }
 
