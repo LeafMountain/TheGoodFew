@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenuAttribute(fileName = "new Equipment", menuName = "Item")]
 public class Equipment : ScriptableObject {
 
+    [SerializeField]
     public Item body;
     public Item leftHand;
     public Item rightHand;

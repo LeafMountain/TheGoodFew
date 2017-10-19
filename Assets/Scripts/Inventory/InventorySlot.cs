@@ -73,19 +73,35 @@ public class InventorySlot : MonoBehaviour
         else
         {
             barracksManager.ItemInQuestion = item;
-            barracksManager._EquipmentManager.EquipmentSlotClicked(gameObject, item);
+            barracksManager._EquipmentManager.EquipmentClicked(gameObject, item);
         }
     }
     public void ShowItemInfo()
     {
         if (item != null)
         {
-            shopManager.informationDisplay.RecieveInformation(item);
+            if (shopManager != null)
+            {
+                shopManager.informationDisplay.RecieveInformation(item);
+            }
+            else
+            {
+                barracksManager.informationDisplay.RecieveInformation(item);
+            }
+        
         }
     }
     public void RemoveItemInfo()
     {
-        shopManager.informationDisplay.EmptyDisplay();
+        if(shopManager != null)
+        {
+            shopManager.informationDisplay.EmptyDisplay();
+        }
+        else
+        {
+            barracksManager.informationDisplay.EmptyDisplay();
+        }
+        
     }
     public void HightlightSelf(bool lit)
     {

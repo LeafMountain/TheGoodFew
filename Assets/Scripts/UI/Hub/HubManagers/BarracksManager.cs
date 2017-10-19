@@ -11,9 +11,11 @@ public class BarracksManager : MonoBehaviour {
     private EquipmentManager equipmentManager;
     private Item itemInQuestion;
 
+    public DisplayItemInformation informationDisplay;
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
     public GameObject playerEquipment;
+    public PlayerData playerData; //<< Need to put a unitdata reference for every hero.
 
     void Start()
     {
@@ -49,6 +51,11 @@ public class BarracksManager : MonoBehaviour {
     {
         //When the player clicks on a equipment slot with an item in it the item is removed and put in the players inventory. 
     }
+    public void SetCharacterEquipment(int index)
+    {
+        equipmentManager._Equipment = playerData.characterEquipment[index];
+    }
+        
 
     //Properties
     public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }

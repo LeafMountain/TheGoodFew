@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caa7ae1459e47be4b95d68e93f74f676, type: 3}
+  m_Name: AlenaEquipment
+  m_EditorClassIdentifier: 
+  body: {fileID: 11400000, guid: 126c2e5b75971fe43a52189ea98bcb9f, type: 2}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 11400000, guid: 97e66030f6521d4438d597c4b67124fb, type: 2}
+  firstTrinket: {fileID: 0}
+  secondTrinket: {fileID: 0}

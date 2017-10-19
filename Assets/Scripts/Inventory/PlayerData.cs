@@ -8,17 +8,20 @@ public class PlayerData : MonoBehaviour {
 
     private Inventory inventory;
     private int epas;
-    public CharacterEquippedItems[] equippedItems; // array has the length of six, one for each character, in alaphabetical order.
+    public Equipment[] characterEquipment;
 
     void Start()
     {
         epas = dataSource.goldCoins;
         inventory = GetComponent<Inventory>();
-        if (equippedItems == null) equippedItems = new CharacterEquippedItems[6];
+        if (characterEquipment == null) characterEquipment = new Equipment[6];
+        
     }
     
     //properties
 
     public int Epas { get { return epas; } set { epas = value; } }
     public Inventory _Inventory { get { return inventory; } set { inventory = value; } }
+    public Equipment[] CharacterEquipment { get { return characterEquipment; } set { characterEquipment = value; } }
+    
 }
