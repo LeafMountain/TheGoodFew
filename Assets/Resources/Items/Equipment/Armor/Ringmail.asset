@@ -14,7 +14,7 @@ MonoBehaviour:
   itemName: 
   price: 10
   itemType: 0
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9b85bf60a346fb34d852679e51a0e11f, type: 3}
   description: 
   developerNote: 
   showInInventory: 0

@@ -13,8 +13,8 @@ public class BarracksButton : MonoBehaviour {
 
     public void CharacterButtonCLicked()
     {
-        barracksManager.SetCharacterEquipment(transform.GetSiblingIndex());
-        barracksManager.OpenCharacter(transform.GetSiblingIndex());
+        barracksManager.OpenCharacterEquipmentMenu(transform.GetSiblingIndex());
+        
         
     }
 }
