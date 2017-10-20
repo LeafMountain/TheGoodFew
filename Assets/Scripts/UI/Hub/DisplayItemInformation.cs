@@ -58,7 +58,7 @@ public class DisplayItemInformation : MonoBehaviour {
         {
             ArmorObject armor = (ArmorObject)item;
 
-            whatClass.text = "Armour Type: " + GetArmorType(armor.armortype);
+            whatClass.text = "Armour Type: " + item.itemType.ToString();
 
             defence.text = "Physical Defence: " + armor.physicalDefence.ToString();
             resistance.text = "Resistance: " + armor.magicalDefence.ToString();
@@ -73,7 +73,7 @@ public class DisplayItemInformation : MonoBehaviour {
         {
             WeaponObject weapon = (WeaponObject)item;
 
-            whatClass.text = "Wielded by: " + GetClass(weapon.characterClass).ToString();
+            whatClass.text = "Wielded by: " + weapon.characterClass.ToString();
             atkForce.text = "Attack Force: " + weapon.minimumAtk + " - " + weapon.maximumAtk; 
         }
     }
@@ -85,22 +85,7 @@ public class DisplayItemInformation : MonoBehaviour {
         }
 
     }
-    public string GetClass(UnitData.Class type)
-    {
-        if ((int)type == 0) return "Soldier";
-        else if ((int)type == 1) return "Scout";
-        else if ((int)type == 1) return "Archer";
-        else if ((int)type == 1) return "Acolyte";
-        return "Apprentice";
-
-    }
-    public string GetArmorType(ArmorType type)
-    {
-        if ((int)type == 0) return "Light";
-        else if ((int)type == 1) return "Medium";
-        else if ((int)type == 1) return "Heavy";
-        return "Cloth";
-    }
+   
 
 
 }

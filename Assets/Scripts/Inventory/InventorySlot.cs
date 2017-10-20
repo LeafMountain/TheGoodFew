@@ -56,16 +56,7 @@ public class InventorySlot : MonoBehaviour
     public void InventorySlotClicked()
     {
         shopManager.ItemInQuestion = item;
-
-        if (shopManager.Buying)
-        {
-            shopManager.Ask(item.itemName, item.price);
-        }
-        else
-        {
-            shopManager.Ask(item.itemName, item.price/2);
-        }
-        
+        shopManager.Ask(item.itemName, item.price);
     }
    
     public void ShowItemInfo()

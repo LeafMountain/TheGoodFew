@@ -13,7 +13,8 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         inventory = GetComponentInChildren<Inventory>();
-        inventory.onItemChangedCallback += UpdateUI;
+
+        if(inventory != null) inventory.onItemChangedCallback += UpdateUI;
     }
 
     // Check to see if we should open/close the inventory
@@ -50,5 +51,4 @@ public class InventoryUI : MonoBehaviour
     }
     //Properties
     public Inventory Inventory { set { inventory = value; } }
-
 }
