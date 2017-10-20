@@ -11,16 +11,16 @@ public class GridMover : CombatElement {
 
     public int moveRange;
     private Vector3 destination;
-    public Vector3 Destination {
-        get { return new Vector3 (destination.x, transform.position.y, destination.z); }
-        private set {
-            agent.SetDestination (value);
-            StopAllCoroutines();
-            StartCoroutine ("CorrectPosition"); 
-            StartCoroutine ("CheckIfReachedDestination");           
-            destination = value;
-        }
-    }
+    // public Vector3 Destination {
+    //     get { return new Vector3 (destination.x, transform.position.y, destination.z); }
+    //     private set {
+    //         agent.SetDestination (value);
+    //         StopAllCoroutines();
+    //         StartCoroutine ("CorrectPosition"); 
+    //         StartCoroutine ("CheckIfReachedDestination");           
+    //         destination = value;
+    //     }
+    // }
 
     [TooltipAttribute ("The time until the object is forced to the destinations position")] public float timeoutTime = 5;
 
@@ -29,16 +29,15 @@ public class GridMover : CombatElement {
     private float lastVelocity;
     private float velocity { get { return (transform.position - lastPosition).magnitude / Time.deltaTime; } }
 
-    public AI ai;
-    public bool AtDestination { get { return (Vector3.Distance (transform.position, Destination) < 0.1f + agent.stoppingDistance); } }
+    public bool AtDestination { get { return (Vector3.Distance (transform.position, destination) < 0.1f + agent.stoppingDistance); } }
 
     private Grid walkGrid;
 
-    private TileModel currentCell;
+    // private TileModel currentCell;
 
     private void Awake () {
         agent = GetComponent<NavMeshAgent> ();
-        Destination = transform.position;
+        destination = transform.position;
         ReachedDestination.RemoveAllListeners();
     }
 
@@ -57,16 +56,24 @@ public class GridMover : CombatElement {
     }
 
     private void OnUnitActivated(){
-        ShowMoveableArea();
+        // ShowMoveableArea(App.Controller.PathfindingController.GetArea2(currentCell, moveRange));
     }
 
     private void OnUnitInactivated(){
-        Reset();
+        RemoveMoveableArea();
+    }
+
+    private void SetDestination(Vector3 destination){
+        agent.SetDestination (destination);
+        StopAllCoroutines();
+        StartCoroutine ("CorrectPosition"); 
+        StartCoroutine ("CheckIfReachedDestination");           
+        this.destination = destination;
     }
 
     //Move to destination
     public void Move (Vector3 destination) {
-        this.Destination = destination;
+        SetDestination(destination);
     }
 
     //Updates the velocity of the object
@@ -78,13 +85,14 @@ public class GridMover : CombatElement {
         }
     }
 
-    private void ShowMoveableArea(){
+    private void ShowMoveableArea(List<TileModel> moveableTiles){
         // currentCell = boardManager.GetCell(new Vector2(transform.position.x, transform.position.z));
         // walkGrid = new Grid(1, Color.red, App.Controller.PathfindingController.GetArea2(currentCell, moveRange));
-        // walkGrid.UpdateGrid();
+        walkGrid = new Grid(1, Color.red, moveableTiles);
+        walkGrid.UpdateGrid();
     }
 
-    private void Reset(){
+    private void RemoveMoveableArea(){
         if(walkGrid != null){
             Destroy(walkGrid.gameObject);
             walkGrid = null;
@@ -97,7 +105,7 @@ public class GridMover : CombatElement {
         yield return new WaitForSeconds (timeoutTime);
 
         if (!AtDestination) {
-            transform.position = Destination;
+            transform.position = destination;
         }
     }
 

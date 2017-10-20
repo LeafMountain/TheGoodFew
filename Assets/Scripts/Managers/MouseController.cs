@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MouseController : MonoBehaviour {
+public class MouseController2 : MonoBehaviour {
 
     private BattleManager battleManager;
 

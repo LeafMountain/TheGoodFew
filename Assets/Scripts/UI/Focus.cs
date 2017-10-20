@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Focus : MonoBehaviour {
 
-    private MouseController mouse;
+    private MouseController2 mouse;
     private ObjectInformation focusedUnit;
 
     private void Start () {
-        mouse = GetComponent<MouseController>();
+        mouse = GetComponent<MouseController2>();
     }
 
     public event EventHandler<FocusUpdate> FocusUpdated;

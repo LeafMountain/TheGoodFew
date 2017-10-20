@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class BoardView : CombatElement {
 
-    private void Start(){
-        SetSize();
+    public int GetWidth(){
+        return Mathf.FloorToInt(GetComponent<Renderer>().bounds.size.x);
     }
 
-    private void SetSize(){
-        Renderer renderer = GetComponent<Renderer>();
-        int width = (int)renderer.bounds.size.x;
-        int height = (int)renderer.bounds.size.z;
-        App.Controller.Board.Setup.SetupBoard(width, height);
+    public int GetHeight(){
+        return Mathf.FloorToInt(GetComponent<Renderer>().bounds.size.z);
     }
 	
 }

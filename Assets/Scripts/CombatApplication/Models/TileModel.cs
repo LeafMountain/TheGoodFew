@@ -32,6 +32,7 @@ public class TileModel {
 
     public void SetUnit(UnitModel unit){
         Unit = unit;
+        Type = CellType.blocked;
     }
 
     public void RemoveOccupant(){

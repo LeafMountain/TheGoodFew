@@ -13,18 +13,18 @@ public class BoardView_Debug : CombatElement {
 
 
 	void Start () {
-		// width = App.Model.Board.Width;
-		// height = App.Model.Board.Height;
+		width = App.Model.Board.Width;
+		height = App.Model.Board.Height;
 
 		GetComponent<GridLayoutGroup>().constraintCount = width;
 		CreateTiles();
 
-		App.Controller.Board.Setup.SetupBoard(width, height);
+		// App.Controller.Board.Setup.SetupBoard(width, height);
 
-		AddObstacles();
-		AddUnits();
+		// AddObstacles();
+		// AddUnits();
 		PaintBoard();
-		Pathfind(App.Controller.TurnController.GetCurrentUnit());
+		// Pathfind(App.Controller.TurnController.GetCurrentUnit());
 	}
 
 	private void CreateTiles(){
@@ -32,10 +32,11 @@ public class BoardView_Debug : CombatElement {
 
 		for (int x = 0; x < width; x++)
 		{
-			for (int y = height - 1; y >= 0; y--)
+			for (int y = 0; y < height; y++)
 			{
 				GameObject _tile = Instantiate(tile, transform);
 				images[x, y] = _tile.GetComponent<Image>();
+				_tile.GetComponent<TileButton_Debug>().SetTile(App.Controller.Board.GetCell(new Vector2(x, y)));
 			}
 		}
 	}
@@ -48,30 +49,6 @@ public class BoardView_Debug : CombatElement {
 				}
 			}
 		}		
-	}
-
-	private void AddUnits(){
-		List<Vector2> positions = new List<Vector2>();
-		positions.Add(new Vector2(width / 2, height / 2));
-		positions.Add(new Vector2(width - 1, height - 1));
-		
-		// positions.Add(new Vector2(2, 3));
-		// positions.Add(new Vector2(2, 4));
-		// positions.Add(new Vector2(2, 5));
-		
-		// positions.Add(new Vector2(8, 2));
-		// positions.Add(new Vector2(8, 3));
-		// positions.Add(new Vector2(8, 4));
-		// positions.Add(new Vector2(8, 5));
-
-		for (int i = 0; i < positions.Count; i++)
-		{
-			TileModel tile = App.Controller.Board.GetCell(positions[i]);			
-			UnitModel unit = new UnitModel(null, tile);
-			tile.SetUnit(unit);
-			App.Controller.TurnController.AddUnit(unit);
-			tile.ChangeType(TileModel.CellType.blocked);
-		}
 	}
 
 	private void PaintBoard(){
@@ -95,21 +72,9 @@ public class BoardView_Debug : CombatElement {
 	private UnitModel unit;
 
 	private void Pathfind(UnitModel unit){
-		// tiles = App.Controller.PathfindingController.GetArea2(unit.CurrentTile, 6);
 		tiles = App.Controller.pathfindingController1.GetWalkableTiles(unit.CurrentTile, 6);
 		this.unit = unit;
 		StartCoroutine("Fade");
-		// this.images[(int)unit.CurrentTile.Position.x, (int)unit.CurrentTile.Position.y + 1].color = Color.green;
-
-		// for (int i = 0; i < tiles.Count; i++)
-		// {
-		// 	if(tiles[i] != unit.CurrentTile){
-		// 		this.images[(int)tiles[i].Position.x, (int)tiles[i].Position.y].color = Color.green;
-		// 	}
-		// 	else{
-		// 		this.images[(int)tiles[i].Position.x, (int)tiles[i].Position.y].color = Color.magenta;				
-		// 	}
-		// }
 	}
 
 	IEnumerator Fade() {

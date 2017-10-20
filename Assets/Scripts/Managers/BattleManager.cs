@@ -10,7 +10,7 @@ public class BattleManager : MonoBehaviour {
     // public ClassDataBase classDatabase { get; private set; }
 
     public Board board { get; private set; }
-    public MouseController mouse { get; private set; }
+    public MouseController2 mouse { get; private set; }
     public CameraControls cameraControls { get; private set; }
 
     // public TurnManager turnManager { get; private set; }
@@ -37,7 +37,7 @@ public class BattleManager : MonoBehaviour {
 
     private void Start () {
         //Initialize values
-        mouse = GetComponent<MouseController> ();
+        mouse = GetComponent<MouseController2> ();
         // abilitySystem = GameObject.FindObjectOfType (typeof (AbilityManager)) as AbilityManager;
         // turnManager = GetComponent<TurnManager>();
         

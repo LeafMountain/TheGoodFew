@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class BoardSetupController : CombatElement {
 
-	public void SetupBoard(int width, int height){
+    private void Awake(){
+        SetupBoard(App.View.BoardView.GetWidth(), App.View.BoardView.GetHeight());
+    }
+
+	private void SetupBoard(int width, int height){
         App.Model.Board.SetMapSize(width, height);
 
         CreateBoardCells();
         SetNeighbours();
 	}
+
+    private void Start(){
+        FindObstacles();
+    }
 
 	private void CreateBoardCells(){
         for (int x = 0; x < App.Model.Board.Width; x++){
@@ -45,6 +53,20 @@ public class BoardSetupController : CombatElement {
                 App.Model.Board.Tiles[x, y].SetNeighbors(neighbors);
             }
         }
+	}
+
+    private void FindObstacles() {
+		GridOccupant[] occupants = (GridOccupant[])GameObject.FindObjectsOfType(typeof(GridOccupant));
+
+		for (int i = 0; i < occupants.Length; i++){
+			// App.Model.TurnModel.AddUnit(new UnitModel(null, occupants[i], App.Controller.Board.GetCell(new Vector2(occupants[i].transform.position.x, occupants[i].transform.position.z))));
+
+            for (int j = 0; j < occupants[i].Positions().Count; j++) {
+                TileModel tile = App.Controller.Board.GetCell(new Vector2(occupants[i].Positions()[j].x, (occupants[i].Positions()[j].z)));
+                tile.ChangeType(TileModel.CellType.blocked);
+                Debug.Log(App.Model.Board.Tiles.Length);
+            }
+		}
 	}
 	
 }

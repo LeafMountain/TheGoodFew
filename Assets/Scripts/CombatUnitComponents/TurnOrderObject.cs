@@ -40,7 +40,7 @@ public class TurnOrderObject : MonoBehaviour {
 	public event UnitEvent UnitActivated;
 	public event UnitEvent UnitInactivated;
 	public event UnitEvent NewTurn;
-
+	
 	private void OnUnitActivated(TurnOrderObject currentUnit){
 		if(currentUnit == this && UnitActivated != null){
 			UnitActivated.Invoke();
