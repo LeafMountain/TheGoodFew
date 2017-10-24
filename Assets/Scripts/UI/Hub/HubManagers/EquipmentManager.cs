@@ -40,22 +40,25 @@ public class EquipmentManager {
     public void InventorySlotClicked(GameObject go)
     {
         bool clickedEquipmentSlot = false;
-
+        
         for (int i = 0; i < equipmentSlots.Length; i++)
         {
             if(equipmentSlots[i] == go){ clickedEquipmentSlot = true; }
         }
         if (clickedEquipmentSlot)
         {
-            Debug.Log("You clicked a EquipmentSlot");
+            Debug.Log("You clicked an EquipmentSlot");
 
             new UnequipItem(go, barracksManager.ItemInQuestion, this);
         }
         else
         {
-            Debug.Log("You clicked a inventory slot");
-
-            new EquipItem(barracksManager.ItemInQuestion, go, this);
+            Debug.Log("You clicked an inventory slot");
+            if (equipmentSlots[(int)(EquipmentPart)barracksManager.ItemInQuestion.itemType] != null)
+            {
+               //Behöver göra en class som tar reda på vilken equipmentslot som ska tömmas.
+            }
+                new EquipItem(barracksManager.ItemInQuestion, go, this);
         }
     }
     private void SelectedTwoSlotOption(GameObject go)

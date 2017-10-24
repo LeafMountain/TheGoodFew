@@ -35,10 +35,13 @@ public class InventorySlot : MonoBehaviour
     // Add item to the slot
     public void AddItem(Item newItem)
     {
-        item = newItem;
+        if (newItem != null)
+        {
+            item = newItem;
 
-        icon.sprite = item.icon;
-        icon.enabled = true;
+            icon.sprite = item.icon;
+            icon.enabled = true;
+        }
        
     }
 

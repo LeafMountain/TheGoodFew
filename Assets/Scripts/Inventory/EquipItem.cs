@@ -29,8 +29,9 @@ public class EquipItem
 
     private void Equip(GameObject go, Item item)
     {
-        barracksManager.playerInventory.Remove(item);
-        {
+        equipmentManager._BarracksManager.playerInventory.Remove(item);
+
+        
             if (item.itemType == ItemType.Armor)
             {
                 equipment.EquipmentPieces[0] = item; equipmentSlots[0].GetComponent<InventorySlot>().AddItem(item);
@@ -47,6 +48,8 @@ public class EquipItem
             }
             else if (item.itemType == ItemType.Trinket)
             { twoSlotChoiceInstance = new TwoSlotChoice(equipmentManager, item); } // < uses <TwoSlotChoice> cause a trinket 
-        }                                                                           //can be placed in two different inventory 
-    }                                                                               //slot.
+                                                                                   //can be placed in two different inventory 
+                                                                                    //slot.
+        
+    }                                                                              
 }

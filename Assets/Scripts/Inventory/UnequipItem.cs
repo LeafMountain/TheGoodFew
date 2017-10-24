@@ -10,17 +10,21 @@ public class UnequipItem {
 
     public UnequipItem(GameObject go, Item item, EquipmentManager equipmentManager)
     {
+        Debug.Log("UnequipItem constructor 1 used.");
         this.equipmentManager = equipmentManager;
         equipment = equipmentManager.CurrentEquipment;
         equipmentSlots = equipmentManager.EquipmentSlots;
 
+        Unequip(go, item);
     }
+   
     private void Unequip(GameObject go, Item item)
     {
         if (go.GetComponent<InventorySlot>()._Item != null)
         {
             Debug.Log("Unequiping " + item.name);
 
+            
             go.GetComponent<InventorySlot>().RemoveItemFromInventory(); //< Remove from the Inventory Slot.
             equipmentManager._BarracksManager.playerInventory.Add(item); //< Add the removed item to the player inventory.
             RemoveEquipment(go, item); //< Remove the item from the Equipment class.
