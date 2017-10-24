@@ -16,6 +16,7 @@ public class BarracksManager : MonoBehaviour {
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
     public GameObject playerEquipment;
     public PlayerData playerData; //<< Need to put a unitdata reference for every hero.
+    
 
     void Start()
     {

@@ -49,7 +49,7 @@ public class OpenCharacter {
 
             }
         }
-        else{Debug.Log("Equipment missing for charachter " + characterIndex);}
+        else{Debug.Log("Equipment missing for charachter " + (UnitData.Class)characterIndex);}
     }
 }
     
