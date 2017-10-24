@@ -38,6 +38,8 @@ public class BarracksManager : MonoBehaviour {
     {
         itemInQuestion = item;
         equipmentManager.InventorySlotClicked(go);
+        _InventoryUI.UpdateUI();
+        equipmentManager.UpdateEquipmentUI();
     }
 
     

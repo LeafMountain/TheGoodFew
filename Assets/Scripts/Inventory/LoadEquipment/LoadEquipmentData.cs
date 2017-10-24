@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class LoadEquipmentData
+﻿public class LoadEquipmentData
 {
 
     private bool devMode;
@@ -13,6 +9,15 @@ public class LoadEquipmentData
     {
         this.devMode = devMode;
         this.playerData = playerData;
+
+        if(devMode)
+        {
+            LoadDeveloperEquipment();
+        }
+        else
+        {
+            LoadSaveFileEquipment();
+        }
     }
     private void LoadDeveloperEquipment()
     {

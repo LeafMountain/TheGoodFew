@@ -119,4 +119,6 @@ public class InventorySlot : MonoBehaviour
             frame.color = normalColor;
         }
     }
+    //Properties
+    public Item _Item { get { return item; } }
 }

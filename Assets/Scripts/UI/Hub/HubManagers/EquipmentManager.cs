@@ -25,7 +25,7 @@ public class EquipmentManager {
     private bool canDuelWield; //<< Future ability.
     private UnitData currentCharacter; //< the current character in the barracks. 
 
-    private TwoSlotChoice twoSlotChoiceInstance;
+    private TwoSlotChoice twoSlotChoiceInstance; 
 
     private EquipmentManager() { }//Constructor
     public EquipmentManager(BarracksManager barracksManager)
@@ -39,17 +39,45 @@ public class EquipmentManager {
     } // Constructor
     public void InventorySlotClicked(GameObject go)
     {
+        bool clickedEquipmentSlot = false;
+
         for (int i = 0; i < equipmentSlots.Length; i++)
         {
-            if(equipmentSlots[i] == go){new SwapEquipment(barracksManager, true, go); return; }
-            new SwapEquipment(barracksManager, false, go);
+            if(equipmentSlots[i] == go){ clickedEquipmentSlot = true; }
+        }
+        if (clickedEquipmentSlot)
+        {
+            Debug.Log("You clicked a EquipmentSlot");
+
+            new UnequipItem(go, barracksManager.ItemInQuestion, this);
+        }
+        else
+        {
+            Debug.Log("You clicked a inventory slot");
+
+            new EquipItem(barracksManager.ItemInQuestion, go, this);
         }
     }
     private void SelectedTwoSlotOption(GameObject go)
     {
         twoSlotChoiceInstance.ClickedInventorySlot(go);
     }
-   
+    public void UpdateEquipmentUI()
+    {
+        if (currentEquipment != null)
+        {
+            for (int i = 0; i < equipmentSlots.Length; i++)
+            {
+                Debug.Log("Add item in to equipment slot...");
+
+                if (currentEquipment.EquipmentPieces[i] != null)
+                {
+                    equipmentSlots[i].GetComponent<InventorySlot>().AddItem(currentEquipment.EquipmentPieces[i]);
+                }
+
+            }
+        }
+    }
     //Properties
     public BarracksManager _BarracksManager { get { return barracksManager; } }
     public GameObject[] EquipmentSlots { get { return equipmentSlots; } }

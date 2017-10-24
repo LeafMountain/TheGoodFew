@@ -33,23 +33,7 @@ public class OpenCharacter {
 
     private void UpdateEquipmentUI()
     {
-            GameObject[] equipmentSlots = equipmentManager.EquipmentSlots;
-            Equipment characterEquipment = equipmentManager.CurrentEquipment;
-
-        if (characterEquipment != null)
-        {
-            for (int i = 0; i < equipmentSlots.Length; i++)
-            {
-                Debug.Log("Add item in to equipment slot...");
-
-                if (characterEquipment.EquipmentPieces[i] != null)
-                {
-                    equipmentSlots[i].GetComponent<InventorySlot>().AddItem(characterEquipment.EquipmentPieces[i]);
-                }
-
-            }
-        }
-        else{Debug.Log("Equipment missing for charachter " + (UnitData.Class)characterIndex);}
+        equipmentManager.UpdateEquipmentUI();
     }
 }
     

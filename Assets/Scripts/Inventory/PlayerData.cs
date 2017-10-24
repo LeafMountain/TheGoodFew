@@ -22,6 +22,8 @@ public class PlayerData : MonoBehaviour {
         characterEquipmentList = new Equipment[6];
         if (devEquipmentData == null) devEquipmentData = new DevEquipment[6];
         new LoadEquipmentData(devMode, this);
+
+        Debug.Log("PlayerDataBase Start() is DONE");
     }
 
 
