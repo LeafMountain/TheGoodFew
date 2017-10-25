@@ -8,30 +8,15 @@ public class TurnOrderObject : MonoBehaviour {
 	public enum Allegiance { Enemy, Friendly }
 	public Allegiance allegiance;
 
-<<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
-<<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
-	private TurnManager unitManager;
-	private TurnManager UnitManager { 
-=======
-	private UnitManager unitManager;
-	private UnitManager UnitManager { 
->>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit:Assets/Scripts/Board/Components/TurnOrderObject.cs
+	private TurnManager turnManager;
+	private TurnManager TurnManager { 
 		get {
-			if(unitManager == null){
-				unitManager = UnitManager.GetInstance();
+			if(turnManager == null){
+				turnManager = TurnManager.GetInstance();
 			}
-			return unitManager;
+			return turnManager;
 		}
 	}
-
-<<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
-	public delegate void UnitEvent ();
-
-	public event UnitEvent TurnStarted;
-
-
-=======
-	private TurnManager turnManager;
 
 	private void Start(){
 		Health health = GetComponent<Health>();
@@ -43,9 +28,6 @@ public class TurnOrderObject : MonoBehaviour {
 	}
 
 	//If unit dies, disables the gameobject
->>>>>>> parent of e6a0ca8... Merge pull request #3 from LeafMountain/TGF-101-TurnStateMachine:Assets/Scripts/Board/Components/TurnOrderObject.cs
-=======
->>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit:Assets/Scripts/Board/Components/TurnOrderObject.cs
 	private void OnDead(){
 		gameObject.SetActive(false);
 	}

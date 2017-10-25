@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class TurnStateMachine : StateMachine {
 
+    public TurnManager UnitManager { get; set; }
 
-<<<<<<< HEAD
-    public UnitManager UnitManager { get; set; }
-
-    public void ChangeState(ITurnState newState) {
+    public void ChangeState(StateMachineState newState) {
         if(currentState != null){
             currentState.ExitState();
         }
@@ -23,6 +21,4 @@ public class TurnStateMachine : StateMachine {
     private void Update() {
         currentState.Update(); 
     }
-=======
->>>>>>> parent of c11bb99... TurnStateMachine update and Unit Manager
 }

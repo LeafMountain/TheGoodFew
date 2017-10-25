@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnStatePrepare : ITurnState {
+public class TurnStatePrepare : StateMachineState {
 
 	private TurnStateMachine turnStateMachine;
 
@@ -11,7 +11,7 @@ public class TurnStatePrepare : ITurnState {
 	}
 
 	public void EnterState(){
-		turnStateMachine.UnitManager = UnitManager.GetInstance();
+		turnStateMachine.UnitManager = TurnManager.GetInstance();
 	}
 
 	public void ExitState(){
