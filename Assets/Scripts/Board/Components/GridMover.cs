@@ -34,6 +34,8 @@ public class GridMover : MonoBehaviour {
     public AI ai;
     public bool AtDestination { get { return (Vector3.Distance (transform.position, Destination) < 0.1f + agent.stoppingDistance); } }
 
+    private Pathfinder pathfinder = new Pathfinder();
+
     private void Awake () {
         agent = GetComponent<NavMeshAgent> ();
         Destination = transform.position;

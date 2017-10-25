@@ -14,7 +14,9 @@ public class UnitStateMove : StateMachineState {
 
     public override void EnterState () {
         stateMachine.csm.battleCont.board.interaction.MarkTiles (stateMachine.unit.GetComponent<GridOccupant> ().CurrentTile, (int) stateMachine.unit.GetComponent<ObjectInformation> ().UnitData.Movement, Color.red);
-        stateMachine.unit.GetComponent<GridMover> ().ReachedDestination.AddListener (OnReachedDestination);        
+
+        GridMover mover = stateMachine.unit.GetComponent<GridMover> ();
+        mover.ReachedDestination.AddListener (OnReachedDestination);
     }
 
     public override void ExitState () {

@@ -21,6 +21,11 @@ public class Tile {
     }
     public Vector2 BoardPosition { get; private set; }
     public Vector3 WorldPosition { get; private set; }
+    public int MoveCost { get{ return moveCost; } }
+    public int moveCost;
+
+    private Tile[] neighbors = new Tile[4];
+    public Tile[] Neighbors { get { return neighbors; } }
 
     //Initialize board position, world position and status
     public Tile (Vector2 boardPosition, Vector3 worldPosition, Status Status = Status.open) {
@@ -43,5 +48,9 @@ public class Tile {
         }
 
         return null;
+    }
+
+    public void SetNeightbors(Tile[] neighbors){
+        this.neighbors = neighbors;
     }
 }

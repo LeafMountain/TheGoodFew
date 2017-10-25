@@ -16,8 +16,8 @@ public class MouseController : MonoBehaviour {
         battleManager = BattleManager.GetInstance();
 
         //Create grid for mouse marker
-        List<GridCell> gridCell = new List<GridCell> ();
-        gridCell.Add (new GridCell (Vector2.zero, Grid.CellType.neutral));
+        List<Tile> gridCell = new List<Tile> ();
+        gridCell.Add (battleManager.board.GetTile(Vector2.zero));
         marker = new Grid (1, Color.blue, gridCell);
     }
 

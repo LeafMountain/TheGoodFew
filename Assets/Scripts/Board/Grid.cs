@@ -11,10 +11,10 @@ public class Grid {
     private Material[] materials = new Material[2];
     private Color specialColor;
 
-    private List<GridCell> cells = new List<GridCell>();
+    private List<Tile> cells = new List<Tile>();
 
     //Creates a grid with different sub materials
-    public Grid (float cellSize, Color specialColor, List<GridCell> cells) {
+    public Grid (float cellSize, Color specialColor, List<Tile> cells) {
         this.cells = cells;
         this.specialColor = specialColor;
 
@@ -74,12 +74,12 @@ public class Grid {
 
         //Sort the types into different lists
         for (int i = 0; i < cells.Count; i++) {
-            if (cells[i].Type == CellType.invisible)
-                meshesInvisible.Add(cells[i].Position);
-            else if (cells[i].Type == CellType.neutral)
-                meshesNeutral.Add(cells[i].Position);
-            else if (cells[i].Type == CellType.special)
-                meshesSpecial.Add(cells[i].Position);
+            if (cells[i].CurrentStatus == Tile.Status.occupied)
+                meshesInvisible.Add(cells[i].BoardPosition);
+            else if (cells[i].CurrentStatus == Tile.Status.open)
+                meshesNeutral.Add(cells[i].BoardPosition);
+            else if (cells[i].CurrentStatus == Tile.Status.blocked)
+                meshesSpecial.Add(cells[i].BoardPosition);
         }
 
         //Combine the the meshes

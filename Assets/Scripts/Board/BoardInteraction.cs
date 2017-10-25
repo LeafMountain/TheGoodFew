@@ -21,29 +21,29 @@ public class BoardInteraction {
 
         markedTiles = FindUsableTiles (tiles, Tile.Status.open);
 
-        grid = new Grid (1, specialColor, ConvertToCellType (tiles, rootTile));
-        grid.gameObject.transform.position = rootTile.WorldPosition;
-        grid.UpdateGrid ();
+        // grid = new Grid (1, specialColor, ConvertToCellType (tiles, rootTile));
+        // grid.gameObject.transform.position = rootTile.WorldPosition;
+        // grid.UpdateGrid ();
 
         return markedTiles;
     }
 
     //Converts a list of tiles to a GridCell list
-    public List<GridCell> ConvertToCellType (List<Tile> tiles, Tile rootTile) {
-        List<GridCell> cells = new List<GridCell> ();
+    // public List<Tile> ConvertToCellType (List<Tile> tiles, Tile rootTile) {
+    //     List<Tile> cells = new List<Tile> ();
 
-        for (int i = 0; i < tiles.Count; i++) {
-            if (tiles[i].CurrentStatus == Tile.Status.open) {
-                cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.neutral));
-            } else if (tiles[i].CurrentStatus == Tile.Status.occupied) {
-                cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.special));
-            } else if (!board.WithinBounds (tiles[i].BoardPosition)) {
-                cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.invisible));
-            }
-        }
+    //     for (int i = 0; i < tiles.Count; i++) {
+    //         if (tiles[i].CurrentStatus == Tile.Status.open) {
+    //             cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.neutral));
+    //         } else if (tiles[i].CurrentStatus == Tile.Status.occupied) {
+    //             cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.special));
+    //         } else if (!board.WithinBounds (tiles[i].BoardPosition)) {
+    //             cells.Add (new GridCell (tiles[i].BoardPosition - rootTile.BoardPosition, Grid.CellType.invisible));
+    //         }
+    //     }
 
-        return cells;
-    }
+    //     return cells;
+    // }
 
     //Destroys the grid and makes the grid variable empty
     public void DeMarkTiles () {
