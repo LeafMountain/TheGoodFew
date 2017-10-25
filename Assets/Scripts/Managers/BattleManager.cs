@@ -13,12 +13,12 @@ public class BattleManager : MonoBehaviour {
     public MouseController mouse { get; private set; }
     public CameraControls cameraControls { get; private set; }
 
-    // public TurnManager turnManager { get; private set; }
-    // public AbilityManager abilitySystem { get; private set; }
+    public TurnManager turnManager { get; private set; }
+    public AbilityManager abilitySystem { get; private set; }
 
-    // public CombatStateMachine combatStateMachine { get; private set; }
+    public CombatStateMachine combatStateMachine { get; private set; }
     public GlobalStateMachine GlobalStateMachine { get; private set; }
-    // public AIHelper aiHelper;
+    public AIHelper aiHelper;
 
     private void Awake () {
         battleManager = this;
@@ -28,7 +28,7 @@ public class BattleManager : MonoBehaviour {
         // classDatabase = new ClassDataBase ();
         board = GameObject.FindObjectOfType (typeof (Board)) as Board;
         cameraControls = GameObject.FindObjectOfType (typeof (CameraControls)) as CameraControls;
-        // aiHelper = new AIHelper ();
+        aiHelper = new AIHelper ();
     }
 
     public static BattleManager GetInstance () {
@@ -38,13 +38,13 @@ public class BattleManager : MonoBehaviour {
     private void Start () {
         //Initialize values
         mouse = GetComponent<MouseController> ();
-        // abilitySystem = GameObject.FindObjectOfType (typeof (AbilityManager)) as AbilityManager;
-        // turnManager = GetComponent<TurnManager>();
+        abilitySystem = GameObject.FindObjectOfType (typeof (AbilityManager)) as AbilityManager;
+        turnManager = GetComponent<TurnManager>();
         
 
         GlobalStateMachine = GameObject.FindObjectOfType (typeof (GlobalStateMachine)) as GlobalStateMachine;
 
-        // combatStateMachine = GetComponent<CombatStateMachine> ();
+        combatStateMachine = GetComponent<CombatStateMachine> ();
     }
 
     private void OnDisable(){
