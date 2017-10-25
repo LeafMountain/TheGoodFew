@@ -4070,7 +4070,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825481469571504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d2f7f6d947779a48a692a9128fde4b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b3c8cf95b0aa8749a3d6ee6155425b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114118108887387134
@@ -4091,6 +4091,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114127552141138300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4773,6 +4774,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114212875840888418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5802,6 +5804,7 @@ MonoBehaviour:
   m_PreferredHeight: 10
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114346526747908746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6748,6 +6751,7 @@ MonoBehaviour:
   m_PreferredHeight: 10
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114453585498045036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7337,6 +7341,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114550386683621648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9243,6 +9248,7 @@ MonoBehaviour:
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114852495773836564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9449,6 +9455,7 @@ MonoBehaviour:
   m_PreferredHeight: 10
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114885000071748232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9943,6 +9950,7 @@ MonoBehaviour:
   m_PreferredHeight: 10
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114975424589551650
 MonoBehaviour:
   m_ObjectHideFlags: 1
