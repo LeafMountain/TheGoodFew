@@ -1,11 +1,11 @@
-﻿using System.Collections; 
-using System.Collections.Generic; 
-using UnityEngine; 
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class TurnStateMachine:MonoBehaviour {
+public class TurnStateMachine : StateMachine {
 
-    private ITurnState currentState;
 
+<<<<<<< HEAD
     public UnitManager UnitManager { get; set; }
 
     public void ChangeState(ITurnState newState) {
@@ -23,4 +23,6 @@ public class TurnStateMachine:MonoBehaviour {
     private void Update() {
         currentState.Update(); 
     }
+=======
+>>>>>>> parent of c11bb99... TurnStateMachine update and Unit Manager
 }

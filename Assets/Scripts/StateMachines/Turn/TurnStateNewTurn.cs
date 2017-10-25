@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnStateNewTurn : ITurnState {
+public class TurnStateNewTurn : StateMachineState {
 
-	private TurnStateMachine turnStateMachine;
-
-	public TurnStateNewTurn(TurnStateMachine turnStateMachine){
-		this.turnStateMachine = turnStateMachine;
+	public override void EnterState () {
+		
 	}
 
-	public void EnterState(){
-	}
-
+<<<<<<< HEAD
 	public void ExitState(){
 		TurnOrderObject currentUnit = turnStateMachine.UnitManager.CurrentUnit;
 		turnStateMachine.UnitManager.AddUnit(currentUnit);
@@ -24,5 +20,14 @@ public class TurnStateNewTurn : ITurnState {
 		if(Input.GetKeyDown(KeyCode.Space)){
 			turnStateMachine.ChangeState(new TurnStateNewTurn(turnStateMachine));
 		}
+=======
+	public override void ExitState(){
+		
 	}
+	
+	public override void Update () {
+		
+>>>>>>> parent of c11bb99... TurnStateMachine update and Unit Manager
+	}
+	
 }
