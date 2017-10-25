@@ -5,19 +5,17 @@ using UnityEngine;
 public class TurnStateNewTurn : ITurnState {
 
 	private TurnStateMachine turnStateMachine;
-	private TurnOrderObject currentUnit;
 
 	public TurnStateNewTurn(TurnStateMachine turnStateMachine){
 		this.turnStateMachine = turnStateMachine;
 	}
 
 	public void EnterState(){
-
 	}
 
 	public void ExitState(){
-		currentUnit = turnStateMachine.TurnManager.CurrentUnit;
-		turnStateMachine.TurnManager.AddUnit(currentUnit);
+		TurnOrderObject currentUnit = turnStateMachine.UnitManager.CurrentUnit;
+		turnStateMachine.UnitManager.AddUnit(currentUnit);
 	}
 
 	public void Update(){
@@ -26,9 +24,5 @@ public class TurnStateNewTurn : ITurnState {
 		if(Input.GetKeyDown(KeyCode.Space)){
 			turnStateMachine.ChangeState(new TurnStateNewTurn(turnStateMachine));
 		}
-	}
-
-	private void FocusCamera(){
-		CameraControls.GetInstance().Move(currentUnit.transform.position);
 	}
 }

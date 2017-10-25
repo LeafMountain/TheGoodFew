@@ -9,16 +9,22 @@ public class TurnOrderObject : MonoBehaviour {
 	public Allegiance allegiance;
 
 <<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
+<<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
 	private TurnManager unitManager;
 	private TurnManager UnitManager { 
+=======
+	private UnitManager unitManager;
+	private UnitManager UnitManager { 
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit:Assets/Scripts/Board/Components/TurnOrderObject.cs
 		get {
 			if(unitManager == null){
-				unitManager = TurnManager.GetInstance();
+				unitManager = UnitManager.GetInstance();
 			}
 			return unitManager;
 		}
 	}
 
+<<<<<<< HEAD:Assets/Scripts/CombatUnitComponents/TurnOrderObject.cs
 	public delegate void UnitEvent ();
 
 	public event UnitEvent TurnStarted;
@@ -38,6 +44,8 @@ public class TurnOrderObject : MonoBehaviour {
 
 	//If unit dies, disables the gameobject
 >>>>>>> parent of e6a0ca8... Merge pull request #3 from LeafMountain/TGF-101-TurnStateMachine:Assets/Scripts/Board/Components/TurnOrderObject.cs
+=======
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit:Assets/Scripts/Board/Components/TurnOrderObject.cs
 	private void OnDead(){
 		gameObject.SetActive(false);
 	}
@@ -55,12 +63,6 @@ public class TurnOrderObject : MonoBehaviour {
 	private void OnDisable(){
 		if(turnManager != null){
 			turnManager.RemoveUnit(this);
-		}
-	}
-
-	public void StartTurn(){
-		if(TurnStarted != null){
-			TurnStarted.Invoke();
 		}
 	}
 }

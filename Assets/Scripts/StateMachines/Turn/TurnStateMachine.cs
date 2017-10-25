@@ -6,7 +6,7 @@ public class TurnStateMachine:MonoBehaviour {
 
     private ITurnState currentState;
 
-    public TurnManager TurnManager { get; set; }
+    public UnitManager UnitManager { get; set; }
 
     public void ChangeState(ITurnState newState) {
         if(currentState != null){
@@ -14,7 +14,6 @@ public class TurnStateMachine:MonoBehaviour {
         }
         currentState = newState; 
         currentState.EnterState();
-        // Debug.Log(currentState);
     }
 
     private void Start() {
@@ -22,6 +21,6 @@ public class TurnStateMachine:MonoBehaviour {
     }
 
     private void Update() {
-        currentState.Update();
+        currentState.Update(); 
     }
 }

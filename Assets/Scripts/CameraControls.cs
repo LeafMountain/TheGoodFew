@@ -17,7 +17,6 @@ public class CameraControls : MonoBehaviour {
     private float zoom;
 
     private InputManager inputManager;
-    private CombatEventTracker combatEventTracker;
 
     public static CameraControls GetInstance () {
         return cameraControls;
@@ -36,13 +35,6 @@ public class CameraControls : MonoBehaviour {
             inputManager.ZoomKeys += Zoom;
             inputManager.CamRotateLeft += RotateLeft;
             inputManager.CamRotateRight += RotateRight;
-        }
-
-        //Subscribe to combat events
-        combatEventTracker = CombatEventTracker.GetInstance();
-
-        if(combatEventTracker != null) {
-            combatEventTracker.CombatEventUpdated += OnCombatEventUpdated;
         }
     }
 
@@ -106,9 +98,5 @@ public class CameraControls : MonoBehaviour {
         inputManager.ZoomKeys -= Zoom;
         inputManager.CamRotateLeft -= RotateLeft;
         inputManager.CamRotateRight -= RotateRight;
-    }
-
-    public void OnCombatEventUpdated(object source, CombatEventTrackerUpdate combatEventUpdate){
-        Move(combatEventUpdate.eventPosition);
     }
 }

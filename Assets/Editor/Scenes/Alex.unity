@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 64737843}
   - component: {fileID: 64737842}
   - component: {fileID: 64737841}
+  - component: {fileID: 64737840}
   - component: {fileID: 64737839}
   m_Layer: 5
   m_Name: End
@@ -168,6 +169,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioData: {fileID: 11400000, guid: ea79b48247997274c9888c393ee0514b, type: 2}
+--- !u!114 &64737840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114083734154231772, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 64737837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &64737841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +386,7 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+<<<<<<< HEAD
 --- !u!1 &86616763
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +471,8 @@ MeshFilter:
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 =======
 >>>>>>> parent of e6a0ca8... Merge pull request #3 from LeafMountain/TGF-101-TurnStateMachine
+=======
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 --- !u!1001 &94496729
 Prefab:
   m_ObjectHideFlags: 0
@@ -496,8 +512,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114178778004096846, guid: e0751262124ff1349985e5c2c622b800, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e0751262124ff1349985e5c2c622b800, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &117897151
@@ -1365,6 +1380,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 222201427979794988, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 226726495}
 --- !u!1 &236838466
 GameObject:
@@ -1445,6 +1461,10 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 236838466}
 --- !u!1 &241975321
+=======
+  m_GameObject: {fileID: 150514564}
+--- !u!1 &154530083
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1929816314091656, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -1693,7 +1713,16 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 297724604}
+=======
+  - component: {fileID: 187308264}
+  - component: {fileID: 187308269}
+  - component: {fileID: 187308268}
+  - component: {fileID: 187308267}
+  - component: {fileID: 187308266}
+  - component: {fileID: 187308265}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
@@ -1795,12 +1824,26 @@ MonoBehaviour:
 --- !u!222 &303085277
 CanvasRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 222351722747860950, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303085274}
 --- !u!1 &304098235
 GameObject:
+=======
+  m_PrefabParentObject: {fileID: 114278127529376306, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187308263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &187308267
+MonoBehaviour:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1749598333382952, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -2855,11 +2898,19 @@ MonoBehaviour:
 --- !u!222 &458351232
 CanvasRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 222016406297270434, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458351229}
 --- !u!1 &464785127
+=======
+  m_PrefabParentObject: {fileID: 222133010155601568, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 306407741}
+--- !u!1 &341962755
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1348561234685018, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -2948,11 +2999,19 @@ MonoBehaviour:
 --- !u!222 &464785131
 CanvasRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 222930344225243902, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 464785127}
 --- !u!1 &469521260
+=======
+  m_PrefabParentObject: {fileID: 222052073302008754, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341962755}
+--- !u!1 &373997181
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1465662082267976, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -3402,9 +3461,16 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 562987873}
   - component: {fileID: 562987875}
   - component: {fileID: 562987874}
+=======
+  - component: {fileID: 426025985}
+  - component: {fileID: 426025988}
+  - component: {fileID: 426025987}
+  - component: {fileID: 426025986}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
@@ -3426,12 +3492,33 @@ RectTransform:
   m_Father: {fileID: 180241945}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 40.6, y: 11}
   m_SizeDelta: {x: 59.95, y: 17.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562987874
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 189.5, y: 116}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &426025986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114242262621723732, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 426025984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &426025987
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114187230195249378, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -4091,7 +4178,100 @@ Transform:
   m_Father: {fileID: 71569022}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &670155169
+=======
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 77, y: 80}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &479083713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114499556314719862, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479083711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &479083714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114907269831559052, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479083711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+--- !u!114 &479083715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114804567248501518, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479083711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
+--- !u!114 &479083716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114083045951329674, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479083711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0bc0d8c9cf6aef84cafba6c4f5c20787, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &479083717
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222958469287854166, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479083711}
+--- !u!1 &495692772
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1690587171228696, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -5577,9 +5757,18 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 796066225}
   - component: {fileID: 796066227}
   - component: {fileID: 796066226}
+=======
+  - component: {fileID: 683684597}
+  - component: {fileID: 683684602}
+  - component: {fileID: 683684601}
+  - component: {fileID: 683684600}
+  - component: {fileID: 683684599}
+  - component: {fileID: 683684598}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: 'Trinket:'
   m_TagString: Untagged
@@ -5606,7 +5795,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!114 &796066226
+=======
+--- !u!114 &683684598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114351465668143768, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683684596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1176694303}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1176694303}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &683684599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114933108408271778, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683684596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &683684600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114600329682782774, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683684596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 683684601}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &683684601
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114917103594405196, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -6204,7 +6499,107 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+<<<<<<< HEAD
 --- !u!114 &825758073
+=======
+--- !u!1 &758508555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1950220113928260, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 758508556}
+  - component: {fileID: 758508561}
+  - component: {fileID: 758508560}
+  - component: {fileID: 758508559}
+  - component: {fileID: 758508558}
+  - component: {fileID: 758508557}
+  m_Layer: 5
+  m_Name: Description (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &758508556
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224575044812106748, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758508555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2012266667}
+  - {fileID: 254178776}
+  - {fileID: 1420878125}
+  - {fileID: 1609608675}
+  - {fileID: 683278980}
+  - {fileID: 2127864639}
+  - {fileID: 2083454125}
+  m_Father: {fileID: 825758069}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 77, y: 80}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &758508557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114753575218053318, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758508555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &758508558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114516804399328870, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758508555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 5
+    m_Right: 5
+    m_Top: 5
+    m_Bottom: 5
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+--- !u!114 &758508559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114390756238729838, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758508555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
+--- !u!114 &758508560
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114225581141236056, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -6318,11 +6713,24 @@ MonoBehaviour:
 --- !u!222 &837747077
 CanvasRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 222756312228042968, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 837747074}
 --- !u!1001 &841217786
+=======
+  m_PrefabParentObject: {fileID: 222027702483278154, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761958072}
+--- !u!4 &774302802 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4116967053197286, guid: 95fc1989b7f630343b1199643eb5a7d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 912956037}
+--- !u!1001 &775513464
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6833,12 +7241,17 @@ RectTransform:
 --- !u!114 &910045294
 MonoBehaviour:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 114140322572578418, guid: 3f535d6106d8d33419dbfe225150559a,
+=======
+  m_PrefabParentObject: {fileID: 114490014156867250, guid: 3f535d6106d8d33419dbfe225150559a,
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910045292}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -6866,6 +7279,13 @@ MonoBehaviour:
   m_Text: 
 --- !u!222 &910045295
 CanvasRenderer:
+=======
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &807994464
+MonoBehaviour:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 222212476309261268, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -7039,9 +7459,18 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 947657937}
   - component: {fileID: 947657939}
   - component: {fileID: 947657938}
+=======
+  - component: {fileID: 825758069}
+  - component: {fileID: 825758074}
+  - component: {fileID: 825758073}
+  - component: {fileID: 825758072}
+  - component: {fileID: 825758071}
+  - component: {fileID: 825758070}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -7077,6 +7506,111 @@ MonoBehaviour:
   m_GameObject: {fileID: 947657936}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+=======
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 758508555}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 758508555}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &825758071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114060312858873380, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825758068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &825758072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114977481914709710, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825758068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 825758073}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &825758073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114225581141236056, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825758068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -7464,6 +7998,7 @@ MonoBehaviour:
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Delegates:
   - eventID: 0
     callback:
@@ -7515,6 +8050,33 @@ MonoBehaviour:
   cooldownText: {fileID: 0}
 --- !u!114 &984935654
 MonoBehaviour:
+=======
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &882451868
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222517047821479472, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882451865}
+--- !u!1 &894133910
+GameObject:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114964273339115194, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -8283,9 +8845,18 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1122733010}
   - component: {fileID: 1122733012}
   - component: {fileID: 1122733011}
+=======
+  - component: {fileID: 984935651}
+  - component: {fileID: 984935656}
+  - component: {fileID: 984935655}
+  - component: {fileID: 984935654}
+  - component: {fileID: 984935653}
+  - component: {fileID: 984935652}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -8312,7 +8883,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!114 &1122733011
+=======
+--- !u!114 &984935652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114228001700816584, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984935650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 479083711}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 479083711}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &984935653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114990220686812140, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984935650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &984935654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114964273339115194, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 984935650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 984935655}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &984935655
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114739775235554858, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -8780,6 +9457,7 @@ Transform:
   m_Father: {fileID: 1904561650}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1163096119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8794,6 +9472,32 @@ MonoBehaviour:
 --- !u!95 &1163096120
 Animator:
   serializedVersion: 3
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.0000019073486, y: -0.00000071525574}
+  m_SizeDelta: {x: 0, y: -0.4000001}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1075542108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1597164443094540, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1075542109}
+  - component: {fileID: 1075542110}
+  m_Layer: 5
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1075542109
+RectTransform:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 95129718209524642, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -9624,6 +10328,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -9642,6 +10347,61 @@ MonoBehaviour:
   m_FillOrigin: 0
 --- !u!222 &1234762726
 CanvasRenderer:
+=======
+--- !u!95 &1163096120
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 95129718209524642, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163096117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 19bdfc57210330f4fa97fdf4f3119607, type: 3}
+  m_Controller: {fileID: 9100000, guid: d291728a1a751d04896fdef05289843c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!23 &1163096121
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 23818074063589714, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1163096117}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 356ae90ab4c1d6d40a4bfab7c21512dc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1163096122
+MeshFilter:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 222415873675726142, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -9697,9 +10457,18 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1265421266}
   - component: {fileID: 1265421268}
   - component: {fileID: 1265421267}
+=======
+  - component: {fileID: 1176554649}
+  - component: {fileID: 1176554654}
+  - component: {fileID: 1176554653}
+  - component: {fileID: 1176554652}
+  - component: {fileID: 1176554651}
+  - component: {fileID: 1176554650}
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -9726,7 +10495,113 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
 --- !u!114 &1265421267
+=======
+--- !u!114 &1176554650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114300493481290862, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176554648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2146746672}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2146746672}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &1176554651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114406513951335948, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176554648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1176554652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114658897682706120, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176554648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1176554653}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1176554653
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114616184878313836, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -9843,6 +10718,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277992389}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -9870,6 +10746,13 @@ MonoBehaviour:
   m_Text: 
 --- !u!222 &1277992392
 CanvasRenderer:
+=======
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1176694306
+MonoBehaviour:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 222569451683181714, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -10705,8 +11588,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &1418559998
 RectTransform:
+=======
+--- !u!4 &1276531675
+Transform:
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 224662287497884724, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
@@ -11264,6 +12152,7 @@ MonoBehaviour:
 --- !u!114 &1459399469
 MonoBehaviour:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 114913367309896246, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
@@ -11332,6 +12221,57 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1459399466}
 --- !u!1 &1460654333
+=======
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.5964808
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4722647317386022, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 208471135888147248, guid: 9ed0925812e4d1f43974bd2184cc8594,
+        type: 2}
+      propertyPath: m_Extents.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647461931172946, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9ed0925812e4d1f43974bd2184cc8594, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1375689672
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1241925870073706, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -12476,11 +13416,19 @@ MonoBehaviour:
 --- !u!222 &1674754152
 CanvasRenderer:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   m_PrefabParentObject: {fileID: 222632993156112572, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674754149}
 --- !u!1 &1678690085
+=======
+  m_PrefabParentObject: {fileID: 222517506708401870, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609608674}
+--- !u!1 &1636999340
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 1093571493501528, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -13417,6 +14365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e45a24fdfdedf45a9b263875893ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   title: {fileID: 449550328}
   dmg: {fileID: 0}
   mDmg: {fileID: 0}
@@ -13424,11 +14373,88 @@ MonoBehaviour:
   range: {fileID: 0}
   info: {fileID: 1409621144}
 --- !u!114 &1814310048
+=======
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8313726, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 7
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 7
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1708278057
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222579093808128166, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708278054}
+--- !u!1 &1732382705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1578745063032876, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1732382706}
+  - component: {fileID: 1732382711}
+  - component: {fileID: 1732382710}
+  - component: {fileID: 1732382709}
+  - component: {fileID: 1732382708}
+  - component: {fileID: 1732382707}
+  m_Layer: 5
+  m_Name: Skill 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1732382706
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224154069053783580, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732382705}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+  m_Children:
+  - {fileID: 709856994}
+  - {fileID: 1828569264}
+  - {fileID: 217243838}
+  - {fileID: 1814310046}
+  m_Father: {fileID: 2102265481}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1732382707
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114839947281260340, guid: 3f535d6106d8d33419dbfe225150559a,
     type: 2}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1814310045}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -13447,6 +14473,63 @@ MonoBehaviour:
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
 --- !u!114 &1814310049
+=======
+  m_GameObject: {fileID: 1732382705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1814310045}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1814310045}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &1732382708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114576872616134160, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732382705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1732382709
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114002797993426116, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -13695,6 +14778,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1830537287}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -13707,6 +14791,12 @@ MonoBehaviour:
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
 --- !u!114 &1830537290
+=======
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1814310048
+>>>>>>> parent of 0bf2840... Merge pull request #11 from LeafMountain/TGF-130-ActivateUnit
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114572378310798172, guid: 3f535d6106d8d33419dbfe225150559a,
@@ -18021,12 +19111,13 @@ RectTransform:
 --- !u!114 &2102265482
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_PrefabParentObject: {fileID: 114528508472145098, guid: 3f535d6106d8d33419dbfe225150559a,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2102265480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0b6df30ee1c54345a1a43c45aab3d24, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2102265483
@@ -18443,15 +19534,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146746672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2e45a24fdfdedf45a9b263875893ac6, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: {fileID: 148404862}
-  dmg: {fileID: 0}
-  mDmg: {fileID: 0}
-  heal: {fileID: 0}
-  range: {fileID: 0}
-  info: {fileID: 440238050}
 --- !u!114 &2146746675
 MonoBehaviour:
   m_ObjectHideFlags: 0

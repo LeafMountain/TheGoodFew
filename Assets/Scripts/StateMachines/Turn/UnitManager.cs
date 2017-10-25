@@ -3,23 +3,23 @@ using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine; 
 
-public class TurnManager:MonoBehaviour {
+public class UnitManager:MonoBehaviour {
 
-	private static TurnManager currentInstance; 
+	private static UnitManager currentInstance; 
 	public List < TurnOrderObject > turnOrderObjects = new List<TurnOrderObject>();
 	public TurnOrderObject CurrentUnit {get {return turnOrderObjects[0]; }}
 
 
-	public static TurnManager GetInstance() {
-		return currentInstance;
+	public static UnitManager GetInstance() {
+		return currentInstance; 
 	}
 
 	private void Awake() {
-		currentInstance = this;
+		currentInstance = this; 
 	}
 
 	private void Start() {
-		OnTurnOrderUpdated();
+		// FindTurnOrderObjects(); 
 	}
 
 	//Find all TurnOrderObjects and add them to the list of turn order objects.
@@ -42,39 +42,16 @@ public class TurnManager:MonoBehaviour {
 			OnTurnOrderUpdated();
 		}
 		else {
-			Debug.Log("The unit doesn't exists in the Turn Order Object list");
+			Debug.Log("The unit doesn't exists in the Turn Order Object list"); 
 		}
 	}
 
 	//Event
 	public event EventHandler<TurnOrderUpdate> TurnOrderUpdated;
-	
-	//Trying to make an event for when a new turn starts
-	public delegate void TurnEvent ();
-	public event TurnEvent NewTurn;
-	public event TurnEvent NewUnit;
 
-	protected virtual void OnTurnOrderUpdated () {		
+	protected virtual void OnTurnOrderUpdated () {
 		if (TurnOrderUpdated != null) {
-			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects));
-		}
-	}
-
-	// protected virtual void OnNewTurn(){
-	// 	if(NewTurn != null){
-	// 		NewTurn.Invoke();
-	// 	}
-	// }
-
-	// protected virtual void OnNewUnit(){
-	// 	if(NewUnit != null){
-	// 		NewUnit.Invoke();
-	// 	}
-	// }
-
-	protected virtual void OnTurnEvent(TurnEvent turnEvent){
-		if(turnEvent != null){
-			turnEvent.Invoke();
+			TurnOrderUpdated (this, new TurnOrderUpdate (turnOrderObjects)); 
 		}
 	}
 }
