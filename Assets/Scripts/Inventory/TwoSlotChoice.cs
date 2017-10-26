@@ -1,8 +1,6 @@
 ﻿//Description: This class is used when the player wants to equip a trinket 
 //Type: Controller 
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TwoSlotChoice {

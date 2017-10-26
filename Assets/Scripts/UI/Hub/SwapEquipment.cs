@@ -1,9 +1,7 @@
 ﻿//Description: When the player adds or removes a item used as equipment this class is called. When a Button with 
-            //an <InventorySlot> class on it is clicked this class may be instantiated if the player is in the 
-            //barracks manu. The <InventorySlot> tells the <BarracksManager> that it was clicked.
-//Type: Component
-using System.Collections;
-using System.Collections.Generic;
+//an <InventorySlot> class on it is clicked this class may be instantiated if the player is in the 
+//barracks manu. The <InventorySlot> tells the <BarracksManager> that it was clicked.
+//Type: Controller
 using UnityEngine;
 
 public class SwapEquipment {
@@ -13,7 +11,8 @@ public class SwapEquipment {
     private TwoSlotChoice twoSlotChoiceInstance;
     private bool clickedEquipmentSlot;
 
-    private Item itemInQuestion;
+    private Item itemBeingEquipped;
+    private Item itemBeingSwapped;
     private GameObject inventorySlotOnButtonClicked;
 
     //Character details
@@ -21,36 +20,44 @@ public class SwapEquipment {
     private UnitData.Class currentClass;
 
     private SwapEquipment() { } //Constructor
-    public SwapEquipment(BarracksManager barracksManager, bool clickedEquipmentSlot, GameObject inventorySlot) //Constructor
+    public SwapEquipment(EquipmentManager equipmentManager) //Constructor
     {
-        Debug.Log("Swapping item");
-        this.barracksManager = barracksManager;
-        equipmentManager = barracksManager._EquipmentManager;
+        Debug.Log("SwapEquipment RUNNING | SwapEquipment RUNNING | SwapEquipment RUNNING | SwapEquipment RUNNING  ");
+        this.equipmentManager = equipmentManager;
         
         twoSlotChoiceInstance = equipmentManager.TwoSlotChoiceInstance;
-        this.clickedEquipmentSlot = clickedEquipmentSlot;
+        itemBeingEquipped = equipmentManager._BarracksManager.ItemInQuestion;
+        
 
-        itemInQuestion = barracksManager.ItemInQuestion;
-        inventorySlotOnButtonClicked = inventorySlot;
-
-        InventoryClicked(inventorySlotOnButtonClicked, itemInQuestion);
-      
+        SwapItems();
+        Debug.Log("SwapEquipment DONE | SwapEquipment DONE | SwapEquipment DONE | SwapEquipment DONE ");
     }
-    public void InventoryClicked(GameObject go, Item item)
+    public void SwapItems()
     {
-        //This method is called when the player clicks on an inventory slot that is in the barracks sub menu.
-        if (clickedEquipmentSlot)
+        if (equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item != null)
         {
-            Debug.Log("You clicked a EquipmentSlot");
+            itemBeingSwapped = equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item;
+            Debug.Log("Replacing " + itemBeingSwapped.ToString() + " with " + itemBeingEquipped.ToString());
 
-             new UnequipItem(go, item, equipmentManager); 
+            new UnequipItem(equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)], itemBeingSwapped, equipmentManager);
         }
         else
         {
-            Debug.Log("You clicked a inventory slot");
-            
-            new EquipItem(item, go, equipmentManager);
+            Debug.Log("There is no item to replace.");
         }
+    }
+
+    private int WhatSlotIsBeingSwapped(Item item)
+    {
+        if (item.itemType == ItemType.Armor) return 0;
+        else if (item.itemType == ItemType.OffHand) return 1;
+        else if (!canDuelWield && item.itemType == ItemType.Weapon) return 2;
+
+        return -1;
+    }
+    private void AskWhatSlotToUnequip() //This is used when the player equips a trinket. The player can choose trinket slot one or two.
+    {
+
     }
 }
 

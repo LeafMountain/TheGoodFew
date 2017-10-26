@@ -54,24 +54,24 @@ public class EquipmentManager {
         else
         {
             Debug.Log("You clicked an inventory slot");
-            if (equipmentSlots[(int)(EquipmentPart)barracksManager.ItemInQuestion.itemType] != null)
-            {
-               //Behöver göra en class som tar reda på vilken equipmentslot som ska tömmas.
-            }
+           
+                new SwapEquipment(this);
+            
                 new EquipItem(barracksManager.ItemInQuestion, go, this);
         }
     }
+   
     private void SelectedTwoSlotOption(GameObject go)
     {
         twoSlotChoiceInstance.ClickedInventorySlot(go);
     }
     public void UpdateEquipmentUI()
     {
+        Debug.Log("Updating EquipmentUI");
         if (currentEquipment != null)
         {
             for (int i = 0; i < equipmentSlots.Length; i++)
             {
-                Debug.Log("Add item in to equipment slot...");
 
                 if (currentEquipment.EquipmentPieces[i] != null)
                 {
