@@ -58,24 +58,16 @@ public class EquipmentManager {
                 new EquipItem(barracksManager.ItemInQuestion, go, this);
         }
     }
-   
-    private void SelectedTwoSlotOption(GameObject go)
-    {
-        twoSlotChoiceInstance.ClickedInventorySlot(go);
-    }
     public void UpdateEquipmentUI()
     {
-        Debug.Log("Updating EquipmentUI");
         if (currentEquipment != null)
         {
             for (int i = 0; i < equipmentSlots.Length; i++)
             {
-
                 if (currentEquipment.EquipmentPieces[i] != null)
                 {
                     equipmentSlots[i].GetComponent<InventorySlot>().AddItem(currentEquipment.EquipmentPieces[i]);
                 }
-
             }
         }
     }
@@ -89,7 +81,6 @@ public class EquipmentManager {
             }
             else
             {
-                Debug.Log("Must pick a trinket slot.");
                 barracksManager.playerInventory.Add(barracksManager.ItemInQuestion);
                 barracksManager.ItemInQuestion = null;
             }
@@ -102,14 +93,12 @@ public class EquipmentManager {
             }
             else
             {
-                Debug.Log("Must pick MainHand or OffHandSlot");
                 barracksManager.playerInventory.Add(barracksManager.ItemInQuestion);
                 barracksManager.ItemInQuestion = null;
             }
             UpdateEquipmentUI();
             _BarracksManager._InventoryUI.UpdateUI();
         }
-            
     }
     //Properties
     public BarracksManager _BarracksManager { get { return barracksManager; } }

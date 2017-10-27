@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Description: This class is used when the player wants to unequip an item. 
+using UnityEngine;
 
 public class UnequipItem {
 
@@ -39,9 +40,6 @@ public class UnequipItem {
         Debug.Log("Removing equipment piece for " + (EquipmentPart)(go.transform.GetSiblingIndex()));
         equipment.EquipmentPieces[go.transform.GetSiblingIndex()] = null;
     }
-   private void UnequipTrinket()
-    {
-
-    }
+   
 
 }

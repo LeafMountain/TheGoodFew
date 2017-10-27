@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿//Description: This class is used when the player wants to equip something. It has two constructors, the second one
+// is used when the player wants to equip a trinket or when the player has a character that can
+// duel wield and the game wants to know in what slot the equipping weapon should be placed.
+using UnityEngine;
 
 public class EquipItem 
 {
 
     private EquipmentManager equipmentManager;
-    private Item item;
     private BarracksManager barracksManager;
     private Equipment equipment;
     private GameObject[] equipmentSlots;
@@ -16,7 +18,7 @@ public class EquipItem
     public EquipItem(Item item, GameObject go, EquipmentManager equipmentManager)
     {
         Debug.Log("EquipItem RUNNING | EquipItem RUNNING | EquipItem RUNNING | EquipItem RUNNING |");
-        this.item = item;
+        
         this.equipmentManager = equipmentManager;
         equipment = equipmentManager.CurrentEquipment;
         equipmentSlots = equipmentManager.EquipmentSlots;

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Description: Simple class that moves an item from or to a equipment slot. Use the first constructor to move an item from 
+// the player inventory to an equipments slot and use the second one to move an item from an equipment slot to 
+// the player inventory.
+using UnityEngine;
 
 public class MoveItemBetweenInventoryAndEquipmentSlot {
 

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /* Sits on all InventorySlots. */
-
 public class InventorySlot : MonoBehaviour
 {
     public Image icon;
@@ -11,12 +10,9 @@ public class InventorySlot : MonoBehaviour
     private Image frame;
     private ShopManager shopManager;
     private BarracksManager barracksManager;
-
     private Color highligtColor;
     private Color normalColor;
-
-
-    Item item;  // Current item in the slot
+    private Item item;  // Current item in the slot
 
     void Start()
     {
@@ -38,7 +34,6 @@ public class InventorySlot : MonoBehaviour
         if (newItem != null)
         {
             item = newItem;
-
             icon.sprite = item.icon;
             icon.enabled = true;
         }
@@ -69,18 +64,13 @@ public class InventorySlot : MonoBehaviour
     {
         // Checking if this inventory slot is in a shop sub menu or a in the barracks sub menu.
 
-        Debug.Log("Clicked...");
-
         if (shopManager != null)
         {
-            Debug.Log("...a inventorySlot in a shop sub menu.");
             shopManager.ItemInQuestion = item;
             shopManager.Ask(item.itemName, item.price);
         }
         else
         {
-
-            Debug.Log("...a inventorySlot in the barracks sub menu.");
             if (!barracksManager.WaitForSlotPicked)
             {
                 barracksManager.ItemInQuestion = item;
@@ -88,7 +78,6 @@ public class InventorySlot : MonoBehaviour
             }
             else
             {
-                Debug.Log("Player picked a slot.");
                 barracksManager._EquipmentManager.EquipmentSlotPicked(transform.GetSiblingIndex());
             }
         }
@@ -105,7 +94,6 @@ public class InventorySlot : MonoBehaviour
             {
                 barracksManager.informationDisplay.RecieveInformation(item);
             }
-        
         }
     }
     public void RemoveItemInfo()

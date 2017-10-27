@@ -60,10 +60,6 @@ public class SwapEquipment {
 
         return -1;
     }
-    private void AskWhatSlotToUnequip() //This is used when the player equips a trinket. The player can choose trinket slot one or two.
-    {
-
-    }
 }
 
 

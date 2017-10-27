@@ -45,29 +45,7 @@ public class TwoSlotChoice {
         slotOne.HightlightSelf(light);
         slotTwo.HightlightSelf(light);
     }
-    public void ClickedInventorySlot(GameObject go)
-    { 
-     //This method is called when the player presses a inventory slot while the variable twoSlotChoiceInstance is not
-     //null. It looks if the player clicked a valid equipment slot (inventory slot) for the item being equipped.
-    Item item = twoChoiceItem;
-
-    barracksManager.playerInventory.Remove(item);
-        int index = 0;
-        foreach(GameObject gameobject in equipmentManager.EquipmentSlots)
-        {
-            if(itemTypeInQuestion == ItemType.Trinket)
-            {
-                if(gameobject == go)
-                {
-                    equipmentManager.CurrentEquipment.EquipmentPieces[index] = item;
-                    equipmentManager.EquipmentSlots[index].GetComponent<InventorySlot>().AddItem(item);
-                }       
-            }
-        }
-        equipmentManager.TwoSlotChoiceInstance = null;
-        equipmentManager._BarracksManager.WaitForSlotPicked = false;
-    }
-    
+   
     public ItemType ItemTypeInQuestion { get { return itemTypeInQuestion; } }
     public Item TwoChoiceItem { get { return twoChoiceItem; } }
 }
