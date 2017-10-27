@@ -63,22 +63,24 @@ public class InventorySlot : MonoBehaviour
     public void InventorySlotClicked()
     {
         // Checking if this inventory slot is in a shop sub menu or a in the barracks sub menu.
-
-        if (shopManager != null)
+        if (item != null)
         {
-            shopManager.ItemInQuestion = item;
-            shopManager.Ask(item.itemName, item.price);
-        }
-        else
-        {
-            if (!barracksManager.WaitForSlotPicked)
+            if (shopManager != null)
             {
-                barracksManager.ItemInQuestion = item;
-                barracksManager.InventorySlotClicked(gameObject, item);
+                shopManager.ItemInQuestion = item;
+                shopManager.Ask(item.itemName, item.price);
             }
             else
             {
-                barracksManager._EquipmentManager.EquipmentSlotPicked(transform.GetSiblingIndex());
+                if (!barracksManager.WaitForSlotPicked)
+                {
+                    barracksManager.ItemInQuestion = item;
+                    barracksManager.InventorySlotClicked(gameObject, item);
+                }
+                else
+                {
+                    barracksManager._EquipmentManager.EquipmentSlotPicked(transform.GetSiblingIndex());
+                }
             }
         }
     }
