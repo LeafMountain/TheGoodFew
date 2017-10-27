@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class BarracksManager : MonoBehaviour {
 
@@ -10,6 +7,8 @@ public class BarracksManager : MonoBehaviour {
     private InventoryUI inventoryUI;
     private EquipmentManager equipmentManager;
     private Item itemInQuestion;
+
+    private bool waitForSlotPicked;
 
     public DisplayItemInformation informationDisplay;
     public Inventory playerInventory;
@@ -58,5 +57,5 @@ public class BarracksManager : MonoBehaviour {
     public InventoryUI _InventoryUI { get { return inventoryUI; } set { inventoryUI = value; } }
     public Item ItemInQuestion { get { return itemInQuestion; } set { itemInQuestion = value; } }
     public EquipmentManager _EquipmentManager { get { return equipmentManager; } set { equipmentManager = value; } }
-
+    public bool WaitForSlotPicked {get { return waitForSlotPicked; } set { waitForSlotPicked = value; } }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EquipItem 
 {
@@ -12,6 +10,7 @@ public class EquipItem
     private GameObject[] equipmentSlots;
     private bool canDuelWield;
     private TwoSlotChoice twoSlotChoiceInstance;
+    private Inventory playerInventory;
 
     private EquipItem() { }
     public EquipItem(Item item, GameObject go, EquipmentManager equipmentManager)
@@ -23,6 +22,7 @@ public class EquipItem
         equipmentSlots = equipmentManager.EquipmentSlots;
         canDuelWield = equipmentManager.CanDuelWield;
         twoSlotChoiceInstance = equipmentManager.TwoSlotChoiceInstance;
+        playerInventory = equipmentManager._BarracksManager.playerInventory;
 
         Equip(go, item);
         Debug.Log("EquipItem DONE | EquipItem DONE | EquipItem DONE | EquipItem DONE | EquipItem DONE | ");
@@ -30,32 +30,50 @@ public class EquipItem
     }
     public EquipItem(int equipmentSlot, Item item, EquipmentManager equipmentManager)
     {
+        Debug.Log("Equipping " + item.ToString());
         this.equipmentManager = equipmentManager;
-        EquipTrinket(equipmentManager.EquipmentSlots[equipmentSlot], item);
+        GameObject slot = equipmentManager.EquipmentSlots[equipmentSlot];
+        Inventory playerInventory = equipmentManager._BarracksManager.playerInventory;
+        Item currentlyEquippedItem = equipmentManager.EquipmentSlots[equipmentSlot].GetComponent<InventorySlot>()._Item;
+
+        if (currentlyEquippedItem != null)
+        {
+            new MoveItemBetweenInventoryAndEquipmentSlot(currentlyEquippedItem, slot, playerInventory);
+        }
+            new MoveItemBetweenInventoryAndEquipmentSlot(item, playerInventory, slot);
+
+        equipmentManager.CurrentEquipment.EquipmentPieces[equipmentSlot] = item;
+       
+        equipmentManager.TwoSlotChoiceInstance.Highligt(false);
+        equipmentManager.TwoSlotChoiceInstance = null;
+        equipmentManager._BarracksManager.WaitForSlotPicked = false;
+        equipmentManager._BarracksManager._InventoryUI.UpdateUI();
         
     }
 
     private void Equip(GameObject go, Item item)
     {
-            equipmentManager._BarracksManager.playerInventory.Remove(item);
-            
-        
             if (item.itemType == ItemType.Armor)
             {
                 Debug.Log("Equipping an Armor");
-                equipment.EquipmentPieces[0] = item; equipmentSlots[0].GetComponent<InventorySlot>().AddItem(item);
+                equipment.EquipmentPieces[0] = item;
+                 new MoveItemBetweenInventoryAndEquipmentSlot(item, playerInventory, go); 
             }
             else if (item.itemType == ItemType.OffHand)
             {
                 Debug.Log("Equipping an OffHand");
-                equipment.EquipmentPieces[1] = item; equipmentSlots[1].GetComponent<InventorySlot>().AddItem(item); 
-               
+                equipment.EquipmentPieces[1] = item;
+                new MoveItemBetweenInventoryAndEquipmentSlot(item, playerInventory, go);
+
+
             }
-            else if (item.itemType == ItemType.Weapon)
+             else if (item.itemType == ItemType.Weapon)
             {
                 Debug.Log("Equipping a Weapon");
-                if (!canDuelWield) { equipment.EquipmentPieces[2] = item; equipmentSlots[2].GetComponent<InventorySlot>().AddItem(item); }
-                else { /* call two slot choice*/}
+                if (!canDuelWield) { equipment.EquipmentPieces[2] = item;
+                new MoveItemBetweenInventoryAndEquipmentSlot(item, playerInventory, go);
+            }
+            else { /* call two slot choice*/}
             }
             else if (item.itemType == ItemType.Trinket)
             {
@@ -65,10 +83,5 @@ public class EquipItem
                                                                                    //can be placed in two different inventory 
                                                                                     //slot.
         
-    }
-
-    private void EquipTrinket(GameObject go, Item item)
-    {
-        go.GetComponent<InventorySlot>().AddItem(item);
     }
 }

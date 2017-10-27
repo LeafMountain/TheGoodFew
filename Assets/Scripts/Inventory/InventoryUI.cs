@@ -33,6 +33,7 @@ public class InventoryUI : MonoBehaviour
     // This is called using a delegate on the Inventory.
     public void UpdateUI()
     {
+        Debug.Log("Updating Inventory UI");
         InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
 
         
@@ -44,7 +45,7 @@ public class InventoryUI : MonoBehaviour
                 }
                 else
                 {
-                    slots[i].ClearSlot();
+                    if(slots[i].gameObject.name[0] == 'I') slots[i].ClearSlot();
                 }
             
         }

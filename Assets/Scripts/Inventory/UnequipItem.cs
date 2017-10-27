@@ -26,9 +26,7 @@ public class UnequipItem {
         {
             Debug.Log("Unequiping " + item.name);
 
-            
-            go.GetComponent<InventorySlot>().RemoveItemFromInventory(); //< Remove from the Inventory Slot.
-            equipmentManager._BarracksManager.playerInventory.Add(item); //< Add the removed item to the player inventory.
+            new MoveItemBetweenInventoryAndEquipmentSlot(item, go, equipmentManager._BarracksManager.playerInventory);
             RemoveEquipment(go, item); //< Remove the item from the Equipment class.
         }
         else

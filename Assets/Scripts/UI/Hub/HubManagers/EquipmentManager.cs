@@ -1,17 +1,15 @@
 ﻿//Description: Player presses either a inventory slot that represents a item in the players inventory or presses a inventory slot
-             //representing a equipped item. The idea is that when the player clicks on a item in the player inventory this class
-             //checks if the inventory slot indeed was a item of the players inventory or a equipment slot, it does this  with 
-             //EquipmentClicked(). If it is a item in the players inventory it checks the .itemType of the <Item> and moves and 
-             //displays the item at the correct equipment slot, this is done in EquipItem().
-             //    It's a bit tricky when the player tries to equip a trinket because a trinket can be placed in two different
-             //slots. A class, <TwoSlotChoices> is instatiated and two of the valid slots for trinkets are highligted and now the 
-             //<EquipmentManager> is ready to move the selected trinket to one of the slots. If the player picks a invenotry
-             //slot not valid for a trinket the trinket item will be selected and the equipment slot will be dehighlighted.
-             //The ClickedInventorySlot() method in <TwoSlotChoice> gets what inventory slot the player clicked and what
-             //how the game should react. 
+//representing a equipped item. The idea is that when the player clicks on a item in the player inventory this class
+//checks if the inventory slot indeed was a item of the players inventory or a equipment slot, it does this  with 
+//EquipmentClicked(). If it is a item in the players inventory it checks the .itemType of the <Item> and moves and 
+//displays the item at the correct equipment slot, this is done in EquipItem().
+//    It's a bit tricky when the player tries to equip a trinket because a trinket can be placed in two different
+//slots. A class, <TwoSlotChoices> is instatiated and two of the valid slots for trinkets are highligted and now the 
+//<EquipmentManager> is ready to move the selected trinket to one of the slots. If the player picks a invenotry
+//slot not valid for a trinket the trinket item will be selected and the equipment slot will be dehighlighted.
+//The ClickedInventorySlot() method in <TwoSlotChoice> gets what inventory slot the player clicked and what
+//how the game should react. 
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum EquipmentPart { Body, OffHand, MainHand, FirstTrinket, SecondTrinket}
@@ -53,7 +51,7 @@ public class EquipmentManager {
         }
         else
         {
-            Debug.Log("You clicked an inventory slot");
+                Debug.Log("You clicked an inventory slot");
            
                 new SwapEquipment(this);
             
@@ -83,7 +81,35 @@ public class EquipmentManager {
     }
     public void EquipmentSlotPicked(int slot)
     {
-        new EquipItem(slot, barracksManager.ItemInQuestion, this);
+        if(barracksManager.ItemInQuestion.itemType == ItemType.Trinket)
+        {
+            if (slot >= 3)
+            {
+                new EquipItem(slot, barracksManager.ItemInQuestion, this);
+            }
+            else
+            {
+                Debug.Log("Must pick a trinket slot.");
+                barracksManager.playerInventory.Add(barracksManager.ItemInQuestion);
+                barracksManager.ItemInQuestion = null;
+            }
+        }
+        else
+        {
+            if(slot == 1 || slot == 2)
+            {
+                new EquipItem(slot, barracksManager.ItemInQuestion, this);
+            }
+            else
+            {
+                Debug.Log("Must pick MainHand or OffHandSlot");
+                barracksManager.playerInventory.Add(barracksManager.ItemInQuestion);
+                barracksManager.ItemInQuestion = null;
+            }
+            UpdateEquipmentUI();
+            _BarracksManager._InventoryUI.UpdateUI();
+        }
+            
     }
     //Properties
     public BarracksManager _BarracksManager { get { return barracksManager; } }

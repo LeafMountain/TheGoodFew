@@ -23,6 +23,8 @@ public class TwoSlotChoice {
         twoChoiceItem = item;
         itemTypeInQuestion = item.itemType;
         equipmentManager.TwoSlotChoiceInstance = this;
+        equipmentManager._BarracksManager.WaitForSlotPicked = true;
+       
 
         if (itemTypeInQuestion == ItemType.Trinket)
         {
@@ -34,11 +36,14 @@ public class TwoSlotChoice {
             slotOne = equipmentManager.EquipmentSlots[1].GetComponent<InventorySlot>();
             slotTwo = equipmentManager.EquipmentSlots[2].GetComponent<InventorySlot>();
         }
+        Highligt(true);
+        
     }
-    private void Highligt()
+    public void Highligt(bool light)
     {
-        slotOne.HightlightSelf(true);
-        slotOne.HightlightSelf(true);
+        Debug.Log("Highlighting");
+        slotOne.HightlightSelf(light);
+        slotTwo.HightlightSelf(light);
     }
     public void ClickedInventorySlot(GameObject go)
     { 
@@ -60,6 +65,7 @@ public class TwoSlotChoice {
             }
         }
         equipmentManager.TwoSlotChoiceInstance = null;
+        equipmentManager._BarracksManager.WaitForSlotPicked = false;
     }
     
     public ItemType ItemTypeInQuestion { get { return itemTypeInQuestion; } }

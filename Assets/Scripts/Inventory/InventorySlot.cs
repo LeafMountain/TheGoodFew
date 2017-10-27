@@ -14,7 +14,7 @@ public class InventorySlot : MonoBehaviour
 
     private Color highligtColor;
     private Color normalColor;
-    
+
 
     Item item;  // Current item in the slot
 
@@ -42,7 +42,7 @@ public class InventorySlot : MonoBehaviour
             icon.sprite = item.icon;
             icon.enabled = true;
         }
-       
+
     }
 
     // Clear the slot
@@ -60,10 +60,10 @@ public class InventorySlot : MonoBehaviour
     // Use the item
     public void UseItem()
     {
-       if (item != null)
-       {
+        if (item != null)
+        {
             item.Use();
-       }
+        }
     }
     public void InventorySlotClicked()
     {
@@ -79,9 +79,18 @@ public class InventorySlot : MonoBehaviour
         }
         else
         {
+
             Debug.Log("...a inventorySlot in the barracks sub menu.");
-            barracksManager.ItemInQuestion = item;
-            barracksManager.InventorySlotClicked(gameObject, item);
+            if (!barracksManager.WaitForSlotPicked)
+            {
+                barracksManager.ItemInQuestion = item;
+                barracksManager.InventorySlotClicked(gameObject, item);
+            }
+            else
+            {
+                Debug.Log("Player picked a slot.");
+                barracksManager._EquipmentManager.EquipmentSlotPicked(transform.GetSiblingIndex());
+            }
         }
     }
     public void ShowItemInfo()
@@ -115,13 +124,13 @@ public class InventorySlot : MonoBehaviour
     {
         if (lit)
         {
-            frame.color = highligtColor;   
+           transform.GetChild(0).gameObject.GetComponent<Image>().color = highligtColor;   
         }
         else
         {
-            frame.color = normalColor;
+            transform.GetChild(0).gameObject.GetComponent<Image>().color = normalColor;
         }
     }
     //Properties
-    public Item _Item { get { return item; } }
+    public Item _Item { get { return item; } set { item = value; } }
 }
