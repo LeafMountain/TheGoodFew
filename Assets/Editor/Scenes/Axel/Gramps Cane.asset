@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fbdb3117f58ed4a98e8b7a0173d2b4, type: 3}
+  m_Name: Gramps Cane
+  m_EditorClassIdentifier: 
+  itemName: Gramps Cane
+  price: 100
+  itemType: 3
+  icon: {fileID: 21300000, guid: f93287569987f8546a9765f7f48d69b3, type: 3}
+  description: Gramps needs his cane on long walks.
+  developerNote: Used for testing the equipment system.
+  showInInventory: 0
+  addedDamage: 2

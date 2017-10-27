@@ -81,6 +81,10 @@ public class EquipmentManager {
             }
         }
     }
+    public void EquipmentSlotPicked(int slot)
+    {
+        new EquipItem(slot, barracksManager.ItemInQuestion, this);
+    }
     //Properties
     public BarracksManager _BarracksManager { get { return barracksManager; } }
     public GameObject[] EquipmentSlots { get { return equipmentSlots; } }

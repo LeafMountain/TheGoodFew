@@ -17,10 +17,12 @@ public class TwoSlotChoice {
     private TwoSlotChoice() { }
     public TwoSlotChoice(EquipmentManager equipmentManager, Item item)
     {
+        Debug.Log("TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | ");
         this.equipmentManager = equipmentManager;
         barracksManager = equipmentManager._BarracksManager;
         twoChoiceItem = item;
         itemTypeInQuestion = item.itemType;
+        equipmentManager.TwoSlotChoiceInstance = this;
 
         if (itemTypeInQuestion == ItemType.Trinket)
         {

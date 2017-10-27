@@ -28,6 +28,12 @@ public class EquipItem
         Debug.Log("EquipItem DONE | EquipItem DONE | EquipItem DONE | EquipItem DONE | EquipItem DONE | ");
 
     }
+    public EquipItem(int equipmentSlot, Item item, EquipmentManager equipmentManager)
+    {
+        this.equipmentManager = equipmentManager;
+        EquipTrinket(equipmentManager.EquipmentSlots[equipmentSlot], item);
+        
+    }
 
     private void Equip(GameObject go, Item item)
     {
@@ -47,13 +53,22 @@ public class EquipItem
             }
             else if (item.itemType == ItemType.Weapon)
             {
+                Debug.Log("Equipping a Weapon");
                 if (!canDuelWield) { equipment.EquipmentPieces[2] = item; equipmentSlots[2].GetComponent<InventorySlot>().AddItem(item); }
                 else { /* call two slot choice*/}
             }
             else if (item.itemType == ItemType.Trinket)
-            { twoSlotChoiceInstance = new TwoSlotChoice(equipmentManager, item); } // < uses <TwoSlotChoice> cause a trinket 
+            {
+                Debug.Log("Equipping a Trinket");
+                twoSlotChoiceInstance = new TwoSlotChoice(equipmentManager, item);
+            }                                                                       // < uses <TwoSlotChoice> cause a trinket 
                                                                                    //can be placed in two different inventory 
                                                                                     //slot.
         
-    }                                                                              
+    }
+
+    private void EquipTrinket(GameObject go, Item item)
+    {
+        go.GetComponent<InventorySlot>().AddItem(item);
+    }
 }

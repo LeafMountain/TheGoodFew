@@ -34,24 +34,29 @@ public class SwapEquipment {
     }
     public void SwapItems()
     {
-        if (equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item != null)
+        if (WhatSlotIsBeingSwapped(itemBeingEquipped) != -1)
         {
-            itemBeingSwapped = equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item;
-            Debug.Log("Replacing " + itemBeingSwapped.ToString() + " with " + itemBeingEquipped.ToString());
+            if (equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item != null)
+            {
+                itemBeingSwapped = equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item;
+                Debug.Log("Replacing " + itemBeingSwapped.ToString() + " with " + itemBeingEquipped.ToString());
 
-            new UnequipItem(equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)], itemBeingSwapped, equipmentManager);
+                new UnequipItem(equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)], itemBeingSwapped, equipmentManager);
+            }
+            else
+            {
+                Debug.Log("There is no item to replace.");
+
+            }
         }
-        else
-        {
-            Debug.Log("There is no item to replace.");
-        }
-    }
+      }
 
     private int WhatSlotIsBeingSwapped(Item item)
     {
         if (item.itemType == ItemType.Armor) return 0;
         else if (item.itemType == ItemType.OffHand) return 1;
         else if (!canDuelWield && item.itemType == ItemType.Weapon) return 2;
+        else if (item.itemType == ItemType.Trinket) return -1;
 
         return -1;
     }
