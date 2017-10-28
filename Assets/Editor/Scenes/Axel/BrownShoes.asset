@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c377c4ee091a565459d9ddf8ba477f73, type: 3}
   m_Name: BrownShoes
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Mighty Brown Shoes
   price: 0
   itemType: 0
   icon: {fileID: 0}

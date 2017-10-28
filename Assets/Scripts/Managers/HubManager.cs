@@ -7,6 +7,7 @@ public class HubManager : MonoBehaviour {
 
     public GameObject[] subMenuGameObject;
     
+
     public void SelectedSubHub(string objectName)
     {
         //Goes through a array of <ShopDataBase> and when the string paramenter matches the <ShopDataBase> subHubMenu 
