@@ -1,7 +1,7 @@
 ﻿//Note: this could be merged with <OpenBuySection>.
 using UnityEngine;
 
-public class OpenSellingSection : MonoBehaviour {
+public class OpenSellingSection  {
 
     private Inventory inventory;
     private ShopManager shopManager;
