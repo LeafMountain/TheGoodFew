@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿//Description: 
+using UnityEngine;
 
-public class ExperienceManager : MonoBehaviour {
+public class ExperienceManager  {
 
     private bool devMode;
     private DevExperienceData devExpData;
@@ -13,6 +14,8 @@ public class ExperienceManager : MonoBehaviour {
     public ExperienceManager(bool devMode, DevExperienceData devAllCharactersExp, ExperienceData experienceData) //save file should be a parameter.
     {
         this.devMode = devMode;
+        devExpData = devAllCharactersExp;
+        expData = experienceData;
         LoadData(devMode);
 
     }

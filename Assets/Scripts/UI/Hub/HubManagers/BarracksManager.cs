@@ -7,6 +7,7 @@ public class BarracksManager : MonoBehaviour {
     private InventoryUI inventoryUI;
     private EquipmentManager equipmentManager;
     private Item itemInQuestion;
+    
 
     private bool waitForSlotPicked;
 
@@ -15,7 +16,7 @@ public class BarracksManager : MonoBehaviour {
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
     public GameObject playerEquipment;
     public PlayerData playerData; //<< Need to put a unitdata reference for every hero.
-    
+    public GameObject levelPanel;
 
     void Start()
     {
@@ -42,14 +43,11 @@ public class BarracksManager : MonoBehaviour {
     }
 
     
-    public void Unequip()
-    {
-        //When the player clicks on a equipment slot with an item in it the item is removed and put in the players inventory. 
-    }
     public void OpenCharacterEquipmentMenu(int index)
     {
         new OpenCharacter(this, index);
-    }    
+    }
+        
 
     //Properties
     public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }

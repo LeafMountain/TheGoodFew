@@ -29,6 +29,11 @@ public class OpenCharacter {
         //Player equipment prep
         equipmentManager.CurrentEquipment = barracksManager.playerData.CharacterEquipmentList[characterIndex];
         UpdateEquipmentUI();
+
+        //Player experience prep
+
+        new DisplayExperienceStats(barracksManager.levelPanel, barracksManager.playerData.ExpManager.AllCharactersExp[characterIndex],
+                barracksManager.playerData.ExpManager.AllCharactersLevel[characterIndex]);
     }
 
     private void UpdateEquipmentUI()
