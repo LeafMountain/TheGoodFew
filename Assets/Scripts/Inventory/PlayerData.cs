@@ -12,7 +12,14 @@ public class PlayerData : MonoBehaviour {
     private Inventory inventory;
     private int epas;
     public DevEquipment[] devEquipmentData;
+
+    public DevAbilityPointsData devAPData;
+    public DevExperienceData devExpData;
+
+    private AbilityPointsData apData;
+    private ExperienceData expData;
     
+
     public bool devMode;
 
     void Start()
@@ -21,7 +28,15 @@ public class PlayerData : MonoBehaviour {
         inventory = GetComponent<Inventory>();
         characterEquipmentList = new Equipment[6];
         if (devEquipmentData == null) devEquipmentData = new DevEquipment[6];
+
+        apData = new AbilityPointsData();
+        //need a method to load the abilityPointsData from a xml file.
+        expData = new ExperienceData();
+        //need a method to load experienceData from a xml file.
+
         new LoadEquipmentData(devMode, this);
+        new AbilityPointsManager(devMode, devAPData, apData);
+        new ExperienceManager(devMode, devExpData, expData);
 
         Debug.Log("PlayerDataBase Start() is DONE");
     }

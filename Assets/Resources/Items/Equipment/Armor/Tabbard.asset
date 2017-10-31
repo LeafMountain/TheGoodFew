@@ -11,8 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c377c4ee091a565459d9ddf8ba477f73, type: 3}
   m_Name: Tabbard
   m_EditorClassIdentifier: 
-  name: Tabbard
+  itemName: 
+  price: 0
+  itemType: 3
   icon: {fileID: 0}
+  description: 
+  developerNote: 
+  showInInventory: 0
   model: {fileID: 0}
   characterClass: 1
   armortype: 0
@@ -20,5 +25,3 @@ MonoBehaviour:
   magicalDefence: 2
   blockChance: 0
   speedPenalty: 0
-  description: 
-  note: 
