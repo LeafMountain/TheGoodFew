@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 114563369767277596}
   - component: {fileID: 114217853232250996}
   - component: {fileID: 114277028261481120}
+  - component: {fileID: 114478201895863740}
   m_Layer: 0
   m_Name: pref_char_monster_skeleton
   m_TagString: Unit
@@ -1019,9 +1020,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970293789430606}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 7.5, y: 0, z: 16.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.57, y: 0, z: -16.88}
+  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children:
   - {fileID: 4046472459437438}
   m_Father: {fileID: 0}
@@ -1329,6 +1330,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Undead Warrior
   unitData: {fileID: 11400000, guid: 60f3d333690dec348bee4a07f3085169, type: 2}
+--- !u!114 &114478201895863740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970293789430606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799903a46c0beaf48bad4e41cc0f40f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
+  hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &114563369767277596
 MonoBehaviour:
   m_ObjectHideFlags: 1

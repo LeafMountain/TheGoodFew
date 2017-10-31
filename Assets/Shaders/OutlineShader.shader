@@ -1,111 +1,174 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/Outline Shader"{
 
 	//Variables
 	Properties {
-		_MainTexture("Main Color (RGB) Hello!", 2D) = "white" {}
-		_Color("Coloror", Color) = (1, 1, 1, 1)
+		_MainTex("Texture", 2D) = "white" {}
+		_Color ("Color", Color) = (1,1,1,1)
 
-		_ExtrudeAmount("Extrude Amount", Range(0, .2)) = .2
+		_OutlineColor ("Outline color", Color) = (1,1,1,1)
+		_OutlineWidth("Outline width", Range(0, .2)) = 0
+		_SilhouetteColor ("Silhouette color", Color) = (1,1,1,1)
+		
 	}
 
-	SubShader{
+	CGINCLUDE
+	#include "UnityCG.cginc"	
 
+	ENDCG
+
+	SubShader
+	{
+		//Outline
 		Pass{
-			//Nvidia CG
+			Name "OUTLINE"
+			Tags { "LightMode" = "Always" }
+			Cull Off
+			ZWrite Off
+			ZTest Always
+			ColorMask RGB // alpha not used
+
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+
 			CGPROGRAM
-
-			#pragma vertex vertexFunction
-			#pragma fragment fragmentFunction
-
-			#include "UnityCG.cginc"
+			#pragma vertex vert
+			#pragma fragment frag
 
 			struct appdata {
 				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
 				float3 normal : NORMAL;
 			};
 
-			//Vertex to fragment = v2f
 			struct v2f {
-				float4 position : SV_POSITION;
-				float2 uv : TEXCOORD0;
+				float4 pos : SV_POSITION;
+				float3 normal : NORMAL;
 			};
 
-			//Adding the variables
-			float4 _Color;
-			sampler2D _MainTexture;
-			float _ExtrudeAmount;
+			float _OutlineWidth;
+			float4 _OutlineColor;
 
-			v2f vertexFunction(appdata IN){
-				v2f OUT;
+			v2f vert(appdata v)
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos (v.vertex);
 
-				IN.vertex.xyz += IN.normal.xyz * _ExtrudeAmount;
+                float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
+                float2 offset = TransformViewToProjection(norm.xy);
 
-				//For the camera ??
-				OUT.position = UnityObjectToClipPos(IN.vertex);
-				OUT.uv = IN.uv;
+                o.pos.xy += offset * _OutlineWidth;
+				
+                return o;
+            }
 
-				return OUT;
+			half4 frag(v2f i) : COLOR{
+				return _OutlineColor;
 			}
 
-			//Color it in
-			fixed4 fragmentFunction(v2f IN) : SV_Target {
-				// float4 textureColor = tex2D(_MainTexture, IN.uv);
-				
-				return _Color;
+			ENDCG
+
+		}
+
+		Pass{
+			Name "SILHOUETTE"
+			Tags { "LightMode" = "Always" }
+			Cull Off
+			ZWrite Off
+			ZTest Always
+			ColorMask RGB // alpha not used
+
+			// you can choose what kind of blending mode you want for the outline
+			Blend SrcAlpha OneMinusSrcAlpha // Normal
+			//Blend One One // Additive
+			//Blend One OneMinusDstColor // Soft Additive
+			//Blend DstColor Zero // Multiplicative
+			//Blend DstColor SrcColor // 2x Multiplicative
+
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+
+			struct appdata {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+			};
+
+			struct v2f {
+				float4 pos : SV_POSITION;
+				float3 normal : NORMAL;
+			};
+
+			float4 _SilhouetteColor;
+
+			//Vertex to fragment
+			v2f vert(appdata v){
+				// v.vertex.xyz *= _OutlineWidth;
+
+				v2f o;
+				//Transform to worldspace
+				o.pos = UnityObjectToClipPos(v.vertex);
+				return o;
+			}
+
+			half4 frag(v2f i) : COLOR{
+				return _SilhouetteColor;
 			}
 
 
 			ENDCG
 		}
-		
+
+		//Not mine
 		Pass{
-			//Nvidia CG
 			CGPROGRAM
-
-			#pragma vertex vertexFunction
-			#pragma fragment fragmentFunction
-
-			#include "UnityCG.cginc"
-
-			struct appdata {
-				float4 vertex : POSITION;
-				float2 uv : TEXCOORD0;
-				float3 normal : NORMAL;
-			};
-
-			//Vertex to fragment = v2f
-			struct v2f {
-				float4 position : SV_POSITION;
-				float2 uv : TEXCOORD0;
-			};
-
-			//Adding the variables
-			// float4 _Color;
-			sampler2D _MainTexture;
-			float _ExtrudeAmount;
-
-			v2f vertexFunction(appdata IN){
-				v2f OUT;
+				#pragma vertex vert
+				#pragma fragment frag
+				// make fog work
+				#pragma multi_compile_fog
 				
-				//For the camera ??
-				OUT.position = UnityObjectToClipPos(IN.vertex);
-				OUT.uv = IN.uv;
+				#include "UnityCG.cginc"
 
-				return OUT;
-			}
+				struct appdata
+				{
+					float4 vertex : POSITION;
+					float2 uv : TEXCOORD0;
+				};
 
-			//Color it in
-			fixed4 fragmentFunction(v2f IN) : SV_Target {
-				float4 textureColor = tex2D(_MainTexture, IN.uv);
+				struct v2f
+				{
+					float2 uv : TEXCOORD0;
+					UNITY_FOG_COORDS(1)
+					float4 vertex : SV_POSITION;
+				};
+
+				sampler2D _MainTex;
+				float4 _MainTex_ST;
 				
-				return textureColor;
-			}
-
-
-			ENDCG
+				v2f vert (appdata v)
+				{
+					v2f o;
+					o.vertex = UnityObjectToClipPos(v.vertex);
+					o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+					UNITY_TRANSFER_FOG(o,o.vertex);
+					return o;
+				}
+				
+				fixed4 frag (v2f i) : SV_Target
+				{
+					// sample the texture
+					fixed4 col = tex2D(_MainTex, i.uv);
+					// apply fog
+					UNITY_APPLY_FOG(i.fogCoord, col);
+					return col;
+				}
+				ENDCG
 		}
 	}
 }
