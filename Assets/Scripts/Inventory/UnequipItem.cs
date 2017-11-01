@@ -7,9 +7,11 @@ public class UnequipItem {
     private Equipment equipment;
     private GameObject[] equipmentSlots;
 
-    public UnequipItem(GameObject go, Item item, EquipmentManager equipmentManager)
+    public UnequipItem(
+        GameObject go, Item item, EquipmentManager equipmentManager)
     {
-        Debug.Log("UnequipItem RUNNING | UnequipItem RUNNING | UnequipItem RUNNING | UnequipItem RUNNING ");
+        Debug.Log("UnequipItem RUNNING | UnequipItem RUNNING |" +
+            " UnequipItem RUNNING | UnequipItem RUNNING ");
 
         this.equipmentManager = equipmentManager;
         equipment = equipmentManager.CurrentEquipment;
@@ -17,8 +19,8 @@ public class UnequipItem {
 
         Unequip(go, item);
 
-        Debug.Log("UnequipItem DONE | UnequipItem DONE | UnequipItem DONE | UnequipItem DONE ");
-
+        Debug.Log("UnequipItem DONE | UnequipItem DONE |" +
+            " UnequipItem DONE | UnequipItem DONE ");
     }
 
     private void Unequip(GameObject go, Item item)
@@ -27,8 +29,9 @@ public class UnequipItem {
         {
             Debug.Log("Unequiping " + item.name);
 
-            new MoveItemBetweenInventoryAndEquipmentSlot(item, go, equipmentManager._BarracksManager.playerInventory);
-            RemoveEquipment(go, item); //< Remove the item from the Equipment class.
+            new MoveItemBetweenInventoryAndEquipmentSlot(
+                item, go, equipmentManager._BarracksManager.playerInventory);
+            RemoveEquipment(go, item); 
         }
         else
         {
@@ -37,7 +40,8 @@ public class UnequipItem {
     }
     private void RemoveEquipment(GameObject go, Item item)
     {
-        Debug.Log("Removing equipment piece for " + (EquipmentPart)(go.transform.GetSiblingIndex()));
+        Debug.Log("Removing equipment piece for " + 
+            (EquipmentPart)(go.transform.GetSiblingIndex()));
         equipment.EquipmentPieces[go.transform.GetSiblingIndex()] = null;
     }
    

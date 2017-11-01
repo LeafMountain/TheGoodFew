@@ -1,5 +1,4 @@
 ﻿//Description: 
-using UnityEngine;
 
 public class ExperienceManager  {
 
@@ -11,7 +10,9 @@ public class ExperienceManager  {
     private int[] allCharactersExp;
 
     private ExperienceManager() { }
-    public ExperienceManager(bool devMode, DevExperienceData devAllCharactersExp, ExperienceData experienceData) //save file should be a parameter.
+    public ExperienceManager(
+        bool devMode, DevExperienceData devAllCharactersExp,
+        ExperienceData experienceData) //save file should be a parameter.
     {
         this.devMode = devMode;
         devExpData = devAllCharactersExp;
@@ -45,8 +46,13 @@ public class ExperienceManager  {
         //Increasing the stats on a player.
     }
 
+    //properties
+    public int[] AllCharactersLevel
+    { get { return allCharactersLevel; }
+        set { allCharactersLevel = value; } }
 
-    public int[] AllCharactersLevel { get { return allCharactersLevel; } set { allCharactersLevel = value; } }
-    public int[] AllCharactersExp { get { return allCharactersExp; } set { allCharactersExp = value; } }
+    public int[] AllCharactersExp
+    { get { return allCharactersExp; }
+        set { allCharactersExp = value; } }
 
 }

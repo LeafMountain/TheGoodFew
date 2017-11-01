@@ -62,7 +62,8 @@ public class InventorySlot : MonoBehaviour
     }
     public void InventorySlotClicked()
     {
-        // Checking if this inventory slot is in a shop sub menu or a in the barracks sub menu.
+        // Checking if this inventory slot is in a shop 
+        //sub menu or a in the barracks sub menu.
         if (item != null)
         {
             if (shopManager != null)
@@ -79,7 +80,8 @@ public class InventorySlot : MonoBehaviour
                 }
                 else
                 {
-                    barracksManager._EquipmentManager.EquipmentSlotPicked(transform.GetSiblingIndex());
+                    barracksManager._EquipmentManager.EquipmentSlotPicked(
+                        transform.GetSiblingIndex());
                 }
             }
         }
@@ -112,13 +114,16 @@ public class InventorySlot : MonoBehaviour
     }
     public void HightlightSelf(bool lit)
     {
+        Image imageComponent =
+            transform.GetChild(0).gameObject.GetComponent<Image>();
+
         if (lit)
         {
-           transform.GetChild(0).gameObject.GetComponent<Image>().color = highligtColor;   
+           imageComponent.color = highligtColor;   
         }
         else
         {
-            transform.GetChild(0).gameObject.GetComponent<Image>().color = normalColor;
+            imageComponent.color = normalColor;
         }
     }
     //Properties
