@@ -1,5 +1,5 @@
-﻿//Description: When the player is browsing the shop this class makes sure that the when the mouse is above
-//              an item the information of that item is shown in a panel.
+﻿//Description: Information is displayed when browsing the shop's items.
+//Type: View
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,8 +60,10 @@ public class DisplayItemInformation : MonoBehaviour {
 
             whatClass.text = "Armour Type: " + item.itemType.ToString();
 
-            defence.text = "Physical Defence: " + armor.physicalDefence.ToString();
-            resistance.text = "Resistance: " + armor.magicalDefence.ToString();
+            defence.text = 
+                "Physical Defence: " + armor.physicalDefence.ToString();
+            resistance.text = 
+                "Resistance: " + armor.magicalDefence.ToString();
 
         }
         else if(whatType == ItemType.Consumables)
@@ -73,8 +75,10 @@ public class DisplayItemInformation : MonoBehaviour {
         {
             WeaponObject weapon = (WeaponObject)item;
 
-            whatClass.text = "Wielded by: " + weapon.characterClass.ToString();
-            atkForce.text = "Attack Force: " + weapon.minimumAtk + " - " + weapon.maximumAtk; 
+            whatClass.text = 
+             "Wielded by: " + weapon.characterClass.ToString();
+            atkForce.text = 
+             "Attack Force: " + weapon.minimumAtk + " - " + weapon.maximumAtk; 
         }
     }
     public void EmptyDisplay()

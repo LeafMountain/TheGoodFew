@@ -17,24 +17,29 @@ public class TwoSlotChoice {
     private TwoSlotChoice() { }
     public TwoSlotChoice(EquipmentManager equipmentManager, Item item)
     {
-        Debug.Log("TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | ");
+        Debug.Log("TwoSlotChoice RUNNING | TwoSlotChoice RUNNING" + 
+            " | TwoSlotChoice RUNNING | TwoSlotChoice RUNNING | ");
         this.equipmentManager = equipmentManager;
         barracksManager = equipmentManager._BarracksManager;
         twoChoiceItem = item;
         itemTypeInQuestion = item.itemType;
         equipmentManager.TwoSlotChoiceInstance = this;
         equipmentManager._BarracksManager.WaitForSlotPicked = true;
-       
 
+        GameObject[] slots = equipmentManager.EquipmentSlots;
         if (itemTypeInQuestion == ItemType.Trinket)
         {
-            slotOne = equipmentManager.EquipmentSlots[3].GetComponent<InventorySlot>();
-            slotTwo = equipmentManager.EquipmentSlots[4].GetComponent<InventorySlot>();
+            slotOne =  
+             slots[3].GetComponent<InventorySlot>();
+            slotTwo = 
+             slots[4].GetComponent<InventorySlot>();
         }
         else
         {
-            slotOne = equipmentManager.EquipmentSlots[1].GetComponent<InventorySlot>();
-            slotTwo = equipmentManager.EquipmentSlots[2].GetComponent<InventorySlot>();
+            slotOne = 
+             slots[1].GetComponent<InventorySlot>();
+            slotTwo = 
+             slots[2].GetComponent<InventorySlot>();
         }
         Highligt(true);
         

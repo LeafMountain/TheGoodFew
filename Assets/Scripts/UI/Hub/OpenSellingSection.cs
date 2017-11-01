@@ -1,4 +1,4 @@
-﻿//Note: this could be merged with <OpenBuySection>.
+﻿//Type: Controller
 using UnityEngine;
 
 public class OpenSellingSection  {
@@ -11,7 +11,8 @@ public class OpenSellingSection  {
     private InventoryUI storeUI;
 
     private OpenSellingSection() { }
-    public OpenSellingSection(Inventory inventory, ShopManager shopManager)
+    public OpenSellingSection(
+        Inventory inventory, ShopManager shopManager)
     {
         this.inventory = inventory;
         this.shopManager = shopManager;
@@ -20,14 +21,16 @@ public class OpenSellingSection  {
         storeUI = shopManager.storeUI;
         shopManager.inventoryTitle.text = "Player Inventory";
         shopManager.Buying = false;
-        shopManager.dispayPlayerCoins.text = shopManager._PlayerData.Epas.ToString();
+        shopManager.dispayPlayerCoins.text = 
+            shopManager._PlayerData.Epas.ToString();
         Open();
 
     }
     private void Open()
     {
         shopManager.Buying = false;
-        storeUI.Inventory = shopManager.playerDataGameObject.GetComponent<Inventory>();
+        storeUI.Inventory = 
+            shopManager.playerDataGameObject.GetComponent<Inventory>();
         inventoryDisplay.SetActive(true);
         main.SetActive(!main.activeSelf);
         storeUI.UpdateUI();

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour {
@@ -20,8 +18,8 @@ public class ShopManager : MonoBehaviour {
     public int shopGoldCoins;
     public Text dispayPlayerCoins;
 
-    private bool buying; //<< Is the player in the sell or buy menu. Set when player press buy or sell button.
-    private Item itemInQuestion; //<<The item that is being sold or bought. Set when player presses a itemslot.
+    private bool buying; 
+    private Item itemInQuestion; 
     private DialougeData dialougeData;
     private Inventory inventory;
 
@@ -31,7 +29,9 @@ public class ShopManager : MonoBehaviour {
         dispayPlayerCoins.text = playerData.Epas.ToString();
         dialougeData = GetComponent<DialougeData>();
         inventory = GetComponent<Inventory>();
-        GetComponentInParent<InventoryUI>().inventoryUI = subMenus.transform.Find("Inventory Display").Find("Store Inventory").gameObject;
+        GetComponentInParent<InventoryUI>().inventoryUI = 
+            subMenus.transform.Find("Inventory Display").
+            Find("Store Inventory").gameObject;
     }
 
     //SubMenus
@@ -86,8 +86,12 @@ public class ShopManager : MonoBehaviour {
     }
 
     //Properties
-    public bool Buying { get { return buying; } set { buying = value; } }
-    public Item ItemInQuestion {get { return itemInQuestion; } set { itemInQuestion = value; } }
-    public PlayerData _PlayerData { get { return playerData; } set { playerData = value; } }
-    public Inventory _Inventory { get { return inventory; } set { inventory = value; } }
+    public bool Buying {
+        get { return buying; } set { buying = value; } }
+    public Item ItemInQuestion {
+        get { return itemInQuestion; } set { itemInQuestion = value; } }
+    public PlayerData _PlayerData {
+        get { return playerData; } set { playerData = value; } }
+    public Inventory _Inventory {
+        get { return inventory; } set { inventory = value; } }
 }

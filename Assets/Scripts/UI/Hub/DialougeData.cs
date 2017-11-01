@@ -1,4 +1,5 @@
 ﻿//Description: Goes through the dialouge.
+//Type: View
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +31,8 @@ public class DialougeData : MonoBehaviour {
     }
     private void NextDialougeLine()
     {
-        shopManager.textBox.GetComponentInChildren<Text>().text = dialougeLines[dialougeIndex];
+        shopManager.textBox.GetComponentInChildren<Text>().text = 
+            dialougeLines[dialougeIndex];
     }
 
 }

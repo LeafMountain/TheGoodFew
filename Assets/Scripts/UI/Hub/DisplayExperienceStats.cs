@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿//Type: View
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisplayExperienceStats  {
 
@@ -13,9 +12,14 @@ public class DisplayExperienceStats  {
 
     public DisplayExperienceStats(GameObject go, int experience, int level)
     {
-        Debug.Log("DisplayExperienceStats Running | DisplayExperienceStats Running | DisplayExperienceStats Running | DisplayExperienceStats Running |");
-        levelText = go.transform.GetChild(1).GetChild(2).gameObject.GetComponent<Text>();
-        experienceText = go.transform.GetChild(1).GetChild(1).gameObject.GetComponent<Text>();
+        Debug.Log("DisplayExperienceStats Running |" + 
+            " DisplayExperienceStats Running |" + 
+            " DisplayExperienceStats Running |" +
+            " DisplayExperienceStats Running |");
+        levelText = 
+         go.transform.GetChild(1).GetChild(2).gameObject.GetComponent<Text>();
+        experienceText = 
+         go.transform.GetChild(1).GetChild(1).gameObject.GetComponent<Text>();
         this.level = level;
         this.experience = experience;
 

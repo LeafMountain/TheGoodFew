@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿//Type: Controller
 using UnityEngine;
 
 public class OpenDialouge  {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//Type: Controller
+using UnityEngine;
 
 public class OpenBuyingSection {
 
@@ -20,7 +21,8 @@ public class OpenBuyingSection {
         storeUI = shopManager.storeUI;
         shopManager.inventoryTitle.text = "Shop Inventory";
         shopManager.Buying = true;
-        shopManager.dispayPlayerCoins.text = shopManager._PlayerData.Epas.ToString();
+        shopManager.dispayPlayerCoins.text = 
+            shopManager._PlayerData.Epas.ToString();
         Open();
     }
 

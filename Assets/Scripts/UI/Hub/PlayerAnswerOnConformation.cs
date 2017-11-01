@@ -1,14 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerAnswerOnConformation {
+﻿public class PlayerAnswerOnConformation {
 
     private string answer;
     private ShopManager shopManager;
 
     private PlayerAnswerOnConformation() { }
-    public PlayerAnswerOnConformation(string answer, ShopManager shopManager)
+    public PlayerAnswerOnConformation(
+        string answer, ShopManager shopManager)
     {
         this.answer = answer;
         this.shopManager = shopManager;
@@ -21,17 +18,20 @@ public class PlayerAnswerOnConformation {
             if (shopManager.Buying)
             {
                 shopManager.ExecuteTransaction();
-                shopManager.confirmPurches.SetActive(!shopManager.confirmPurches.activeSelf);
+                shopManager.confirmPurches.SetActive(
+                    !shopManager.confirmPurches.activeSelf);
             }
             else
             {
                 shopManager.ExecuteTransaction();
-                shopManager.confirmPurches.SetActive(!shopManager.confirmPurches.activeSelf);
+                shopManager.confirmPurches.SetActive(
+                    !shopManager.confirmPurches.activeSelf);
             }
         }
         else
         {
-            shopManager.confirmPurches.SetActive(!shopManager.confirmPurches.activeSelf);
+            shopManager.confirmPurches.SetActive(
+                !shopManager.confirmPurches.activeSelf);
         }
     }
 

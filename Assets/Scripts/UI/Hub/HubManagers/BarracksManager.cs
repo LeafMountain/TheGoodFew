@@ -15,7 +15,7 @@ public class BarracksManager : MonoBehaviour {
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
     public GameObject playerEquipment;
-    public PlayerData playerData; //<< Need to put a unitdata reference for every hero.
+    public PlayerData playerData; 
     public GameObject levelPanel;
 
     void Start()
@@ -25,12 +25,15 @@ public class BarracksManager : MonoBehaviour {
     
     void OnEnable()
     {
-        iconFrame = transform.Find("SubMenus").Find("IconFrame").gameObject;
-        inventoryDisplay = transform.Find("SubMenus").Find("Inventory Display").gameObject;
+        iconFrame = 
+            transform.Find("SubMenus").Find("IconFrame").gameObject;
+        inventoryDisplay = 
+            transform.Find("SubMenus").Find("Inventory Display").gameObject;
 
         inventoryUI = GetComponentInParent<InventoryUI>();
         inventoryUI.Inventory = playerInventory;
-        inventoryUI.inventoryUI = inventoryDisplay.transform.GetChild(0).gameObject;
+        inventoryUI.inventoryUI = 
+            inventoryDisplay.transform.GetChild(0).gameObject;
         inventoryUI.UpdateUI();
     }
 
@@ -39,7 +42,7 @@ public class BarracksManager : MonoBehaviour {
         itemInQuestion = item;
         equipmentManager.InventorySlotClicked(go);
         _InventoryUI.UpdateUI();
-        equipmentManager.UpdateEquipmentUI();
+        equipmentManager.UpdateEqpmtUI();
     }
 
     
@@ -50,10 +53,16 @@ public class BarracksManager : MonoBehaviour {
         
 
     //Properties
-    public GameObject IconFrame { get { return iconFrame; } set { iconFrame = value; } }
-    public GameObject InventoryDisplay { get { return inventoryDisplay; } }
-    public InventoryUI _InventoryUI { get { return inventoryUI; } set { inventoryUI = value; } }
-    public Item ItemInQuestion { get { return itemInQuestion; } set { itemInQuestion = value; } }
-    public EquipmentManager _EquipmentManager { get { return equipmentManager; } set { equipmentManager = value; } }
-    public bool WaitForSlotPicked {get { return waitForSlotPicked; } set { waitForSlotPicked = value; } }
+    public GameObject IconFrame {
+        get { return iconFrame; } set { iconFrame = value; } }
+    public GameObject InventoryDisplay {
+        get { return inventoryDisplay; } }
+    public InventoryUI _InventoryUI {
+        get { return inventoryUI; } set { inventoryUI = value; } }
+    public Item ItemInQuestion {
+        get { return itemInQuestion; } set { itemInQuestion = value; } }
+    public EquipmentManager _EquipmentManager {
+        get { return equipmentManager; } set { equipmentManager = value; } }
+    public bool WaitForSlotPicked {
+        get { return waitForSlotPicked; } set { waitForSlotPicked = value; } }
 }

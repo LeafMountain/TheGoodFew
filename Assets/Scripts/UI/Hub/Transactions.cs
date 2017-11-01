@@ -1,5 +1,5 @@
-﻿//Description: Depending on the player selling or buying epas are removed or added, and items are moved 
-//              from player or shop inventory.
+﻿//Description: Depending on the player selling or buying epas are 
+// removed or added, and items are moved from player or shop inventory.
 public class Transactions  {
 
     private ShopManager shopManager;
@@ -16,7 +16,8 @@ public class Transactions  {
 
         NewEpaAmount(shopManager._PlayerData.Epas);
         MoveItem();
-        shopManager.dispayPlayerCoins.text = shopManager._PlayerData.Epas.ToString();
+        shopManager.dispayPlayerCoins.text = 
+            shopManager._PlayerData.Epas.ToString();
 
     }
     private void NewEpaAmount(int currentAmount)
@@ -29,7 +30,8 @@ public class Transactions  {
         }
         else
         {
-            //selling an item gives the player 50% of the original price or worth of the item.
+            //selling an item gives the player 50% of the 
+            //original price or worth of the item.
             temp = temp + (itemInQuestion.price / 2); 
         }
 
@@ -41,7 +43,6 @@ public class Transactions  {
         {
             shopManager._Inventory.Remove(itemInQuestion);
             shopManager._PlayerData._Inventory.Add(itemInQuestion);
-            
         }
         else
         {

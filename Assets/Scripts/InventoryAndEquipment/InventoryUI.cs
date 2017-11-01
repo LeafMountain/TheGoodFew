@@ -17,16 +17,6 @@ public class InventoryUI : MonoBehaviour
         if(inventory != null) inventory.onItemChangedCallback += UpdateUI;
     }
 
-    // Check to see if we should open/close the inventory
-    void Update()
-    {
-        //if (Input.GetButtonDown("Inventory"))
-       // {
-        //    inventoryUI.SetActive(!inventoryUI.activeSelf);
-          //  UpdateUI();
-        //}
-    }
-
     // Update the inventory UI by:
     //		- Adding items
     //		- Clearing empty slots

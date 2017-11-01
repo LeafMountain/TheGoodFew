@@ -1,7 +1,4 @@
-﻿//Description: When the player adds or removes a item used as equipment this class is called. When a Button with 
-//an <InventorySlot> class on it is clicked this class may be instantiated if the player is in the 
-//barracks manu. The <InventorySlot> tells the <BarracksManager> that it was clicked.
-//Type: Controller
+﻿//Type: Controller
 using UnityEngine;
 
 public class SwapEquipment {
@@ -22,7 +19,8 @@ public class SwapEquipment {
     private SwapEquipment() { } //Constructor
     public SwapEquipment(EquipmentManager equipmentManager) //Constructor
     {
-        Debug.Log("SwapEquipment RUNNING | SwapEquipment RUNNING | SwapEquipment RUNNING | SwapEquipment RUNNING  ");
+        Debug.Log("SwapEquipment RUNNING | SwapEquipment RUNNING" + 
+            " | SwapEquipment RUNNING | SwapEquipment RUNNING  ");
         this.equipmentManager = equipmentManager;
         
         twoSlotChoiceInstance = equipmentManager.TwoSlotChoiceInstance;
@@ -30,18 +28,28 @@ public class SwapEquipment {
         
 
         SwapItems();
-        Debug.Log("SwapEquipment DONE | SwapEquipment DONE | SwapEquipment DONE | SwapEquipment DONE ");
+        Debug.Log("SwapEquipment DONE | SwapEquipment DONE |" +
+            " SwapEquipment DONE | SwapEquipment DONE ");
     }
     public void SwapItems()
     {
         if (WhatSlotIsBeingSwapped(itemBeingEquipped) != -1)
         {
-            if (equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item != null)
+            if (equipmentManager.
+                EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].
+                GetComponent<InventorySlot>()._Item != null)
             {
-                itemBeingSwapped = equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].GetComponent<InventorySlot>()._Item;
-                Debug.Log("Replacing " + itemBeingSwapped.ToString() + " with " + itemBeingEquipped.ToString());
+                itemBeingSwapped = 
+                    equipmentManager.
+                    EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)].
+                    GetComponent<InventorySlot>()._Item;
+                Debug.Log("Replacing " + itemBeingSwapped.ToString() + 
+                    " with " + itemBeingEquipped.ToString());
 
-                new UnequipItem(equipmentManager.EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)], itemBeingSwapped, equipmentManager);
+                new UnequipItem(
+                    equipmentManager.
+                    EquipmentSlots[WhatSlotIsBeingSwapped(itemBeingEquipped)],
+                    itemBeingSwapped, equipmentManager);
             }
             else
             {
