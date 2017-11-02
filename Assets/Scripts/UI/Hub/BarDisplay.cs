@@ -4,13 +4,15 @@ public class BarDisplay {
 
     private GameObject bar;
     private int points;
-    private float percentage;
+    private int requiredPoints;
     private float fullWidth;
 
-    public BarDisplay(GameObject bar, int points)
+
+    public BarDisplay(GameObject bar, int points, int requiredPoints)
     {
         this.bar = bar;
         this.points = points;
+        this.requiredPoints = requiredPoints;
         fullWidth = 
             bar.transform.parent.gameObject.
             GetComponent<RectTransform>().rect.width;
@@ -23,7 +25,7 @@ public class BarDisplay {
         RectTransform rectTransform =
             bar.GetComponent<RectTransform>();
 
-        float newWidth = (fullWidth* (points / 100.0f));
+        float newWidth = (fullWidth* (points / (float)requiredPoints));
         rectTransform.sizeDelta = new Vector2(newWidth, 20f);
     }
     

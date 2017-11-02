@@ -38,6 +38,7 @@ public class DisplayExperienceStats  {
         experienceText.text = newExperienceText;
 
         new BarDisplay(
-            parent.transform.GetChild(1).GetChild(0).gameObject, experience);
+            parent.transform.GetChild(1).GetChild(0).gameObject, experience,
+            100);
     }
 }

@@ -1,10 +1,8 @@
 ﻿//Description: 
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-public enum AbilityIndex { AssultPush, Blessing, Bullseye, DirtyTrick, Doubleshot,
-                            LightArmor, MissleOfMagic, Recover, Shieldblock, Slow, ThrowDagger}
+public enum AbilityIndex { AssultPush, Blessing, Bullseye, DirtyTrick,
+                            Doubleshot,LightArmor, MissleOfMagic, Recover,
+                            Shieldblock, Slow, ThrowDagger}
 public class AbilityPointsManager  {
 
     private bool devMode;
@@ -12,13 +10,14 @@ public class AbilityPointsManager  {
     private AbilityPointsData apData; //<<from a save file.
 
     private int[] allCharactersAP;
-    private int[][] allCharactersAbilities; // int [characterIndex][AbilityIndex].
-    private int[] apToUnlockAbility; // a character need 200 ap to unlock a ability.
+    private DevAbilityPointsData.AllCharactersAbilities[] allCharactersAbilities; // int [characterIndex][AbilityIndex].
     private int[] currentlyUnlocking; // [abilityIndex]
 
 
     private AbilityPointsManager() { }
-    public AbilityPointsManager(bool devMode, DevAbilityPointsData devAPData, AbilityPointsData apData) //save file should be a parameter.
+    public AbilityPointsManager(
+        bool devMode, DevAbilityPointsData devAPData, 
+        AbilityPointsData apData) //save file should be a parameter.
     {
         this.devMode = devMode;
         this.devAPData = devAPData;
@@ -35,14 +34,13 @@ public class AbilityPointsManager  {
         {
             allCharactersAP = devAPData.allCharactersAP;
             allCharactersAbilities = devAPData.allCharactersAbilities;
-            apToUnlockAbility = devAPData.apToUnlockAbilities;
-            currentlyUnlocking = devAPData.currentlyUnlocking;        
+            currentlyUnlocking = devAPData.currentlyUnlocking;
+
         }
         else
         {
             allCharactersAP = apData.AllCharactersAP;
             allCharactersAbilities = apData.AllCharactersAbilities;
-            apToUnlockAbility = apData.ApToUnlockingAbility;
             currentlyUnlocking = apData.CurrentlyUnlocking;
         }
     }
@@ -56,7 +54,15 @@ public class AbilityPointsManager  {
     }
 
 
-    public int[] AllCharactersAP { get { return allCharactersAP; } set { allCharactersAP = value; } }
-    public int[][] AllCharactersAbilities { get { return allCharactersAbilities; } set { allCharactersAbilities = value; } }
-
+    public int[] AllCharactersAP {
+        get { return allCharactersAP; }
+        set { allCharactersAP = value; } }
+    public DevAbilityPointsData.AllCharactersAbilities[] 
+        AllCharactersAbilities {
+        get { return allCharactersAbilities; }
+        set { allCharactersAbilities = value; } }
+    public int[] CurrentlyUnlocking {
+        get { return currentlyUnlocking; }
+        set { currentlyUnlocking = value; }
+    }
 }

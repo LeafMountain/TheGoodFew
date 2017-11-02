@@ -41,6 +41,7 @@ public class PlayerData : MonoBehaviour {
         apManager = new AbilityPointsManager(devMode, devAPData, apData);
         expManager = new ExperienceManager(devMode, devExpData, expData);
 
+
         Debug.Log("PlayerDataBase Start() is DONE");
     }
 

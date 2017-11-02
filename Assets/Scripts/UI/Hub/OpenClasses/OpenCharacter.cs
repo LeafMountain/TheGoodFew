@@ -16,12 +16,7 @@ public class OpenCharacter {
         equipmentManager = barracksManager._EquipmentManager;
         playerData = barracksManager.playerData;
       
-        
-        
-
-        
-
-        //Player inventory prep
+            //Player inventory prep
         barracksManager.gameObject.transform.Find("SubMenus").
             Find("IconFrame").gameObject.SetActive(true);
         barracksManager.IconFrame.GetComponent<Image>().sprite = 
@@ -38,9 +33,13 @@ public class OpenCharacter {
         //Player experience prep
 
         new DisplayExperienceStats(
-            barracksManager.levelPanel, 
+            barracksManager.playerInformation, 
             playerData.ExpManager.AllCharactersExp[characterIndex],
             playerData.ExpManager.AllCharactersLevel[characterIndex]);
+        new DisplayAPStats(
+            barracksManager.playerInformation,
+            playerData.ApManager.AllCharactersAP[characterIndex],
+            playerData.ApManager.CurrentlyUnlocking[characterIndex]);
     }
 
     private void UpdateEquipmentUI()
