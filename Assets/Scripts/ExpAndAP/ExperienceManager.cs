@@ -5,7 +5,7 @@ public class ExperienceManager  {
     private bool devMode;
     private DevExperienceData devExpData;
     private ExperienceData expData; //<<from a save file.
-
+    
     private int[] allCharactersLevel;
     private int[] allCharactersExp;
 

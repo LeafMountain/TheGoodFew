@@ -17,6 +17,8 @@ public class BarracksManager : MonoBehaviour {
     public GameObject playerEquipment;
     public PlayerData playerData; 
     public GameObject levelPanel;
+    public GameObject expBar;
+    public GameObject apBar;
 
     void Start()
     {

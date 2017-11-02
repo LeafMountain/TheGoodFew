@@ -18,8 +18,16 @@
         }
     }
 
-    public int[] AllCharactersAP { get { return allCharactersAP; } set { allCharactersAP = value; } }
-    public int[][] AllCharactersAbilities { get { return allCharactersAbilities; } set { allCharactersAbilities = value; } }
-    public int[] ApToUnlockingAbility{get { return apToUnlockAbility; }set { apToUnlockAbility = value; }}
-    public int[] CurrentlyUnlocking { get { return currentlyUnlocking; } set { currentlyUnlocking = value; } }
+    public int[] AllCharactersAP {
+        get { return allCharactersAP; }
+        set { allCharactersAP = value; } }
+    public int[][] AllCharactersAbilities {
+        get { return allCharactersAbilities; }
+        set { allCharactersAbilities = value; } }
+    public int[] ApToUnlockingAbility{
+        get { return apToUnlockAbility; }
+        set { apToUnlockAbility = value; }}
+    public int[] CurrentlyUnlocking {
+        get { return currentlyUnlocking; }
+        set { currentlyUnlocking = value; } }
 }
