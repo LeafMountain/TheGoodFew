@@ -13,6 +13,8 @@ public class InventorySlot : MonoBehaviour
     private Color highligtColor;
     private Color normalColor;
     private Item item;  // Current item in the slot
+    private AbilityDataOffensive ability;
+    private bool isAbilitySlot;
 
     void Start()
     {
@@ -27,18 +29,29 @@ public class InventorySlot : MonoBehaviour
         highligtColor = Color.yellow;
         normalColor = Color.white;
         frame = GetComponent<Image>();
+        if (gameObject.name[0] == 'A') {
+            isAbilitySlot = true; }
     }
     // Add item to the slot
     public void AddItem(Item newItem)
     {
-        if (newItem != null)
+            if (newItem != null)
+            {
+                item = newItem;
+                icon.sprite = item.icon;
+                icon.enabled = true;
+            }
+    }
+    public void AddAbility(AbilityDataOffensive newAbility)
+    {
+        if(newAbility != null)
         {
-            item = newItem;
-            icon.sprite = item.icon;
+            Debug.Log("Adding new ability to inventory slot.");
+            ability = newAbility;
+            icon.sprite = newAbility.icon;
             icon.enabled = true;
         }
-
-    }
+    }    
 
     // Clear the slot
     public void ClearSlot()
@@ -60,29 +73,38 @@ public class InventorySlot : MonoBehaviour
             item.Use();
         }
     }
-    public void InventorySlotClicked()
+    public void SlotClicked()
     {
         // Checking if this inventory slot is in a shop 
         //sub menu or a in the barracks sub menu.
-        if (item != null)
+        if (!isAbilitySlot)
         {
-            if (shopManager != null)
+            if (item != null)
             {
-                shopManager.ItemInQuestion = item;
-                shopManager.Ask(item.itemName, item.price);
-            }
-            else
-            {
-                if (!barracksManager.WaitForSlotPicked)
+                if (shopManager != null)
                 {
-                    barracksManager.ItemInQuestion = item;
-                    barracksManager.InventorySlotClicked(gameObject, item);
+                    new InventorySlotClicked(shopManager, item);
                 }
                 else
                 {
-                    barracksManager._EquipmentManager.EquipmentSlotPicked(
-                        transform.GetSiblingIndex());
+                    if (!barracksManager.WaitForSlotPicked)
+                    {
+                        new InventorySlotClicked(
+                            barracksManager, item, gameObject);
+                    }
+                    else
+                    {
+                        barracksManager._EquipmentManager.EquipmentSlotPicked(
+                            transform.GetSiblingIndex());
+                    }
                 }
+            }
+        }
+        else
+        {
+            if(ability != null)
+            {
+
             }
         }
     }
@@ -110,7 +132,6 @@ public class InventorySlot : MonoBehaviour
         {
             barracksManager.informationDisplay.EmptyDisplay();
         }
-        
     }
     public void HightlightSelf(bool lit)
     {
@@ -128,4 +149,7 @@ public class InventorySlot : MonoBehaviour
     }
     //Properties
     public Item _Item { get { return item; } set { item = value; } }
+    public AbilityDataOffensive Ability {
+        get { return ability; }
+        set { ability = value; } }
 }

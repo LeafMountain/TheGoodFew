@@ -10,7 +10,9 @@ public class EquipmentManager {
 
     private BarracksManager barracksManager;
     private GameObject[] equipmentSlots;
+    private GameObject[] abilitySlots;
     private Equipment currentEquipment;
+    private EquippedAbilities currentAbilities;
     private GameObject playerEquipment;
     private Inventory playerInventory;
 
@@ -31,7 +33,7 @@ public class EquipmentManager {
                 playerEquipment.transform.GetChild(i).gameObject;
         }
     } 
-    public void InventorySlotClicked(GameObject go)
+    public void SlotClicked(GameObject go)
     {
         bool clickedEquipmentSlot = false;
         
@@ -48,6 +50,10 @@ public class EquipmentManager {
                 new SwapEquipment(this);
                 new EquipItem(barracksManager.ItemInQuestion, go, this);
         }
+    }
+    public void AbilitySlotClicked()
+    {
+
     }
     public void UpdateEqpmtUI()
     {
@@ -95,4 +101,9 @@ public class EquipmentManager {
         set { twoSlotChoiceInstance = value; } }
     public bool CanDuelWield {
         get { return canDuelWield; } }
+    public GameObject[] AbilitySlots {
+        get { return abilitySlots; } }
+    public EquippedAbilities CurrentAbilities {
+        get { return currentAbilities; }
+        set { currentAbilities = value; } }
 }

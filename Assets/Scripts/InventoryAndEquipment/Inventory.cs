@@ -25,6 +25,9 @@ public class Inventory : MonoBehaviour
     // Our current list of items in the inventory
     public List<Item> items = new List<Item>();
 
+    private List<AbilityDataOffensive> unlockedAbilities = 
+        new List<AbilityDataOffensive>();
+
     // Add a new item if enough room
     public void Add(Item item)
     {
@@ -50,5 +53,8 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
+    public List<AbilityDataOffensive> UnlockedAbilities{
+        get { return unlockedAbilities; }
+        set { unlockedAbilities = value; } }
 
 }

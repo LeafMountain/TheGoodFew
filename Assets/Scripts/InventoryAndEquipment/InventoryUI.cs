@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /* This object manages the inventory UI. */
 
@@ -10,10 +11,13 @@ public class InventoryUI : MonoBehaviour
 
     Inventory inventory;    // Our current inventory
 
+    private List<AbilityDataOffensive> abilities;
+    private bool displayingEquipment;
+
     void Start()
     {
         inventory = GetComponentInChildren<Inventory>();
-
+        displayingEquipment = true;
         if(inventory != null) inventory.onItemChangedCallback += UpdateUI;
     }
 
@@ -31,7 +35,7 @@ public class InventoryUI : MonoBehaviour
             {
                 if (i < inventory.items.Count)
                 {
-                    slots[i].AddItem(inventory.items[i]);
+                        slots[i].AddItem(inventory.items[i]);
                 }
                 else
                 {
@@ -40,6 +44,38 @@ public class InventoryUI : MonoBehaviour
             
         }
     }
+    public void ClearAllSlots()
+    {
+        InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
+        foreach(InventorySlot s in slots)
+        {
+            if(s.gameObject.name[0] == 'I')
+            s.ClearSlot();
+        }
+    }
+    public void UpdateUIAbilities()
+    {
+        Debug.Log("Updateing Inventory UI to Abilities.");
+        InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
+
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (i < inventory.UnlockedAbilities.Count)
+            {
+                slots[i].AddAbility(inventory.UnlockedAbilities[i]);
+            }
+            else
+            {
+                if (slots[i].gameObject.name[0] == 'I') slots[i].ClearSlot();
+            }
+
+        }
+    }
+    
     //Properties
-    public Inventory Inventory { set { inventory = value; } }
+    public Inventory Inventory { get { return inventory; } 
+        set { inventory = value; } }
+    public bool DisplayingEquipment { set { displayingEquipment = value; } }
+    public List<AbilityDataOffensive> Abilities { set { abilities = value; } }
 }

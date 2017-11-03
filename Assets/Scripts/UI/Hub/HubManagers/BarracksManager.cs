@@ -7,7 +7,10 @@ public class BarracksManager : MonoBehaviour {
     private InventoryUI inventoryUI;
     private EquipmentManager equipmentManager;
     private Item itemInQuestion;
-    
+    private AbilityDataOffensive abilityInQuestion;
+    private int characterIndex;
+
+    private bool displayingEquipment;
 
     private bool waitForSlotPicked;
 
@@ -15,12 +18,15 @@ public class BarracksManager : MonoBehaviour {
     public Inventory playerInventory;
     public Sprite[] characterIcon; //< Might be changed to 3D models instead.
     public GameObject playerEquipment;
+    public GameObject playerAbilities;
     public PlayerData playerData; 
     public GameObject playerInformation;
-    
+    public GameObject toggleButton;
+
 
     void Start()
     {
+        displayingEquipment = true;
         equipmentManager = new EquipmentManager(this);
     }
     
@@ -38,20 +44,34 @@ public class BarracksManager : MonoBehaviour {
         inventoryUI.UpdateUI();
     }
 
-    public void InventorySlotClicked(GameObject go, Item item)
+    public void SlotClicked(
+        GameObject go, Item item, AbilityDataOffensive ability)
     {
-        itemInQuestion = item;
-        equipmentManager.InventorySlotClicked(go);
-        _InventoryUI.UpdateUI();
-        equipmentManager.UpdateEqpmtUI();
+        if (item != null)
+        {
+            itemInQuestion = item;
+            equipmentManager.SlotClicked(go);
+            _InventoryUI.UpdateUI();
+            equipmentManager.UpdateEqpmtUI();
+        }
+        else
+        {
+            abilityInQuestion = ability;
+
+        }
     }
 
     
     public void OpenCharacterEquipmentMenu(int index)
     {
         new OpenCharacter(this, index);
+        characterIndex = index;
     }
-        
+    public void ToggleInventory()
+    {
+        displayingEquipment = !displayingEquipment;
+        new ToggleEquipmentAndAbilities(this);
+    }
 
     //Properties
     public GameObject IconFrame {
@@ -66,4 +86,8 @@ public class BarracksManager : MonoBehaviour {
         get { return equipmentManager; } set { equipmentManager = value; } }
     public bool WaitForSlotPicked {
         get { return waitForSlotPicked; } set { waitForSlotPicked = value; } }
+    public bool DisplayingEquipment {
+        get { return displayingEquipment; } }
+    public Inventory Inventory { get { return playerInventory; } }
+    public int CharacterIndex { get { return characterIndex; } }
 }

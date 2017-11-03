@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour {
 
     public PlayerDataBase dataSource;
 
+    private AbilityDataOffensive[] abilities;
     private Equipment[] characterEquipmentList;
     private Inventory inventory;
     private int epas;
@@ -41,6 +42,7 @@ public class PlayerData : MonoBehaviour {
         apManager = new AbilityPointsManager(devMode, devAPData, apData);
         expManager = new ExperienceManager(devMode, devExpData, expData);
 
+        abilities = Resources.LoadAll<AbilityDataOffensive>("Abilities");
 
         Debug.Log("PlayerDataBase Start() is DONE");
     }
@@ -62,4 +64,7 @@ public class PlayerData : MonoBehaviour {
         set { characterEquipmentList = value;} }
     public AbilityPointsManager ApManager { get { return apManager; } }
     public ExperienceManager ExpManager { get { return expManager; } }
+    public AbilityDataOffensive[] Abilities { get { return abilities; } }
+    public AbilityPointsData APData { get { return apData; } }
+    public ExperienceData ExpData { get { return expData; } }
 }

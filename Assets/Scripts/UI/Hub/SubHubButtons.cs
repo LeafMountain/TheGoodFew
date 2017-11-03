@@ -1,7 +1,6 @@
 ﻿//Description: This class is put on buttons in a hub menu. 
 
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SubHubButtons : MonoBehaviour {
 
@@ -34,6 +33,10 @@ public class SubHubButtons : MonoBehaviour {
     public void DialougeButton()
     {
         shopManager.ClickDialougeButton();
+    }
+    public void InventoryToggleButton()
+    {
+        barracksManager.ToggleInventory();
     }
     
     //properties

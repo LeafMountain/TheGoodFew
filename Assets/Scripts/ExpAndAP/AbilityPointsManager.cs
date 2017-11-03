@@ -7,7 +7,7 @@ public class AbilityPointsManager  {
 
     private bool devMode;
     private DevAbilityPointsData devAPData;
-    private AbilityPointsData apData; //<<from a save file.
+    private AbilityPointsData apData; 
 
     private int[] allCharactersAP;
     private DevAbilityPointsData.AllCharactersAbilities[] allCharactersAbilities; // int [characterIndex][AbilityIndex].
@@ -63,6 +63,8 @@ public class AbilityPointsManager  {
         set { allCharactersAbilities = value; } }
     public int[] CurrentlyUnlocking {
         get { return currentlyUnlocking; }
-        set { currentlyUnlocking = value; }
-    }
+        set { currentlyUnlocking = value; }}
+    public AbilityPointsData APData {
+        get { return apData; }
+        set { apData = value; } }
 }
