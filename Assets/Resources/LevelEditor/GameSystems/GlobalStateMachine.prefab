@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 114720868540597316}
   - component: {fileID: 114360242586595178}
   - component: {fileID: 114083301018974356}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 223168715393664126}
   - component: {fileID: 114564066836596086}
   - component: {fileID: 114770213903992300}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 114574968843530836}
   - component: {fileID: 114022513020144778}
   - component: {fileID: 114586631840876792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 224640636861700874}
   - component: {fileID: 222866891311523740}
   - component: {fileID: 114336909340040402}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1833758504597738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.4009256, y: -20.137348, z: 10.386754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224012541915648442}
