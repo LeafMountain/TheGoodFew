@@ -51,11 +51,21 @@ public class LevelController : CombatControllerElement {
 		GridOccupant[] occupants = GameObject.FindObjectsOfType(typeof(GridOccupant)) as GridOccupant[];
 
 		for (int i = 0; i < occupants.Length; i++) {
-			Vector3 occupantPos = occupants[i].GetComponent<BoxCollider>().bounds.min;
+			Vector2 boardPosition = ConvertToBoardPosition(occupants[i].transform.position);
+			Vector3 occupantPos = ConvertToWorldPosition(boardPosition);
+			Debug.Log(boardPosition);
 
-			App.Model.Level.Tiles[Mathf.FloorToInt(occupantPos.x), Mathf.FloorToInt(occupantPos.z)].Status = TileStatus.occupied;
+			App.Model.Level.Tiles[Mathf.FloorToInt(boardPosition.x), Mathf.FloorToInt(boardPosition.y)].Status = TileStatus.occupied;
 
 			GameObject.Instantiate(test, occupantPos, Quaternion.identity);
 		}
+	}
+
+	public Vector2 ConvertToBoardPosition(Vector3 worldPosition){
+		return new Vector2(Mathf.Floor(worldPosition.x - App.Model.Level.Offset.x), Mathf.Floor(worldPosition.z - App.Model.Level.Offset.z));
+	}
+
+	public Vector3 ConvertToWorldPosition(Vector2 boardPosition){
+		return new Vector3(boardPosition.x + App.Model.Level.Offset.x + .5f, 0, boardPosition.y + App.Model.Level.Offset.z + .5f);
 	}
 }
