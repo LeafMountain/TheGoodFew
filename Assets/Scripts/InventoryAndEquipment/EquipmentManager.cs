@@ -27,67 +27,64 @@ public class EquipmentManager {
         playerEquipment = barracksManager.playerEquipment;
         playerInventory = barracksManager.playerInventory;
         equipmentSlots = new GameObject[5];
+        abilitySlots = new GameObject[5];
         for (int i = 0; i < playerEquipment.transform.childCount; i++)
         {
             equipmentSlots[i] = 
                 playerEquipment.transform.GetChild(i).gameObject;
         }
     } 
-    public void SlotClicked(GameObject go)
+    public void SlotClicked(GameObject go) //<<you work here!!
     {
         bool clickedEquipmentSlot = false;
+        bool clickedAbilitySlot = false;
         
         for (int i = 0; i < equipmentSlots.Length; i++)
         {
             if(equipmentSlots[i] == go){ clickedEquipmentSlot = true; }
         }
+       for (int i = 0; i < abilitySlots.Length; i++)
+        {
+              if(abilitySlots[i] == go) { clickedAbilitySlot = true; }
+        }
+
         if (clickedEquipmentSlot)
         {
             new UnequipItem(go, barracksManager.ItemInQuestion, this);
         }
         else
         {
+            if (!clickedAbilitySlot && _BarracksManager.DisplayingEquipment)
+            {
                 new SwapEquipment(this);
                 new EquipItem(barracksManager.ItemInQuestion, go, this);
+
+            }
+            else
+            {
+                if(clickedAbilitySlot)
+                {
+
+                }
+                else
+                {
+                    new EquiipAbility(
+                        _BarracksManager.AbilityInQuestion, go, 
+                        this, go.transform.GetSiblingIndex());
+                }
+            }
         }
     }
-    public void AbilitySlotClicked()
-    {
 
-    }
     public void UpdateEqpmtUI()
     {
         new UpdateBarracksUI(this);
     }
     public void EquipmentSlotPicked(int slot)
     {
-        if(barracksManager.ItemInQuestion.itemType == ItemType.Trinket)
-        {
-            if (slot >= 3)
-            {
-                new EquipItem(slot, barracksManager.ItemInQuestion, this);
-            }
-            else
-            {
-                playerInventory.Add(barracksManager.ItemInQuestion);
-                barracksManager.ItemInQuestion = null;
-            }
-        }
-        else
-        {
-            if(slot == 1 || slot == 2)
-            {
-                new EquipItem(slot, barracksManager.ItemInQuestion, this);
-            }
-            else
-            {
-                playerInventory.Add(barracksManager.ItemInQuestion);
-                barracksManager.ItemInQuestion = null;
-            }
-            UpdateEqpmtUI();
-            _BarracksManager._InventoryUI.UpdateUI();
-        }
+        new EquipmentSlotPicked(this, slot);
     }
+    
     //Properties
     public BarracksManager _BarracksManager {
         get { return barracksManager; } }
