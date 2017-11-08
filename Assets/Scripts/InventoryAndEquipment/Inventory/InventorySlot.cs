@@ -10,8 +10,7 @@ public class InventorySlot : MonoBehaviour
     private Image frame;
     private ShopManager shopManager;
     private BarracksManager barracksManager;
-    private Color highligtColor;
-    private Color normalColor;
+    
     private Item item;  // Current item in the slot
     private AbilityDataOffensive ability;
     private bool isAbilitySlot;
@@ -26,8 +25,7 @@ public class InventorySlot : MonoBehaviour
         {
             barracksManager = GetComponentInParent<BarracksManager>();
         }
-        highligtColor = Color.yellow;
-        normalColor = Color.white;
+      
         frame = GetComponent<Image>();
         if (gameObject.name[0] == 'A') {
             isAbilitySlot = true; }
@@ -107,17 +105,7 @@ public class InventorySlot : MonoBehaviour
     }
     public void HightlightSelf(bool lit)
     {
-        Image imageComponent =
-            transform.GetChild(0).gameObject.GetComponent<Image>();
-
-        if (lit)
-        {
-           imageComponent.color = highligtColor;   
-        }
-        else
-        {
-            imageComponent.color = normalColor;
-        }
+        new HighlightInventorySlot(this, lit);
     }
     //Properties
     public Item _Item { get { return item; } set { item = value; } }
