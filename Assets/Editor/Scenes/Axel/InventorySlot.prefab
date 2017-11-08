@@ -120,7 +120,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114577076572209986}
-        m_MethodName: InventorySlotClicked
+        m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,7 +218,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 114341526040862772}
-  EmptySlotSprite: {fileID: 0}
 --- !u!114 &114629874298403076
 MonoBehaviour:
   m_ObjectHideFlags: 1

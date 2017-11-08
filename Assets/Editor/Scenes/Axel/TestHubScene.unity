@@ -2804,7 +2804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 14.9, y: -86.5}
+  m_AnchoredPosition: {x: 101.6, y: -86.5}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &161315470
@@ -4809,7 +4809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 1335274146}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -11974,7 +11974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 99.3, y: -86.5}
+  m_AnchoredPosition: {x: 13.1, y: -86.5}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &698954798
@@ -16169,7 +16169,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 1422060924}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -17412,6 +17412,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1020056659}
+  - component: {fileID: 1020056660}
   m_Layer: 5
   m_Name: Inventory Display
   m_TagString: Untagged
@@ -17443,6 +17444,17 @@ RectTransform:
   m_AnchoredPosition: {x: -0.024995998, y: 0.6250191}
   m_SizeDelta: {x: 0.1, y: -1.25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1020056660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020056658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1020848868
 GameObject:
   m_ObjectHideFlags: 0
@@ -18551,6 +18563,7 @@ GameObject:
   - component: {fileID: 1074765611}
   - component: {fileID: 1074765610}
   - component: {fileID: 1074765609}
+  - component: {fileID: 1074765612}
   m_Layer: 5
   m_Name: BlacksmithMenu
   m_TagString: Untagged
@@ -18666,6 +18679,17 @@ MonoBehaviour:
   subMenus: {fileID: 1719751990}
   shopGoldCoins: 100
   dispayPlayerCoins: {fileID: 788698408}
+--- !u!114 &1074765612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1074765606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076183509
 GameObject:
   m_ObjectHideFlags: 0
@@ -19944,7 +19968,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 1751981836}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -20200,13 +20224,14 @@ GameObject:
   - component: {fileID: 1170429317}
   - component: {fileID: 1170429319}
   - component: {fileID: 1170429318}
+  - component: {fileID: 1170429320}
   m_Layer: 5
   m_Name: BarracksMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1170429317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20266,6 +20291,17 @@ MonoBehaviour:
   playerData: {fileID: 1116360400}
   playerInformation: {fileID: 432016320}
   toggleButton: {fileID: 322813614}
+--- !u!114 &1170429320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1170429316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1176776936
 GameObject:
   m_ObjectHideFlags: 0
@@ -23783,7 +23819,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 889534148}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -24834,6 +24870,7 @@ GameObject:
   - component: {fileID: 1401643115}
   - component: {fileID: 1401643114}
   - component: {fileID: 1401643113}
+  - component: {fileID: 1401643116}
   m_Layer: 5
   m_Name: TavernMenu
   m_TagString: Untagged
@@ -24888,6 +24925,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00012207031, y: -0.000030517578}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1401643116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1401643112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1403569218
 GameObject:
   m_ObjectHideFlags: 0
@@ -27334,7 +27382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 979416882}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -30718,6 +30766,7 @@ GameObject:
   - component: {fileID: 1695311399}
   - component: {fileID: 1695311398}
   - component: {fileID: 1695311397}
+  - component: {fileID: 1695311400}
   m_Layer: 5
   m_Name: ArcaneShopMenu
   m_TagString: Untagged
@@ -30833,6 +30882,17 @@ MonoBehaviour:
   subMenus: {fileID: 1820928513}
   shopGoldCoins: 100
   dispayPlayerCoins: {fileID: 895787703}
+--- !u!114 &1695311400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695311394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1701214067
 GameObject:
   m_ObjectHideFlags: 0
@@ -34650,7 +34710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 1454791802}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -34849,6 +34909,7 @@ GameObject:
   - component: {fileID: 1885112287}
   - component: {fileID: 1885112288}
   - component: {fileID: 1885112289}
+  - component: {fileID: 1885112290}
   m_Layer: 5
   m_Name: TownhallMenu
   m_TagString: Untagged
@@ -34903,6 +34964,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialougeLines: []
+--- !u!114 &1885112290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1885112286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99624dc3b39bc9649b621cb686ed7bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1889573771
 GameObject:
   m_ObjectHideFlags: 0
@@ -35103,7 +35175,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 667579450}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -37054,7 +37126,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 456283141}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:
@@ -38392,7 +38464,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1609996025}
+      - m_Target: {fileID: 1285230659}
         m_MethodName: SlotClicked
         m_Mode: 1
         m_Arguments:

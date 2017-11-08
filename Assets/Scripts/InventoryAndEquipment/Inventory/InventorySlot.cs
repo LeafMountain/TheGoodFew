@@ -75,38 +75,10 @@ public class InventorySlot : MonoBehaviour
     }
     public void SlotClicked()
     {
+        Debug.Log("Clicked " + gameObject.name);
         // Checking if this inventory slot is in a shop 
         //sub menu or a in the barracks sub menu.
-        if (!isAbilitySlot)
-        {
-            if (item != null)
-            {
-                if (shopManager != null)
-                {
-                    new InventorySlotClicked(shopManager, item);
-                }
-                else
-                {
-                    if (!barracksManager.WaitForSlotPicked)
-                    {
-                        new InventorySlotClicked(
-                            barracksManager, item, gameObject);
-                    }
-                    else
-                    {
-                        barracksManager._EquipmentManager.EquipmentSlotPicked(
-                            transform.GetSiblingIndex());
-                    }
-                }
-            }
-        }
-        else
-        {
-            if(ability != null)
-            {
-
-            }
-        }
+        new Clicked(this);
     }
     public void ShowItemInfo()
     {
@@ -152,4 +124,7 @@ public class InventorySlot : MonoBehaviour
     public AbilityDataOffensive Ability {
         get { return ability; }
         set { ability = value; } }
+    public bool IsAbilitySlot { get { return isAbilitySlot; } }
+    public ShopManager _ShopManager { get { return shopManager; } }
+    public BarracksManager _BarracksManager { get { return barracksManager; } }
 }

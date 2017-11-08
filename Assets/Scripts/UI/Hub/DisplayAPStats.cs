@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayAPStats : MonoBehaviour {
+public class DisplayAPStats {
 
     private GameObject parent;
 

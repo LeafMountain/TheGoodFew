@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventorySlotClicked  {
 
@@ -25,7 +23,7 @@ public class InventorySlotClicked  {
         this.shopManager = shopManager;
         this.item = item;
 
-        shopManager.ItemInQuestion = item;
+        shopManager.ItemInQuestion = this.item;
         shopManager.Ask(item.itemName, item.price);
     }
     public InventorySlotClicked(
