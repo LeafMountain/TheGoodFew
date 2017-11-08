@@ -57,7 +57,7 @@ public class EquipmentManager {
     }
     public void UpdateEqpmtUI()
     {
-        new UpdateEquipmentUI(this);
+        new UpdateBarracksUI(this);
     }
     public void EquipmentSlotPicked(int slot)
     {

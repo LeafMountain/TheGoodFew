@@ -26,15 +26,5 @@ public class InventorySlotClicked  {
         shopManager.ItemInQuestion = this.item;
         shopManager.Ask(item.itemName, item.price);
     }
-    public InventorySlotClicked(
-        BarracksManager barracksManager, AbilityDataOffensive ability,
-        GameObject gameObject)
-    {
-        this.barracksManager = barracksManager;
-        shopManager = null;
-        item = null;
-        this.ability = ability;
-
-
-    }
+    
 }

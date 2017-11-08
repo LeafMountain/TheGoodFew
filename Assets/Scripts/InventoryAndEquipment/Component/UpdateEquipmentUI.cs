@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class UpdateEquipmentUI {
-    public UpdateEquipmentUI(EquipmentManager eqpmntMngr)
+﻿public class UpdateBarracksUI
+{
+    public UpdateBarracksUI(EquipmentManager eqpmntMngr)
     {
         if (eqpmntMngr.CurrentEquipment != null)
         {
@@ -18,4 +15,11 @@ public class UpdateEquipmentUI {
             }
         }
     }
+
+    private void UpdateAbilityUI()
+    {
+
+    }
+  
+
 }

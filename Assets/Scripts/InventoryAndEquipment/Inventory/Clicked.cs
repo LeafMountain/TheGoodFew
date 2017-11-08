@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Clicked  {
+﻿public class Clicked  {
 
     private InventorySlot inventorySlot;
     private bool inShopMode;
@@ -45,7 +41,8 @@ public class Clicked  {
     {
         if(inventorySlot.Ability != null)
         {
-
+            new AbilitySlotClicked(inventorySlot._BarracksManager,
+                inventorySlot.Ability, inventorySlot.gameObject);
         }
     }
 

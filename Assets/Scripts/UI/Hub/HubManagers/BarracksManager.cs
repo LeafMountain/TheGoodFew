@@ -51,14 +51,14 @@ public class BarracksManager : MonoBehaviour {
         {
             itemInQuestion = item;
             equipmentManager.SlotClicked(go);
-            _InventoryUI.UpdateUI();
-            equipmentManager.UpdateEqpmtUI();
         }
         else
         {
             abilityInQuestion = ability;
-
+            equipmentManager.SlotClicked(go);
         }
+        new UpdateUI(
+            _EquipmentManager, true, true, true);
     }
 
     
@@ -75,19 +75,27 @@ public class BarracksManager : MonoBehaviour {
 
     //Properties
     public GameObject IconFrame {
-        get { return iconFrame; } set { iconFrame = value; } }
+        get { return iconFrame; }
+        set { iconFrame = value; } }
     public GameObject InventoryDisplay {
         get { return inventoryDisplay; } }
     public InventoryUI _InventoryUI {
-        get { return inventoryUI; } set { inventoryUI = value; } }
+        get { return inventoryUI; }
+        set { inventoryUI = value; } }
     public Item ItemInQuestion {
-        get { return itemInQuestion; } set { itemInQuestion = value; } }
+        get { return itemInQuestion; }
+        set { itemInQuestion = value; } }
     public EquipmentManager _EquipmentManager {
-        get { return equipmentManager; } set { equipmentManager = value; } }
+        get { return equipmentManager; }
+        set { equipmentManager = value; } }
     public bool WaitForSlotPicked {
-        get { return waitForSlotPicked; } set { waitForSlotPicked = value; } }
+        get { return waitForSlotPicked; }
+        set { waitForSlotPicked = value; } }
     public bool DisplayingEquipment {
         get { return displayingEquipment; } }
     public Inventory Inventory { get { return playerInventory; } }
     public int CharacterIndex { get { return characterIndex; } }
+    public AbilityDataOffensive AbilityInQuestion {
+        get { return abilityInQuestion; }
+        set { abilityInQuestion = value; } }
 }
