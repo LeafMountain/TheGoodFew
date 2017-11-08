@@ -66,42 +66,20 @@ public class InventorySlot : MonoBehaviour
     // Use the item
     public void UseItem()
     {
-        if (item != null)
-        {
-            item.Use();
-        }
+        if (item != null) item.Use();
     }
     public void SlotClicked()
     {
         Debug.Log("Clicked " + gameObject.name);
-        // Checking if this inventory slot is in a shop 
-        //sub menu or a in the barracks sub menu.
         new Clicked(this);
     }
     public void ShowItemInfo()
     {
-        if (item != null)
-        {
-            if (shopManager != null)
-            {
-                shopManager.informationDisplay.RecieveInformation(item);
-            }
-            else
-            {
-                barracksManager.informationDisplay.RecieveInformation(item);
-            }
-        }
+        new ItemInfo(this, true);
     }
     public void RemoveItemInfo()
     {
-        if(shopManager != null)
-        {
-            shopManager.informationDisplay.EmptyDisplay();
-        }
-        else
-        {
-            barracksManager.informationDisplay.EmptyDisplay();
-        }
+        new ItemInfo(this, false);
     }
     public void HightlightSelf(bool lit)
     {
