@@ -1,4 +1,6 @@
-﻿public class Clicked  {
+﻿using UnityEngine;
+
+public class Clicked  {
 
     private InventorySlot inventorySlot;
     private bool inShopMode;
@@ -36,12 +38,6 @@
                         inventorySlot._BarracksManager, inventorySlot._Item,
                         inventorySlot.gameObject);
                 }
-                else
-                {
-                    inventorySlot._BarracksManager._EquipmentManager.
-                        EquipmentSlotPicked(
-                        inventorySlot.transform.GetSiblingIndex());
-                }
             }
         }
     }
@@ -55,7 +51,19 @@
     }
     private void ClickedEquipmentSlot()
     {
+        Debug.Log("Clicked.CLickedEquipmentSlotSlot()");
 
+        if (!inventorySlot._BarracksManager.WaitForSlotPicked)
+        {
+            inventorySlot._BarracksManager.SlotClicked(
+                inventorySlot.gameObject, inventorySlot._Item, null);
+        }
+        else
+        {
+            inventorySlot._BarracksManager._EquipmentManager.
+                       EquipmentSlotPicked(
+                       inventorySlot.transform.GetSiblingIndex());
+        }
     }
 
 }

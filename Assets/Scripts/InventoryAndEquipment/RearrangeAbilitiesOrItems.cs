@@ -42,7 +42,9 @@ public class RearrangeAbilitiesOrItems {
         }
         else
         {
-            
+            new EquipAbility(
+                equipmentManager._BarracksManager.AbilityInQuestion,
+                go, equipmentManager, go.transform.GetSiblingIndex());
         }
     }
     private void MoveEquipment()

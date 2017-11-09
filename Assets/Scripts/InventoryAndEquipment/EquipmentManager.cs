@@ -20,7 +20,8 @@ public class EquipmentManager {
 
     private bool canDuelWield; //<< Future ability.
     private UnitData currentCharacter; 
-    private TwoSlotChoice twoSlotChoiceInstance; 
+    private TwoSlotChoice twoSlotChoiceInstance;
+    private MultiSlotChoice multiSlotChoiceInstance;
 
     private EquipmentManager() { }//Constructor
     public EquipmentManager(BarracksManager barracksManager)
@@ -36,46 +37,9 @@ public class EquipmentManager {
                 playerEquipment.transform.GetChild(i).gameObject;
         }
     } 
-    public void SlotClicked(GameObject go) //<<you work here!!
-    {
-        bool clickedEquipmentSlot = false;
-        bool clickedAbilitySlot = false;
-        
-        for (int i = 0; i < equipmentSlots.Length; i++)
-        {
-            if(equipmentSlots[i] == go){ clickedEquipmentSlot = true; }
-        }
-       for (int i = 0; i < abilitySlots.Length; i++)
-        {
-              if(abilitySlots[i] == go) { clickedAbilitySlot = true; }
-        }
+    public void SlotClicked(GameObject go) {
 
-        if (clickedEquipmentSlot)
-        {
-            new UnequipItem(go, barracksManager.ItemInQuestion, this);
-        }
-        else
-        {
-            if (!clickedAbilitySlot && _BarracksManager.DisplayingEquipment)
-            {
-                new SwapEquipment(this);
-                new EquipItem(barracksManager.ItemInQuestion, go, this);
-
-            }
-            else
-            {
-                if(clickedAbilitySlot)
-                {
-
-                }
-                else
-                {
-                    new EquiipAbility(
-                        _BarracksManager.AbilityInQuestion, go, 
-                        this, go.transform.GetSiblingIndex());
-                }
-            }
-        }
+        new RearrangeAbilitiesOrItems(this, go);
     }
 
     public void UpdateEqpmtUI()
@@ -105,4 +69,7 @@ public class EquipmentManager {
     public EquippedAbilities CurrentAbilities {
         get { return currentAbilities; }
         set { currentAbilities = value; } }
+    public MultiSlotChoice MultiSlotChoiceInstance {
+        get { return multiSlotChoiceInstance; }
+        set { multiSlotChoiceInstance = value; } }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class EquiipAbility {
+public class EquipAbility {
 
     private AbilityDataOffensive ability;
     private GameObject gameObject;
@@ -14,7 +14,7 @@ public class EquiipAbility {
     private EquippedAbilities currentAbilities;
     private int abilitySlotIndex;
 
-    public EquiipAbility(
+    public EquipAbility(
         AbilityDataOffensive ability, GameObject go, 
         EquipmentManager equipmentManager, int abilitySlotIndex)
     {
@@ -35,6 +35,8 @@ public class EquiipAbility {
         currentAbilities =
             equipmentManager.CurrentAbilities;
 
+        EquipOrChoose();
+
     }
 
     private void Equip()
@@ -45,17 +47,33 @@ public class EquiipAbility {
         AbilityDataOffensive currentlyEquippedAbility =
             slot.GetComponent<InventorySlot>().Ability;
 
-        if(currentlyEquippedAbility != null)
+        if (equipmentManager.MultiSlotChoiceInstance !=
+            null)
+
+            if (currentlyEquippedAbility != null)
+            {
+                new MoveAbilityBetweenInventoryAndAbilitySlot(
+                    currentlyEquippedAbility, slot, playerInventory);
+            }
+            else
+            {
+                new MoveAbilityBetweenInventoryAndAbilitySlot(
+                    ability, playerInventory, slot);
+            }
+
+            currentAbilities.AllAbilities[abilitySlotIndex] = ability;
+                
+    }
+    private void EquipOrChoose()
+    {
+        if (equipmentManager.MultiSlotChoiceInstance !=
+            null)
         {
-            new MoveAbilityBetweenInventoryAndAbilitySlot(
-                currentlyEquippedAbility, slot, playerInventory);
+            new AbilitySlotPicked(equipmentManager, abilitySlotIndex);
         }
         else
         {
-            new MoveAbilityBetweenInventoryAndAbilitySlot(
-                ability, playerInventory, slot);
+            new MultiSlotChoice(equipmentManager, ability);
         }
-
-        currentAbilities.AllAbilities[abilitySlotIndex] = ability;
     }
 }
