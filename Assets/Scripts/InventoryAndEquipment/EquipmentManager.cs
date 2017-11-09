@@ -5,6 +5,8 @@ using UnityEngine;
 
 public enum EquipmentPart {
     Body, OffHand, MainHand, FirstTrinket, SecondTrinket}
+public enum InventorySlotType { 
+AbilitySlot, EquipmentSlot, InventorySlot}
 
 public class EquipmentManager {
 

@@ -13,22 +13,23 @@ public class InventorySlot : MonoBehaviour
     
     private Item item;  // Current item in the slot
     private AbilityDataOffensive ability;
-    private bool isAbilitySlot;
+    private InventorySlotType slotType;
 
     void Start()
     {
         if (GetComponentInParent<ShopManager>() != null)
-        {
-            shopManager = GetComponentInParent<ShopManager>();
-        }
+        {shopManager = GetComponentInParent<ShopManager>();}
         else
-        {
-            barracksManager = GetComponentInParent<BarracksManager>();
-        }
-      
+        {barracksManager = GetComponentInParent<BarracksManager>();}
         frame = GetComponent<Image>();
-        if (gameObject.name[0] == 'A') {
-            isAbilitySlot = true; }
+        if (gameObject.name[0] == 'A')
+        { slotType =
+                InventorySlotType.AbilitySlot;}
+        else if (gameObject.name[0] == 'I')
+        {slotType =
+                InventorySlotType.InventorySlot;}
+        else if (gameObject.name[0] != 'A' || gameObject.name[0] != 'I')
+        {slotType = InventorySlotType.EquipmentSlot;}
     }
     // Add item to the slot
     public void AddItem(Item newItem)
@@ -90,7 +91,7 @@ public class InventorySlot : MonoBehaviour
     public AbilityDataOffensive Ability {
         get { return ability; }
         set { ability = value; } }
-    public bool IsAbilitySlot { get { return isAbilitySlot; } }
     public ShopManager _ShopManager { get { return shopManager; } }
     public BarracksManager _BarracksManager { get { return barracksManager; } }
+    public InventorySlotType SlotType { get { return slotType; } }
 }

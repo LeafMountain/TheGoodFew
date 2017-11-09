@@ -2,13 +2,21 @@
 
     private InventorySlot inventorySlot;
     private bool inShopMode;
+    private InventorySlotType type;
 
     public Clicked(InventorySlot inventorySlot)
     {
         this.inventorySlot = inventorySlot;
+        type =
+            inventorySlot.SlotType;
 
-        if (!inventorySlot.IsAbilitySlot) { ClickedInventorySlot(); }
-        else { ClickedAbilitySlot(); }
+        if (type == InventorySlotType.InventorySlot)
+        { ClickedInventorySlot(); }
+
+        else if(type == InventorySlotType.AbilitySlot)
+        { ClickedAbilitySlot(); }
+        else if(type == InventorySlotType.EquipmentSlot)
+        { ClickedEquipmentSlot(); }
     }
     private void ClickedInventorySlot()
     {
@@ -44,6 +52,10 @@
             new AbilitySlotClicked(inventorySlot._BarracksManager,
                 inventorySlot.Ability, inventorySlot.gameObject);
         }
+    }
+    private void ClickedEquipmentSlot()
+    {
+
     }
 
 }
