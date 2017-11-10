@@ -36,7 +36,10 @@ public class SubHubButtons : MonoBehaviour {
     }
     public void InventoryToggleButton()
     {
-        barracksManager.ToggleInventory();
+        if (!barracksManager.WaitForSlotPicked)
+        {
+            barracksManager.ToggleInventory();
+        }
     }
     
     //properties

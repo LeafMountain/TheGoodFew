@@ -54,7 +54,6 @@ public class BarracksManager : MonoBehaviour {
         }
         else
         {
-            abilityInQuestion = ability;
             equipmentManager.SlotClicked(go);
         }
         new UpdateUI(
@@ -98,4 +97,5 @@ public class BarracksManager : MonoBehaviour {
     public AbilityDataOffensive AbilityInQuestion {
         get { return abilityInQuestion; }
         set { abilityInQuestion = value; } }
+    
 }

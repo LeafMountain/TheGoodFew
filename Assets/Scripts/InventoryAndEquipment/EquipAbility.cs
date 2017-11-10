@@ -18,6 +18,7 @@ public class EquipAbility {
         AbilityDataOffensive ability, GameObject go, 
         EquipmentManager equipmentManager, int abilitySlotIndex)
     {
+        Debug.Log("RUNNING EquipAbility.cs");
         this.ability = ability;
         gameObject = go;
         this.equipmentManager = equipmentManager;
@@ -66,10 +67,10 @@ public class EquipAbility {
     }
     private void EquipOrChoose()
     {
-        if (equipmentManager.MultiSlotChoiceInstance !=
-            null)
+        Debug.Log("EquipAbility.EquipOrChoose()");
+        if (barracksManager.WaitForSlotPicked)            
         {
-            new AbilitySlotPicked(equipmentManager, abilitySlotIndex);
+            Equip();
         }
         else
         {

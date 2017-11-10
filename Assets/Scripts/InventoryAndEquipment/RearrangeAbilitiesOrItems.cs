@@ -13,13 +13,14 @@ public class RearrangeAbilitiesOrItems {
     public RearrangeAbilitiesOrItems(
         EquipmentManager equipmentManager, GameObject go)
     {
+        Debug.Log("RUNNING RearrengeAbilitiesOrItems.cs");
         this.equipmentManager = equipmentManager;
         this.go = go;
         inventorySlot = go.GetComponent<InventorySlot>();
         type = inventorySlot.
             SlotType;
-        if (inventorySlot._Item != null)
-        { movingAbility = false; }
+        if (inventorySlot._Item == null)
+        { movingAbility = true; }
 
         if ((int)type == 2)
         { clickedInventorySlot = true;}
@@ -33,6 +34,7 @@ public class RearrangeAbilitiesOrItems {
     }
     private void MoveAbility()
     {
+        Debug.Log("RearrengeAbilitiesOrItems.MoveAbility()");
         if(!clickedInventorySlot)
         {
             new UnequipAbility(

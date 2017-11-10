@@ -10,6 +10,8 @@ public class InventorySlotClicked  {
     public InventorySlotClicked(
         BarracksManager barracksManager, Item item, GameObject gameObject)
     {
+        Debug.Log("InventorySlotClicked.sc "+
+            "FIRST constructor.");
         this.barracksManager = barracksManager;
         shopManager = null;
         this.item = item;
@@ -19,12 +21,28 @@ public class InventorySlotClicked  {
     }
     public InventorySlotClicked(ShopManager shopManager, Item item)
     {
+        Debug.Log("InventorySlotClicked.sc " +
+            "SECOND constructor.");
         barracksManager = null;
         this.shopManager = shopManager;
         this.item = item;
 
         shopManager.ItemInQuestion = this.item;
         shopManager.Ask(item.itemName, item.price);
+    }
+    public InventorySlotClicked(
+        BarracksManager barracksManager, AbilityDataOffensive ability,
+        GameObject gameObject)
+    {
+        Debug.Log("InventorySlotClicked.sc " +
+            "THIRD constructor.");
+        this.barracksManager = barracksManager;
+        this.ability = ability;
+        item = null;
+        shopManager = null;
+
+        barracksManager.AbilityInQuestion = ability;
+        barracksManager.SlotClicked(gameObject, null, ability);
     }
     
 }

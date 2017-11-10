@@ -9,10 +9,12 @@ public class AbilitySlotPicked {
     public AbilitySlotPicked(
         EquipmentManager equipmentManager, int slot)
     {
+        Debug.Log("RUNNING AbilitySlotPicked.cs");
         this.equipmentManager = equipmentManager;
         this.slot = slot;
 
         EquippingAbility();
+        new UpdateUI(equipmentManager, true, false, false);
     }
 
     private void EquippingAbility()

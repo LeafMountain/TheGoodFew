@@ -19,6 +19,8 @@ public class MultiSlotChoice {
         EquipmentManager equipmentManager, 
         AbilityDataOffensive ability)
     {
+
+        Debug.Log("Running MultuSlotChoice.cs");
         this.equipmentManager = equipmentManager;
         barracksManager = equipmentManager._BarracksManager;
 

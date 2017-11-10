@@ -71,7 +71,6 @@ public class ToggleEquipmentAndAbilities {
         
        barracksmanager._InventoryUI.UpdateUIAbilities();
 
-        Debug.Log(unlockedAbilities.Count);
     }
    
 }

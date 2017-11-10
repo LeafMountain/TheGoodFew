@@ -45,7 +45,6 @@ public class InventorySlot : MonoBehaviour
     {
         if(newAbility != null)
         {
-            Debug.Log("Adding new ability to inventory slot.");
             ability = newAbility;
             icon.sprite = newAbility.icon;
             icon.enabled = true;

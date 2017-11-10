@@ -22,31 +22,55 @@ public class Clicked  {
     }
     private void ClickedInventorySlot()
     {
-        if (inventorySlot._Item != null)
+        if (inventorySlot._BarracksManager.DisplayingEquipment)
         {
-            if (inventorySlot._ShopManager != null)
+            Debug.Log("Clicked.ClickedInventorySlot() reads it's Equipment "+
+                "in the slots.");
+            if (inventorySlot._Item != null)
             {
-                new InventorySlotClicked(
-                    inventorySlot._ShopManager, inventorySlot._Item);
-
-            }
-            else
-            {
-                if (!inventorySlot._BarracksManager.WaitForSlotPicked)
+                if (inventorySlot._ShopManager != null)
                 {
                     new InventorySlotClicked(
-                        inventorySlot._BarracksManager, inventorySlot._Item,
-                        inventorySlot.gameObject);
+                        inventorySlot._ShopManager, inventorySlot._Item);
+
                 }
+                else
+                {
+                    if (!inventorySlot._BarracksManager.WaitForSlotPicked)
+                    {
+                        new InventorySlotClicked(
+                            inventorySlot._BarracksManager, inventorySlot._Item,
+                            inventorySlot.gameObject);
+                    }
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Clicked.ClickedInventorySlot() reads it's Abilities "+
+                "in the slots.");
+            if (inventorySlot.Ability != null)
+            {
+                new InventorySlotClicked(
+                    inventorySlot._BarracksManager, inventorySlot.Ability,
+                    inventorySlot.gameObject);
             }
         }
     }
     private void ClickedAbilitySlot()
     {
-        if(inventorySlot.Ability != null)
+        Debug.Log("Clicked.ClickedAbilitySlot()");
+
+        if (!inventorySlot._BarracksManager.WaitForSlotPicked)
         {
             new AbilitySlotClicked(inventorySlot._BarracksManager,
                 inventorySlot.Ability, inventorySlot.gameObject);
+        }
+        else
+        {
+            new AbilitySlotPicked(
+                inventorySlot._BarracksManager._EquipmentManager, 
+                inventorySlot.gameObject.transform.GetSiblingIndex());
         }
     }
     private void ClickedEquipmentSlot()

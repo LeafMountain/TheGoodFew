@@ -30,18 +30,20 @@ public class InventoryUI : MonoBehaviour
         Debug.Log("Updating Inventory UI");
         InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
 
-        
+        if (displayingEquipment)
+        {
             for (int i = 0; i < slots.Length; i++)
             {
                 if (i < inventory.items.Count)
                 {
-                        slots[i].AddItem(inventory.items[i]);
+                    slots[i].AddItem(inventory.items[i]);
                 }
                 else
                 {
-                    if(slots[i].gameObject.name[0] == 'I') slots[i].ClearSlot();
+                    if (slots[i].gameObject.name[0] == 'I') slots[i].ClearSlot();
                 }
-            
+
+            }
         }
     }
     public void ClearAllSlots()

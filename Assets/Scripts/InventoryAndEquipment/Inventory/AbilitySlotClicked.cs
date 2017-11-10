@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class AbilitySlotClicked : MonoBehaviour {
+public class AbilitySlotClicked {
 
     private BarracksManager barracksManager;
     private ShopManager shopManager;
@@ -11,6 +9,7 @@ public class AbilitySlotClicked : MonoBehaviour {
     public AbilitySlotClicked(
         BarracksManager barracksManager, AbilityDataOffensive ability, GameObject gameObject)
     {
+        Debug.Log("RUNNING AbilitySlotClicked.cs");
         this.barracksManager = barracksManager;
         shopManager = null;
         this.ability = ability;

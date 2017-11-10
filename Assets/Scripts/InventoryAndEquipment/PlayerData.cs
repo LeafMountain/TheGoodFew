@@ -11,9 +11,11 @@ public class PlayerData : MonoBehaviour {
 
     private AbilityDataOffensive[] abilities;
     private Equipment[] characterEquipmentList;
+    private EquippedAbilities[] characterAbilitiesList;
     private Inventory inventory;
     private int epas;
     public DevEquipment[] devEquipmentData;
+    public DevAbilities[] devAbilitiesData;
 
     private AbilityPointsManager apManager;
     private ExperienceManager expManager;
@@ -31,6 +33,7 @@ public class PlayerData : MonoBehaviour {
         epas = dataSource.goldCoins;
         inventory = GetComponent<Inventory>();
         characterEquipmentList = new Equipment[6];
+        characterAbilitiesList = new EquippedAbilities[6];
         if (devEquipmentData == null) devEquipmentData = new DevEquipment[6];
 
         apData = new AbilityPointsData();
@@ -39,6 +42,7 @@ public class PlayerData : MonoBehaviour {
         //need a method to load experienceData from a xml file.
 
         new LoadEquipmentData(devMode, this);
+        new LoadAbilitiesData(devMode, this);
         apManager = new AbilityPointsManager(devMode, devAPData, apData);
         expManager = new ExperienceManager(devMode, devExpData, expData);
 
@@ -59,9 +63,15 @@ public class PlayerData : MonoBehaviour {
     public DevEquipment[] DevEquipmentData {
         get { return devEquipmentData; }
         set { devEquipmentData = value; } }
+    public DevAbilities[] DevAbilitiesData {
+        get { return devAbilitiesData; }
+        set { devAbilitiesData = value; } }
     public Equipment[] CharacterEquipmentList {
         get { return characterEquipmentList; }
         set { characterEquipmentList = value;} }
+    public EquippedAbilities[] CharacterAbilitiesList {
+        get { return characterAbilitiesList; }
+        set { characterAbilitiesList = value; } }
     public AbilityPointsManager ApManager { get { return apManager; } }
     public ExperienceManager ExpManager { get { return expManager; } }
     public AbilityDataOffensive[] Abilities { get { return abilities; } }
