@@ -29,7 +29,7 @@ public class OpenCharacter {
         equipmentManager.CurrentEquipment = 
             barracksManager.playerData.CharacterEquipmentList[characterIndex];
         equipmentManager.CurrentAbilities =
-            barracksManager.playerData.
+            barracksManager.playerData.CharacterAbilitiesList[characterIndex];
         UpdateEquipmentUI();
 
         //Player experience prep

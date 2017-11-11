@@ -1,4 +1,6 @@
-﻿public class LoadAbilitiesDevMode {
+﻿using UnityEngine;
+
+public class LoadAbilitiesDevMode {
 
     private PlayerData playerData;
 
@@ -18,8 +20,35 @@
             {
                 playerData.CharacterAbilitiesList[abilityIndex] =
                     new EquippedAbilities();
-                //Continue here, compare LoadEquipmentDevMode.cs
+                foreach (var ability in item.allAbilities)
+                {
+                    if (playerData.DevAbilitiesData[(int)heroCharacter].
+                        allAbilities[abilityIndex] != null)
+                    {
+                        FillAbilitySlotWithDevAbility(
+                            (int)heroCharacter, abilityIndex);                
+                    }
+                    else
+                    {
+                        Debug.Log("There is nothing to load from "+
+                            "ability to load for ability slot " + abilityIndex+
+                            ", for " + heroCharacter.ToString());
+                    }
+                    abilityIndex++;
+                }
             }
+            else
+            {
+                Debug.Log(
+                    "There is no devAbilityData for " + 
+                    heroCharacter.ToString());
+            }
+            heroCharacter++;
         }
+    }
+    private void FillAbilitySlotWithDevAbility(int hero, int abilitySlot)
+    {
+        playerData.CharacterAbilitiesList[hero].AllAbilities[abilitySlot] =
+            playerData.DevAbilitiesData[hero].allAbilities[abilitySlot];
     }
 }
